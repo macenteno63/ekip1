@@ -27,17 +27,17 @@ function Formulaire(){
     ) : (
         <div id={"formu"}>
             <form method={"POST"}>
-                <h1 class="connexion" >Se connecter</h1>
+                <h1 className="connexion" >Se connecter</h1>
                 <label htmlFor={"mail"}></label>
                 <input type={"email"} id={"mail"} placeholder={"Email"}/>
                 <label htmlFor={"MDP"}></label>
                 <input type={"password"} id={"MDP"} placeholder={"Mot de Passe"}/>
                 <label htmlFor={"boutonSubmit"}></label>
-                <p class="mdp" onClick={() => setIsOpen(true)} >Mot de passe oublié ?</p>
+                <p className="mdp" onClick={() => setIsOpen(true)} >Mot de passe oublié ?</p>
                 <input type={"submit"} id={"boutonSubmit"} value={"Se connecter"}/>
             </form>
-            <a class="inscription" > Pas encore de compte ? </a>
-            <a class="inscription" onClick={() => setIsOpen(true)} > S'inscrire </a>
+            <a className="inscription" > Pas encore de compte ? </a>
+            <a className="inscription" onClick={() => setIsOpen(true)} > S'inscrire </a>
         </div>
     )
 }
