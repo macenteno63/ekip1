@@ -36,8 +36,10 @@ function Formulaire(){
                 <p className="mdp" onClick={() => setIsOpen(true)} >Mot de passe oublié ?</p>
                 <input type={"submit"} id={"boutonSubmit"} value={"Se connecter"}/>
             </form>
-            <a className="inscription" > Pas encore de compte ? </a>
-            <a className="inscription" onClick={() => setIsOpen(true)} > S'inscrire </a>
+            <nav className="inscription">
+                <a> Pas encore de compte ? </a>
+                <a className="inscriptionlien" onClick={() => setIsOpen(true)} > S'inscrire </a>
+            </nav>
         </div>
     )
 }
