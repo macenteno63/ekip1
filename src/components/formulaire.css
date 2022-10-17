@@ -1,15 +1,29 @@
+@font-face {
+    font-family: Bold;
+    src: url(Inter-Black.otf);
+  }
+
+@font-face {
+    font-family: Regular;
+    src: url(Inter-Regular.otf);
+  }
+
+  @font-face {
+    font-family: SemiBold;
+    src: url(Inter-Regular.otf);
+  }
 #formu form{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     width: 300px;
     height: 300px;
-    border: solid black 5px;
+    border: solid #879FB5 5px;
     background-color: #879FB5;
     border-radius: 10%;
     padding-left: 20px;
     padding-right: 20px;
-    font-family: 'Inter-Black', sans-serif;
+    padding-bottom: 5px;
 }
 #formu{
     display: flex;
@@ -22,17 +36,51 @@
     height: 100vh;
 }
 
+#formuIns form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 300px;
+    height: 350px;
+    border: solid #879FB5 5px;
+    background-color: #879FB5;
+    border-radius: 10%;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 5px;
+}
+#formuIns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    /* border: solid yellow 2px; */
+    width: 100%;
+    height: 100vh;
+}
+
+
+input{
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
 #boutonSubmit{
+    margin-top: 5px;
+    padding: 5px;
     cursor: pointer; 
 }
 
 .mdp{
+    font-family: Regular;
     text-align: right;
-    font-size: 12px;
+    font-size: 13px;
     color:white;
     cursor: pointer; 
 }
-.connexion{
+h1{
+    font-family: Bold;
     text-align: center;
     font-size: 25px;
     color:white;
@@ -42,7 +90,16 @@
     padding-top: 20px;
 }
 .inscriptionlien{
+    font-family: Regular;
     padding-left: 10px; 
+    font-style: italic;
     cursor: pointer;      
 }
 
+.lien{
+    cursor: pointer;
+}
+
+.text{
+    font-family: SemiBold;
+}
