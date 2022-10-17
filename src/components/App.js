@@ -1,4 +1,4 @@
-import './App.css';
+import '../styles/App.css';
 import Formulaire from './formulaire.js'
 function App() {
   return (

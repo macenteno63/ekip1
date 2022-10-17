@@ -1,16 +1,16 @@
 @font-face {
     font-family: Bold;
-    src: url(Inter-Black.otf);
+    src: url(../styles/fonts/Inter-Black.otf);
   }
 
 @font-face {
     font-family: Regular;
-    src: url(Inter-Regular.otf);
+    src: url(../styles/fonts/Inter-Regular.otf);
   }
 
   @font-face {
     font-family: SemiBold;
-    src: url(Inter-Regular.otf);
+    src: url(../styles/fonts/Inter-Regular.otf);
   }
 #formu form{
     display: flex;
@@ -94,6 +94,10 @@ h1{
     padding-left: 10px; 
     font-style: italic;
     cursor: pointer;      
+}
+#inscription:hover{
+    color: blue;
+    text-decoration: underline;
 }
 
 .lien{

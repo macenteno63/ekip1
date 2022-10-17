@@ -1,8 +1,5 @@
-import './formulaire.css'
+import '../styles/formulaire.css'
 import { useState } from 'react'
-function click() {
-    console.log("fkldjfks");
-}
 
 function Formulaire(){
     let [isOpen, setIsOpen] = useState(false)
@@ -41,7 +38,7 @@ function Formulaire(){
             </form>
             <nav className="inscription">
                 <a className="text"> Pas encore de compte ? </a>
-                <a className="inscriptionlien" onClick={() => setIsOpen(true)} > S'inscrire </a>
+                <a className="inscriptionlien" id={"inscription"} onClick={() => setIsOpen(true)} > S'inscrire </a>
             </nav>
         </div>
     )
