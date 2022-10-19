@@ -1,5 +1,5 @@
-import '../styles/formulaire.css'
-import './reinitialisationMdp.js'
+import '../styles/pages/formulaire.css'
+import './ReinitialisationMdp.js'
 import { useState } from 'react'
 
 function Formulaire(){

@@ -1,4 +1,4 @@
-import '../styles/erreur.css'
+import '../styles/pages/erreur.css'
 import React from 'react';
 
 const Erreur = () => {

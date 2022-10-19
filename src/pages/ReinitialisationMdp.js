@@ -1,5 +1,5 @@
 import React from "react"
-import '../styles/reinitialisationMdp.css'
+import '../styles/pages/reinitialisationMdp.css'
 
 function ReinitialiserMDP(){
 return <div id={"Reinitialiser"}>
