@@ -1,8 +1,12 @@
+import '../styles/erreur.css'
 import React from 'react';
 
 const Erreur = () => {
     return (
-    <h1>tet</h1>
+    <div>
+        <h1>Erreur 404</h1>
+    
+    .</div>
     );
 };
 
