@@ -9,7 +9,6 @@ function App() {
         <Route path="/" element={<Formulaire/>}/> # si c'est l'accueil du site alors on affiche le Formulaire
         <Route path="*" element={<Erreur/>}/> # si jamais l'url est inconnu on affiche une erreur 404
       </Routes>
-      
     </BrowserRouter>
   )
 }
