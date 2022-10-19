@@ -1,4 +1,5 @@
 import '../styles/formulaire.css'
+import './reinitialisationMdp.js'
 import { useState } from 'react'
 
 function Formulaire(){
@@ -18,10 +19,11 @@ function Formulaire(){
                     <label htmlFor={"boutonSubmit"}></label>
                     <input type={"submit"} id={"boutonSubmit"} value={"Se connecter"}/>
                 </form>
-                <nav className="inscription">
-                    <a className="text"> Pas encore de compte ? </a>
-                    <a className="inscriptionlien" onClick={() => setIsOpen(false)} >Connexion</a>
-                </nav>
+                <div className="inscription">
+                    <a className="text"> Déjà un compte ? </a>
+                    <a className="inscriptionlien" id={"hover"} onClick={() => setIsOpen(false)} >Connexion</a>
+                    <button onclick="ReinitialiserMDP()">Button</button> 
+                </div>
             </div>
 
     ) : (
@@ -38,7 +40,7 @@ function Formulaire(){
             </form>
             <nav className="inscription">
                 <a className="text"> Pas encore de compte ? </a>
-                <a className="inscriptionlien" id={"inscription"} onClick={() => setIsOpen(true)} > S'inscrire </a>
+                <a className="inscriptionlien" id={"hover"} onClick={() => setIsOpen(true)} > S'inscrire </a>
             </nav>
         </div>
     )
