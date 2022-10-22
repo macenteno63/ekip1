@@ -1,0 +1,21 @@
+@font-face {
+    font-family: Bold;
+    src: url(../fonts/Inter-Black.otf);
+  }
+
+@font-face {
+    font-family: Regular;
+    src: url(../fonts/Inter-Regular.otf);
+  }
+
+  @font-face {
+    font-family: SemiBold;
+    src: url(../fonts/Inter-Regular.otf);
+  }
+
+h1{
+    font-family: Bold;
+    text-align: center;
+    font-size: 25px;
+    color: red;
+}
