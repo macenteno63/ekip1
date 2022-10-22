@@ -8,7 +8,7 @@ function Formulaire(){
     let [isOpen, setIsOpen] = useState(false)
     return isOpen ?(
             <div id={"formu"}>
-                <form method={"POST"}>
+                <form method={"GET"} action={"localhost:4000"}>
                     <h1>Inscription</h1>
                     <label htmlFor={"prenom"}></label>
                     <input type={"text"} id={"prenom"} placeholder={"Prenom"}/>
@@ -26,7 +26,7 @@ function Formulaire(){
 
     ) : (
         <div id={"formu"}>
-            <form method={"POST"}>
+            <form method={"GET"}>
                 <h1>Connexion</h1>
                 <label htmlFor={"mail"}></label>
                 <input type={"email"} id={"mail"} placeholder={"Email"}/>
