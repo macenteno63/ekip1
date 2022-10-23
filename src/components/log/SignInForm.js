@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import '../../styles/pages/formulaire.scss'
+import axios from "axios";
 
 
 const SignInForm = () => {
@@ -10,6 +11,10 @@ const SignInForm = () => {
             e.preventDefault();
             const emailError = document.querySelector(".email.error");
             const passwordError = document.querySelector(".password.error");
+            axios.get("http://localhost:4000/api/user/getuser")
+                .then(function(response){
+                    console.log("la requete marche");
+                })
         };
 
     return (

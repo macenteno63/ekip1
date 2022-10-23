@@ -2,8 +2,9 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const User = require('./models/User');
+require('dotenv').config({path: './.env'})
 
-mongoose.connect('mongodb+srv://macenteno:toto@ekip.xneynuc.mongodb.net/test',
+mongoose.connect("mongodb+srv://" + process.env.DB_USER_PASS + "@ekip.xneynuc.mongodb.net/test",
     {
         useNewUrlParser: true,
         useUnifiedTopology: true
@@ -17,14 +18,15 @@ mongoose.connect('mongodb+srv://macenteno:toto@ekip.xneynuc.mongodb.net/test',
 //     res.setHeader('Access-Control-Allow-Origin', '*');
 // })
 // app.use(bodyparser.json())
-app.post('/', (req, res, next) => {
+// app.post('/', (req, res, next) => {
+//
+//     delete req.body._id;
+//     const user = new User({
+//         ...req.body
+//     });
+//     user.save()
+//         .then(() => res.status(201).json({ message: 'Objet enregistré !'}))
+//         .catch(error => res.status(400).json({ error }));
+// });
 
-    delete req.body._id;
-    const user = new User({
-        ...req.body
-    });
-    user.save()
-        .then(() => res.status(201).json({ message: 'Objet enregistré !'}))
-        .catch(error => res.status(400).json({ error }));
-});
 module.exports = app;
