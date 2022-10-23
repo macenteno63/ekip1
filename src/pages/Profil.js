@@ -8,7 +8,7 @@ const Profil = () => {
         <Navigation/>
         <h1>Profil</h1>
     
-    .</div>
+    </div>
     );
 };
 
