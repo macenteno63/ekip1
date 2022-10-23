@@ -6,8 +6,7 @@ const User = require('./models/User');
 mongoose.connect('mongodb+srv://macenteno:toto@ekip.xneynuc.mongodb.net/test',
     {
         useNewUrlParser: true,
-        useUnifiedTopology: true,
-        useCreateIndex: true
+        useUnifiedTopology: true
     })
     .then(() => console.log('Connexion à MongoDB réussie !'))
     .catch(() => console.log('Connexion à MongoDB échouée !'));
