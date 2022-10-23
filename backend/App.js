@@ -4,8 +4,11 @@ const mongoose = require('mongoose');
 const User = require('./models/User');
 
 mongoose.connect('mongodb+srv://macenteno:toto@ekip.xneynuc.mongodb.net/test',
-    { useNewUrlParser: true,
-        useUnifiedTopology: true })
+    {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useCreateIndex: true
+    })
     .then(() => console.log('Connexion à MongoDB réussie !'))
     .catch(() => console.log('Connexion à MongoDB échouée !'));
 
@@ -15,7 +18,8 @@ mongoose.connect('mongodb+srv://macenteno:toto@ekip.xneynuc.mongodb.net/test',
 //     res.setHeader('Access-Control-Allow-Origin', '*');
 // })
 // app.use(bodyparser.json())
-app.post('/api/signup', (req, res, next) => {
+app.post('/', (req, res, next) => {
+
     delete req.body._id;
     const user = new User({
         ...req.body
