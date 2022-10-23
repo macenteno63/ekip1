@@ -2,7 +2,7 @@ import '../styles/pages/erreur.css'
 import React from 'react';
 import Navigation from '../components/Navigation';
 
-const Erreur = () => {
+const Profil = () => {
     return (
     <div>
         <Navigation/>
@@ -12,4 +12,4 @@ const Erreur = () => {
     );
 };
 
-export default Erreur
+export default Profil
