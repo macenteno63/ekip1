@@ -2,14 +2,14 @@ import '../styles/pages/erreur.css'
 import React from 'react';
 import Navigation from '../components/Navigation';
 
-const Accueil = () => {
+const Evenement = () => {
     return (
     <div>
         <Navigation/>
-        <h1>Accueil</h1>
+        <h1>Évènements</h1>
     
     </div>
     );
 };
 
-export default Accueil
+export default Evenement
