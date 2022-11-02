@@ -7,7 +7,6 @@ import Profil from '../pages/Profil.js'
 import Calendrier from '../pages/Calendrier.js'
 import Evenement from '../pages/Evenement.js'
 import Messagerie from '../pages/Messagerie.js'
-import Groupe from '../pages/Groupe.js'
 import { BrowserRouter, Routes, Route} from "react-router-dom";
 // import {useDispatch} from "react-redux";
 // import { getUser } from '../actions/user.actions';
@@ -49,7 +48,6 @@ const App = () => {
         <Route path="/calendrier" element={<Calendrier />} />
         <Route path="/evenement" element={<Evenement />} />
         <Route path="/messagerie" element={<Messagerie />} />
-        <Route path="/groupe" element={<Groupe />} />
         {/* # si jamais l'url est inconnu on affiche une erreur 404 */}
         <Route path="*" element={<Erreur />} /> 
       </Routes>

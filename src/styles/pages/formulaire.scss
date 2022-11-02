@@ -107,12 +107,13 @@ h1{
 .text{
     font-family: SemiBold;
 }
-ul {
+.formu ul {
     padding: 10px;
     display: flex;
     justify-content: space-around;
+    list-style: none;
 
-li {
+.formu li {
     background: darkblue;
     color: white;
     width: 130px;
