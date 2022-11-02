@@ -16,7 +16,7 @@ const SignUpForm = () => {
         await axios({
             method: "post",
             url: `http://localhost:4000/api/user/register`,
-            withCredentials: true,
+            withCredentials: false,
             data: {
                 prenom,
                 nom,
@@ -24,7 +24,7 @@ const SignUpForm = () => {
                 password,
             },
         })
-            .then((res) =>{
+            .then((res) => {
                 if (res.data.errors){
                     prenomError.innerHTML = res.data.errors.prenom;
                     nomError.innerHTML = res.data.errors.nom;
@@ -46,6 +46,7 @@ const SignUpForm = () => {
             <input type={"email"} id={"email"} name={"email"} placeholder={"Email"} onChange={(e)=> setEmail(e.target.value)} value={email}/>
             <label htmlFor={"MDP"}></label>
             <input type={"password"} id={"password"} name={"password"} placeholder={"Mot de Passe"} onChange={(e)=> setPassword(e.target.value)} value={password}/>
+            <div className={"password error"}></div>
             <label htmlFor={"boutonSubmit"}></label>
             <input type={"submit"} id={"boutonSubmit"} value={"S'incrire"}/>
         </form>
