@@ -1,4 +1,3 @@
-import '../styles/pages/App.css';
 import Formulaire from '../pages/Formulaire.js'
 import Erreur from '../pages/Erreur.js'
 import Reinit from '../pages/ReinitialisationMdp.js'

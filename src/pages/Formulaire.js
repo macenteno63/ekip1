@@ -1,4 +1,4 @@
-//import '../styles/pages/formulaire.scss'
+import '../styles/pages/formulaire.scss'
 import './ReinitialisationMdp.js'
 import { useState } from 'react'
 import React from 'react';
