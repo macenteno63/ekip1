@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import SignInForm from "./SignInForm";
 import SignUpForm from "./signUpForm";
-import '../../styles/pages/formulaire.scss'
 
 const Log = () => {
     const [signUPModal, setSignUpModal] = useState(true);

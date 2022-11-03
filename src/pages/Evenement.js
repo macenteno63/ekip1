@@ -6,7 +6,6 @@ const Evenement = () => {
     return (
     <div>
         <Navigation/>
-    
     </div>
     );
 };

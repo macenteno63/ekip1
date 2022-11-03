@@ -5,7 +5,7 @@ const userController = require("../controllers/userController");
 //auth
 router.post("/register", authController.signUp);
 // user DB
-router.get("/", userController.getAllUsers);
+router.get("/all", userController.getAllUsers);
 router.get("/:id", userController.userInfo);
 // router.route('/getuser').get((req, res) => {
 //     UserModel.find((error, data) => {

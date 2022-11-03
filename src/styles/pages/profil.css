@@ -1,0 +1,27 @@
+.Personne ul{
+    display: flex;
+    position:relative;
+    float: right;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #2C3E50;
+    width: 15vh;
+    font-weight: 90;
+    list-style: none;
+    justify-content: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 10px;
+}
+
+.Personne li {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    border-radius: 18px;
+    background-color: #396086;
+    margin-bottom: 50px;
+}

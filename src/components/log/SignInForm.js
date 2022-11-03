@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import '../../styles/pages/formulaire.scss'
 import axios from "axios";
 
 
