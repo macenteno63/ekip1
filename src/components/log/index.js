@@ -18,11 +18,11 @@ const Log = () => {
     };
     return (
         <div>
-            <ul>
-                <li className={signInModal ? "active-btn" : null} id={"login"} onClick={handleModals}>
+            <ul  id={"bouton"}>
+                <li className={signInModal ? "active-btn" : "inactive-btn"} id={"login"} onClick={handleModals}>
                     Connexion
                 </li>
-                <li className={signUPModal ? "active-btn" : null} id={"register"} onClick={handleModals} >
+                <li className={signUPModal ? "active-btn" : "inactive-btn"} id={"register"} onClick={handleModals} >
                     Inscription
                 </li>
             </ul>

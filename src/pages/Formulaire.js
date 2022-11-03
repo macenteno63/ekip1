@@ -33,7 +33,6 @@ const Formulaire = () => {
 //                 <div className="inscription">
 //                     <a className="text"> Déjà un compte ? </a>
 //                     <a className="inscriptionlien" id={"hover"} onClick={() => setIsOpen(false)} >Connexion</a>
-//                     <button onclick="ReinitialiserMDP()">Button</button>
 //                 </div>
 //             </div>
 //

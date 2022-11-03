@@ -25,7 +25,7 @@ const SignInForm = () => {
                 <input type={"email"} id={"mail"} name={"mail"} placeholder={"Email"} onChange={(e)=> setMail(e.target.value)} value={mail}/>
                 <label htmlFor={"MDP"}></label>
                 <input type={"password"} id={"MDP"} name={"MDP"} placeholder={"Mot de Passe"} onChange={(e)=> setMDP(e.target.value)} value={MDP}/>
-                <label htmlFor={"boutonSubmit"}></label>
+                <label htmlFor={"MDP"}></label>
                 <input type={"submit"} id={"boutonSubmit"} value={"Se connecter"}/>
             </form>
         </div>
