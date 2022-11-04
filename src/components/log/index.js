@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import SignInForm from "./SignInForm";
 import SignUpForm from "./signUpForm";
-
 const Log = () => {
     const [signUPModal, setSignUpModal] = useState(true);
     const [signInModal, setSignInModal] = useState(false);
@@ -16,7 +15,7 @@ const Log = () => {
         }
     };
     return (
-        <div>
+        <div id={"test"}>
             <ul>
                 <li className={signInModal ? "active-btn" : null} id={"login"} onClick={handleModals}>
                     Connexion
