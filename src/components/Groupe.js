@@ -5,10 +5,10 @@ const Groupe = () => {
     return (
         <div className="Groupe">
             <ul>
-                <li>Daniel.O</li>
-                <li>Anil.B</li>
-                <li>Étienne.F</li>
-                <li>Jules.M</li>
+                <li>Personne 1</li>
+                <li>Personne 2</li>
+                <li>Personne 3</li>
+                <li>Personne 4</li>
             </ul>
         </div>
     );

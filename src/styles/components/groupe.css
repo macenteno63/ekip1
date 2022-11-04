@@ -1,11 +1,12 @@
 .Groupe ul{
     display: flex;
-    position:relative;
+    position: absolute;
     float: right;
     flex-direction: column;
-    height: 100vh;
+    height: 100%;
     background-color: #2C3E50;
-    width: 15vh;
+    width: 15%;
+    right: 0px;
     font-weight: 90;
     list-style: none;
     justify-content: center;

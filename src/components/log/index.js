@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import SignInForm from "./SignInForm";
 import SignUpForm from "./signUpForm";
+
 const Log = () => {
     const [signUPModal, setSignUpModal] = useState(true);
     const [signInModal, setSignInModal] = useState(false);
@@ -15,12 +16,12 @@ const Log = () => {
         }
     };
     return (
-        <div id={"test"}>
-            <ul>
-                <li className={signInModal ? "active-btn" : null} id={"login"} onClick={handleModals}>
+        <div>
+            <ul  id={"bouton"}>
+                <li className={signInModal ? "active-btn" : "inactive-btn"} id={"login"} onClick={handleModals}>
                     Connexion
                 </li>
-                <li className={signUPModal ? "active-btn" : null} id={"register"} onClick={handleModals} >
+                <li className={signUPModal ? "active-btn" : "inactive-btn"} id={"register"} onClick={handleModals} >
                     Inscription
                 </li>
             </ul>
