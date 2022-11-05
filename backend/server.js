@@ -3,7 +3,8 @@ require('dotenv').config({path: './.env'})
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const userRoutes = require('./routes/user.routes');
-const {checkUser, requireAuth} = require('./controllers/cookieController');
+const postRoutes = require('./routes/post.routes');
+const {checkUser, requireAuth} = require('./controllers/cookie.controller');
 const cors = require('cors')
 
 //app.use(cors());
@@ -29,10 +30,10 @@ app.get('*', checkUser);
 app.get('/jwtid', requireAuth, (req, res) => {
     res.status(200).send(res.locals.user._id)
 });
-//app.use(cors(corsOptions));
+
 //routes
 app.use('/api/user', userRoutes);
-
+app.use('/api/post',postRoutes);
 
 
 
