@@ -38,11 +38,11 @@ module.exports.signUpErrors = (err) => {
 
     if (err.code === 11000 && Object.keys(err.keyValue)[0].includes("prenom"))
         errors.nom = "Ce prenom est déjà pris";
-    console.log(err);
     return errors;
 };
 
 module.exports.signInErrors = (err) => {
+    console.log(err)
     let errors = { email: '', password: ''}
 
     if (err.message.includes("email"))
