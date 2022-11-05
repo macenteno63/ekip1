@@ -1,6 +1,5 @@
 import '../styles/pages/formulaire.scss'
 import './ReinitialisationMdp.js'
-import { useState } from 'react'
 import React from 'react';
 import Log from "../components/log";
 
