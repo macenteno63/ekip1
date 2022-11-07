@@ -36,6 +36,31 @@
     height: 100vh;
 }
 
+#formuIns form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 300px;
+    height: 350px;
+    border: solid #879FB5 5px;
+    background-color: #879FB5;
+    border-radius: 10%;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 5px;
+}
+#formuIns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    /* border: solid yellow 2px; */
+    width: 100%;
+    height: 100vh;
+}
+
+
 input{
     padding: 5px;
     margin-bottom: 20px;
@@ -47,11 +72,32 @@ input{
     cursor: pointer; 
 }
 
+.mdp{
+    font-family: Regular;
+    text-align: right;
+    font-size: 13px;
+    color:white;
+    cursor: pointer; 
+}
 h1{
     font-family: Bold;
     text-align: center;
     font-size: 25px;
     color:white;
+}
+.inscription{
+    display: flex;
+    padding-top: 20px;
+}
+.inscriptionlien{
+    font-family: Regular;
+    padding-left: 10px; 
+    font-style: italic;
+    cursor: pointer;      
+}
+#hover:hover{
+    color: blue;
+    text-decoration: underline;
 }
 
 .lien{
@@ -83,58 +129,5 @@ h1{
 }
 }
 .active-btn {
-    background: darksalmon;
-    border-radius: 18px;
-    padding: 10px;
-    margin-left: 200px;
-    margin-right: 200px;
+    background: red;
 }
-
-.inactive-btn {
-    background: salmon;
-    border-radius: 18px;
-    padding: 10px;
-    margin-left: 200px;
-    margin-right: 200px;
-}
-
-#bouton {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    border: solid black 2px;
-}
-
-// #bouton {
-//     display: flex;
-//     justify-content: space-between;
-//     list-style: none;
-//     border: solid black 2px;
-//     margin-left: 500px;
-//     margin-right: 500px;
-// }
-
-// #login {
-//     display: flex;
-//     position: absolute;
-//     justify-content: center;
-//     top: 10%;
-//     left: 35%;
-//     list-style: none;
-//     text-align: center;
-//     cursor: pointer; 
-//     width: 6%;
-// }
-
-// #register {
-//     display: flex;
-//     position: absolute;
-//     justify-content: center;
-//     list-style: none;
-//     top: 10%;
-//     left: 60%;
-//     text-align: center;
-//     cursor: pointer; 
-//     width: 6%;
-
-// }
