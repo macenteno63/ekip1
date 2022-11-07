@@ -1,4 +1,4 @@
-import '../styles/pages/profil.css'
+import '../styles/components/personne.css'
 import React from 'react';
 
 function Personne(props) {

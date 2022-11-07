@@ -17,7 +17,7 @@ const Navigation = () => {
                     <li>Accueil</li>
                 </NavLink>
                 <NavLink to="/evenement" className={(nav) => (nav.isActive ? "nav-active" : "")} end>
-                    <img className="ImageEvent" src={event} alt="ok" ></img>
+                    <img className="ImageEvent" src={event} alt="" ></img>
                     <li>Evenement</li>
                 </NavLink>
                 <NavLink to="/messagerie" className={(nav) => (nav.isActive ? "nav-active" : "")} end>

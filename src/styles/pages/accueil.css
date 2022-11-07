@@ -3,12 +3,11 @@
     src: url(../fonts/Inter-Regular.otf);
   }
 
-h2 {
+h2{
     display: flex;
     position: relative;
     justify-content: center;
     font-family: Bold;
-    text-align: center;
     font-size: 25px;
     color: black;
     top: 10px;
