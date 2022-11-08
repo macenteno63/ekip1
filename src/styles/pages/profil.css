@@ -55,7 +55,7 @@
 .BoutonProfil {
     display: flex;
     position: absolute;
-    background: linear-gradient(-45deg, #3f00b5, #9f69fe, #27c8b7, #3f00b5);
+    background: linear-gradient(-45deg, #3937ac, #3034a1, #52bdff, #282692);
     background-size: 800% 400%;
     padding: 1em 2em;
     right: 2%;

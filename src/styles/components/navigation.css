@@ -24,9 +24,22 @@
     border-radius: 18px;
     background-color: #2C3E50;
     margin-bottom: 50px;
+    justify-content: center;
 }
 .Navigation li:hover {
     background-color: #396086;
+}
+
+.Navigation logout {
+  display: flex;
+  position: fixed;
+  bottom: 5px;
+  margin-left: 13%;
+}
+
+.Navigation logout:hover {
+  background-color: #396086;
+  border-radius: 5px;
 }
 
 .ImageEvent {
@@ -73,16 +86,3 @@
     width: 20px;
   }
   
-  @keyframes mover5 {
-    0% {
-      transform: translateX(-5px) scale(1);
-    }
-  
-    50% {
-      transform: translateX(-20px) scale(1.1);
-    }
-  
-    100% {
-      transform: translateX(-5px) scale(1);
-    }
-  }

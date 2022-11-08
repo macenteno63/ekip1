@@ -4,6 +4,12 @@ import message from '../images/message.png';
 // Comme href en HTML deviendront des ancres (a)
 import { NavLink } from 'react-router-dom';
 import '../styles/components/navigation.css';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+import { grey } from '@mui/material/colors';
+import MessageIcon from '@mui/icons-material/Message';
+import CelebrationIcon from '@mui/icons-material/Celebration';
+import ForumIcon from '@mui/icons-material/Forum';
 
 const Navigation = () => {
     return (
@@ -11,26 +17,25 @@ const Navigation = () => {
             <ul>
                 <NavLink to="/formulaire" className={(nav) => (nav.isActive ? "nav-active" : "")} end>
                     <li>Formulaire</li>
+                    
                 </NavLink>
                 <NavLink to="/accueil" className={(nav) => (nav.isActive ? "nav-active" : "")} end>
-                    <div className="mover"></div>
-                    <li>Accueil</li>
+                    <li><ForumIcon sx={{ fontSize: 40 }}/> Accueil</li>
                 </NavLink>
                 <NavLink to="/evenement" className={(nav) => (nav.isActive ? "nav-active" : "")} end>
-                    <img className="ImageEvent" src={event} alt="" ></img>
-                    <li>Evenement</li>
+                    <li><CelebrationIcon sx={{ fontSize: 40 }}/> Evenement</li>
                 </NavLink>
                 <NavLink to="/messagerie" className={(nav) => (nav.isActive ? "nav-active" : "")} end>
-                    <img className="ImageMessage" src={message} alt=""></img>
-                    <li>Messagerie</li>
+                    <li><MessageIcon sx={{ fontSize: 40 }}/> Messagerie</li>
                 </NavLink>
                 {/* <NavLink to="/calendrier" className={(nav) => (nav.isActive ? "nav-active" : "")} end>
                     <li>Calendrier</li>
                 </NavLink> */}
                 <NavLink to="/profil" className={(nav) => (nav.isActive ? "nav-active" : "")} end>
-                    <li>Profil</li>
+                    <li><AccountCircleIcon sx={{ fontSize: 40 }}/> Profil</li>
                 </NavLink>
             </ul>
+            <logout> <ExitToAppIcon sx={{ color: grey[50], fontSize: 40}} /> </logout>
         </div>
     );
 };
