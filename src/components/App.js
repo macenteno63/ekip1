@@ -7,31 +7,30 @@ import Calendrier from '../pages/Calendrier.js'
 import Evenement from '../pages/Evenement.js'
 import Messagerie from '../pages/Messagerie.js'
 import { BrowserRouter, Routes, Route} from "react-router-dom";
-// import {useDispatch} from "react-redux";
-// import { getUser } from '../actions/user.actions';
-// import React, { useEffect, useState } from "react";
-// import axios from "axios";
+import {useDispatch} from "react-redux";
+// import { getUser } from '../actions/user.actions'; // reducer on utilise pas
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 const App = () => {
-  // const [uid, setUid] = useState(null);
-  // const dispatch = useDispatch();
+  const [uid, setUid] = useState(null);
 
-  // useEffect(() => {
-  //   const fetchToken = async () => {
-  //     await axios({
-  //       method: "get",
-  //       url: `${process.env.REACT_APP_API_URL}jwtid`,
-  //       withCredentials: true,
-  //     })
-  //       .then((res) => {
-  //         setUid(res.data);
-  //       })
-  //       .catch((err) => console.log("No token"));
-  //   };
-  //   fetchToken();
+  useEffect(() => {
+    const fetchToken = async () => {
+      await axios({
+        method: "get",
+        url: `http://localhost:4000/jwtid`,
+        withCredentials: true,
+      })
+        .then((res) => {
+          setUid(res.data);
+          console.log(uid);
+        })
+        .catch((err) => console.log("No token"));
+    };
+    fetchToken();
 
-  //   if (uid) dispatch(getUser(uid));
-  // }, [uid, dispatch]);
+  });
 
   return (
     // ce qui englobe notre application

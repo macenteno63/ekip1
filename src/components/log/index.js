@@ -6,29 +6,73 @@ const Log = () => {
     const [signUPModal, setSignUpModal] = useState(true);
     const [signInModal, setSignInModal] = useState(false);
 
-    const handleModals = (e) => {
-        if (e.target.id === "register") {
-            setSignInModal(false);
-            setSignUpModal(true);
-        } else if (e.target.id === "login") {
-            setSignUpModal(false);
-            setSignInModal(true);
+    let [isOpen, setIsOpen] = useState(true);
+    let [nom, setNom] = useState("Connexion");
+    const handleModals = () => {
+        if (isOpen)
+        {
+            setIsOpen(false);
+            setNom("Inscription");
         }
-    };
+
+        else
+        {
+            setIsOpen(true);
+            setNom("Connexion");
+        }
+    }
+
+    // const handleModals = (e) => {
+    //     // if (e.target.id === "register") {
+    //     //     setSignInModal(false);
+    //     //     setSignUpModal(true);
+    //     // } else if (e.target.id === "login") {
+    //     //     setSignUpModal(false);
+    //     //     setSignInModal(true);
+    //     // }
+    // };
     return (
-        <div>
+        <div id={"formu"}>
+            {isOpen ?  <SignUpForm /> : <SignInForm />}
+            {/*{signInModal && <SignInForm />}*/}
             <ul  id={"bouton"}>
                 <li className={signInModal ? "active-btn" : "inactive-btn"} id={"login"} onClick={handleModals}>
-                    Connexion
+                    {nom}
                 </li>
-                <li className={signUPModal ? "active-btn" : "inactive-btn"} id={"register"} onClick={handleModals} >
-                    Inscription
-                </li>
+                {/*<li className={signUPModal ? "active-btn" : "inactive-btn"} id={"register"} onClick={handleModals} >*/}
+                {/*    {nom}*/}
+                {/*</li>*/}
             </ul>
-            {signUPModal && <SignUpForm />}
-            {signInModal && <SignInForm />}
         </div>
     );
 };
 
+// const Log = () => {
+//     let [isOpen, setIsOpen] = useState(true)
+//     const handleModals = () => {
+//         if (isOpen)
+//             setIsOpen(false);
+//         else
+//             setIsOpen(true);
+//     }
+//
+//     return isOpen ?(
+//         <div>
+//             <SignInForm/>
+//             <ul>
+//                 <li onClick={() => setIsOpen(true)}>inscription</li>
+//             </ul>
+//         </div>
+//     ) : (
+//         <div>
+//             <SignUpForm />
+//             <ul>
+//                 <li>connexion</li>
+//             </ul>
+//         </div>
+//
+//     )
+// };
+
 export default Log;
+

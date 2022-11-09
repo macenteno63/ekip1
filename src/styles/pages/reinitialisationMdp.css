@@ -40,7 +40,7 @@ form {
 #boutonSubmit{
     margin-top: 5px;
     padding: 5px;
-    cursor: pointer; 
+    cursor: pointer;
 }
 
 .mdp{
@@ -48,7 +48,7 @@ form {
     text-align: right;
     font-size: 13px;
     color:white;
-    cursor: pointer; 
+    cursor: pointer;
 }
 h1{
     font-family: Bold;
@@ -62,9 +62,9 @@ h1{
 }
 .inscriptionlien{
     font-family: Regular;
-    padding-left: 10px; 
+    padding-left: 10px;
     font-style: italic;
-    cursor: pointer;      
+    cursor: pointer;
 }
 #hover:hover{
     color: blue;

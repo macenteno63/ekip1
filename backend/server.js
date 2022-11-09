@@ -6,15 +6,15 @@ const userRoutes = require('./routes/user.routes');
 const {checkUser, requireAuth} = require('./controllers/cookieController');
 const cors = require('cors')
 
-//app.use(cors());
-// const corsOptions = {
-//     origin: "*",
-//     credentials: false,
-//     'allowedHeaders': ['sessionId', 'Content-Type'],
-//     'exposedHeaders': ['sessionId'],
-//     'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE',
-//     'preflightContinue': false
-// }
+app.use(cors());
+const corsOptions = {
+    origin: "*",
+    credentials: true,
+    'allowedHeaders': ['sessionId', 'Content-Type'],
+    'exposedHeaders': ['sessionId'],
+    'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    'preflightContinue': false
+}
 // app.use((req, res, next) => {
 //     res.setHeader('Access-Control-Allow-Origin', '*');
 //     res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
@@ -29,7 +29,7 @@ app.get('*', checkUser);
 app.get('/jwtid', requireAuth, (req, res) => {
     res.status(200).send(res.locals.user._id)
 });
-//app.use(cors(corsOptions));
+app.use(cors(corsOptions));
 //routes
 app.use('/api/user', userRoutes);
 

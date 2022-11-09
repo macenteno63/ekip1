@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import axios from "axios";
+import {NavLink} from "react-router-dom";
 
 
 const SignInForm = () => {
@@ -13,6 +14,7 @@ const SignInForm = () => {
                 axios({
                     method: "post",
                     url: "http://localhost:4000/api/user/login",
+                    withCredentials: true,
                     data: {
                         email,
                         password,
@@ -48,6 +50,7 @@ const SignInForm = () => {
                 <div className="email error"/>
                 <label htmlFor={"password"}></label>
                 <input type={"password"} id={"password"} name={"password"} placeholder={"Mot de Passe"} onChange={(e)=> setPassword(e.target.value)} value={password}/>
+                <NavLink to={"/reinitialisationMdp"}>mot de passe oublié</NavLink>
                 <div className="password error"></div>
                 <input type={"submit"} id={"boutonSubmit"} value={"Se connecter"}/>
             </form>

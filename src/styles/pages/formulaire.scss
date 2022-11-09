@@ -15,27 +15,32 @@
 #formu form{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    width: 300px;
-    height: 300px;
-    border: solid #879FB5 5px;
+    justify-content: space-between;
+    height: 100%;
+    //background: black;
+    width: 80%;
     background-color: #879FB5;
     border-radius: 10%;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 5px;
 }
 #formu{
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
     flex-direction: column;
+    text-align: center;
     /* border: solid yellow 2px; */
-    width: 100%;
-    height: 100vh;
-}
+    width: 400px;
+    height: 400px;
 
+}
+#test {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
 #formuIns form{
     display: flex;
     flex-direction: column;
