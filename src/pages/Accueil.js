@@ -1,7 +1,7 @@
 import '../styles/pages/erreur.css'
+import '../styles/pages/accueil.css'
 import React, {useState, useEffect} from 'react';
 import Navigation from '../components/Navigation';
-import Groupe from '../components/Groupe';
 import Personne from "../components/Personne";
 
 const Accueil = () => {
@@ -30,7 +30,6 @@ const Accueil = () => {
     return (
     <div>
         <Navigation/>
-        {/*<Groupe/>*/}
         <Personne scaleValue={nom}/>
         <h2>Fil de discussion :</h2>
         <button className="button">
