@@ -28,9 +28,6 @@ const Navigation = () => {
                 <NavLink to="/messagerie" className={(nav) => (nav.isActive ? "nav-active" : "")} end>
                     <li><MessageIcon sx={{ fontSize: 40 }}/> Messagerie</li>
                 </NavLink>
-                {/* <NavLink to="/calendrier" className={(nav) => (nav.isActive ? "nav-active" : "")} end>
-                    <li>Calendrier</li>
-                </NavLink> */}
                 <NavLink to="/profil" className={(nav) => (nav.isActive ? "nav-active" : "")} end>
                     <li><AccountCircleIcon sx={{ fontSize: 40 }}/> Profil</li>
                 </NavLink>

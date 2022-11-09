@@ -33,7 +33,7 @@
     height: 400px;
 
 }
-#test {
+#CentrerFormulaire {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -133,6 +133,7 @@ h1{
  }
 }
 }
-.active-btn {
-    background: red;
+.inactive-btn {
+    cursor: pointer; 
+    list-style: none;
 }
