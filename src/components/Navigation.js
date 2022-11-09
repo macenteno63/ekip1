@@ -15,21 +15,36 @@ const Navigation = () => {
     return (
         <div className="Navigation">
             <ul>
-                <NavLink to="/formulaire" className={(nav) => (nav.isActive ? "nav-active" : "")} end>
+                <NavLink style={{ textDecoration: 'none' }} to="/formulaire" className={(nav) => (nav.isActive ? "nav-active" : "")} end>
                     <li>Formulaire</li>
                     
                 </NavLink>
-                <NavLink to="/accueil" className={(nav) => (nav.isActive ? "nav-active" : "")} end>
-                    <li><ForumIcon sx={{ fontSize: 40 }}/> Accueil</li>
+                <NavLink style={{ textDecoration: 'none' }} to="/accueil" className={(nav) => (nav.isActive ? "nav-active" : "")} end>
+                    <li>
+                        <p><ForumIcon sx={{ fontSize: 40 }}/></p> 
+                        <p className="menu">Accueil</p>
+                    </li>
                 </NavLink>
-                <NavLink to="/evenement" className={(nav) => (nav.isActive ? "nav-active" : "")} end>
-                    <li><CelebrationIcon sx={{ fontSize: 40 }}/> Evenement</li>
+                <NavLink style={{ textDecoration: 'none' }} to="/evenement" className={(nav) => (nav.isActive ? "nav-active" : "")} end>
+                    <li>
+                        <p><CelebrationIcon sx={{ fontSize: 40 }}/> </p>
+                        <p className="menu">Evenement</p>
+                    </li>
                 </NavLink>
-                <NavLink to="/messagerie" className={(nav) => (nav.isActive ? "nav-active" : "")} end>
-                    <li><MessageIcon sx={{ fontSize: 40 }}/> Messagerie</li>
+                <NavLink style={{ textDecoration: 'none' }} to="/messagerie" className={(nav) => (nav.isActive ? "nav-active" : "")} end>
+                    <li>
+                        <p><MessageIcon sx={{ fontSize: 40 }}/></p>
+                        <p className="menu">Messagerie</p>
+                    </li>
                 </NavLink>
-                <NavLink to="/profil" className={(nav) => (nav.isActive ? "nav-active" : "")} end>
-                    <li><AccountCircleIcon sx={{ fontSize: 40 }}/> Profil</li>
+                {/* <NavLink to="/calendrier" className={(nav) => (nav.isActive ? "nav-active" : "")} end>
+                    <li>Calendrier</li>
+                </NavLink> */}
+                <NavLink style={{ textDecoration: 'none' }} to="/profil" className={(nav) => (nav.isActive ? "nav-active" : "")} end>
+                    <li>
+                        <p><AccountCircleIcon sx={{ fontSize: 40 }}/></p>
+                        <p className="menu">Profil</p>
+                    </li>
                 </NavLink>
             </ul>
             <logout> <ExitToAppIcon sx={{ color: grey[50], fontSize: 40}} /> </logout>

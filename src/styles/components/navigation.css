@@ -16,7 +16,7 @@
 
 .Navigation li {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin: 10px;
     text-align: center;
     font-size: 20px;
@@ -42,47 +42,8 @@
   border-radius: 5px;
 }
 
-.ImageEvent {
-    display: flex;
-    width: 50px;
-    height: 30px;
+.menu{
+  font-size: 26px;
+  margin-left: 30px;
+  
 }
-
-.ImageMessage {
-    display: flex;
-    width: 40px;
-    height: 30px;
-}
-
-.mover {
-    background: white;
-    height: 3px;
-    width: 20px;
-    border-radius: 10px;
-    position: relative;
-    animation: mover5 4s ease-in-out infinite;
-    margin-left: 20px;
-  }
-  
-  .mover::before,
-  .mover::after {
-    content: '';
-    position: absolute;
-    height: 3px;
-    border-radius: 20px;
-    left: 20px;
-    animation: mover5 4s ease-in-out infinite;
-  }
-  
-  .mover::before {
-    background: white;
-    top: 10px;
-    width: 20px;
-  }
-  
-  .mover::after {
-    background: white;
-    top: -10px;
-    width: 20px;
-  }
-  

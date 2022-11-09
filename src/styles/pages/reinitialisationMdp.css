@@ -56,6 +56,10 @@ h1{
     font-size: 25px;
     color:white;
 }
+p{
+    font-family: Bold;
+    color: white;
+}
 .inscription{
     display: flex;
     padding-top: 20px;
