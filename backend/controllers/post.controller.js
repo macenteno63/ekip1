@@ -1,4 +1,3 @@
-const postModel = require("../models/Post");
 const PostModel = require("../models/Post");
 const UserModel = require("../models/User");
 const { uploadErrors } = require("../utils/error");
@@ -12,6 +11,7 @@ module.exports.readPost = (req, res) => {
   PostModel.find((err, docs) => {
     if (!err) res.send(docs);
     else console.log("Error to get data : " + err);
+    // Afficher du plus récent au plus ancien
   }).sort({ createdAt: -1 });
 };
 
@@ -42,7 +42,7 @@ module.exports.createPost = async (req, res) => {
     );
   }
 
-  const newPost = new postModel({
+  const newPost = new PostModel({
     posterId: req.body.posterId,
     message: req.body.message,
     picture: req.file !== null ? "./uploads/posts/" + fileName : "",
@@ -60,15 +60,19 @@ module.exports.createPost = async (req, res) => {
 };
 
 module.exports.updatePost = (req, res) => {
+  // On contrôle si l'id passé existe
   if (!ObjectID.isValid(req.params.id))
+    // Il n'est pas bon on return que l'id passé est incconu
     return res.status(400).send("ID unknown : " + req.params.id);
 
+  // Enregistrement de la mise à jour
   const updatedRecord = {
     message: req.body.message,
   };
 
   PostModel.findByIdAndUpdate(
     req.params.id,
+    // On met à jour le message du post
     { $set: updatedRecord },
     { new: true },
     (err, docs) => {
@@ -82,6 +86,7 @@ module.exports.deletePost = (req, res) => {
   if (!ObjectID.isValid(req.params.id))
     return res.status(400).send("ID unknown : " + req.params.id);
 
+  // On supprime l'id passé en paramètre
   PostModel.findByIdAndRemove(req.params.id, (err, docs) => {
     if (!err) res.send(docs);
     else console.log("Delete error : " + err);
@@ -96,6 +101,7 @@ module.exports.likePost = async (req, res) => {
     await PostModel.findByIdAndUpdate(
       req.params.id,
       {
+        // On ajoute au tableau l'id de la personne qui a liké
         $addToSet: { likers: req.body.id },
       },
       { new: true })
@@ -105,14 +111,15 @@ module.exports.likePost = async (req, res) => {
     await UserModel.findByIdAndUpdate(
       req.body.id,
       {
+        // On ajoute aux likes de la personnes
         $addToSet: { likes: req.params.id },
       },
       { new: true })
-            .then((data) => res.send(data))
-            .catch((err) => res.status(500).send({ message: err }));
-    } catch (err) {
-        return res.status(400).send(err);
-    }
+      .then((data) => res.send(data))
+      .catch((err) => res.status(500).send({ message: err }));
+  } catch (err) {
+    return res.status(400);
+  }
 };
 
 module.exports.unlikePost = async (req, res) => {
@@ -123,23 +130,25 @@ module.exports.unlikePost = async (req, res) => {
     await PostModel.findByIdAndUpdate(
       req.params.id,
       {
+        // On retire du tableau la personne qui a liké
         $pull: { likers: req.body.id },
       },
       { new: true })
-            .then((data) => res.send(data))
-            .catch((err) => res.status(500).send({ message: err }));
+      .then((data) => res.send(data))
+      .catch((err) => res.status(500).send({ message: err }));
 
     await UserModel.findByIdAndUpdate(
       req.body.id,
       {
+        // On retire le like d'une personne
         $pull: { likes: req.params.id },
       },
       { new: true })
-            .then((data) => res.send(data))
-            .catch((err) => res.status(500).send({ message: err }));
-    } catch (err) {
-        return res.status(400).send(err);
-    }
+      .then((data) => res.send(data))
+      .catch((err) => res.status(500).send({ message: err }));
+  } catch (err) {
+    return res.status(400);
+  }
 };
 
 module.exports.commentPost = (req, res) => {
@@ -147,24 +156,27 @@ module.exports.commentPost = (req, res) => {
     return res.status(400).send("ID unknown : " + req.params.id);
 
   try {
+    // On récupère l'id du post
     return PostModel.findByIdAndUpdate(
       req.params.id,
       {
+        // On ajoute le commentaire
         $push: {
           comments: {
             commenterId: req.body.commenterId,
-            commenterPseudo: req.body.commenterPseudo,
+            nom: req.body.nom,
             text: req.body.text,
+            // Savoir quand il a été posté
             timestamp: new Date().getTime(),
           },
         },
       },
       { new: true })
-            .then((data) => res.send(data))
-            .catch((err) => res.status(500).send({ message: err }));
-    } catch (err) {
-        return res.status(400).send(err);
-    }
+      .then((data) => res.send(data))
+      .catch((err) => res.status(500).send({ message: err }));
+  } catch (err) {
+    return res.status(400).send(err);
+  }
 };
 
 module.exports.editCommentPost = (req, res) => {
@@ -172,7 +184,9 @@ module.exports.editCommentPost = (req, res) => {
     return res.status(400).send("ID unknown : " + req.params.id);
 
   try {
+    // Chercher un commentaire parmi un poste donné
     return PostModel.findById(req.params.id, (err, docs) => {
+      // Commentaire à éditer
       const theComment = docs.comments.find((comment) =>
         comment._id.equals(req.body.commentId)
       );
@@ -198,6 +212,7 @@ module.exports.deleteCommentPost = (req, res) => {
     return PostModel.findByIdAndUpdate(
       req.params.id,
       {
+        // On ve retirer le commentaire d'un post de par son id
         $pull: {
           comments: {
             _id: req.body.commentId,
@@ -205,9 +220,9 @@ module.exports.deleteCommentPost = (req, res) => {
         },
       },
       { new: true })
-            .then((data) => res.send(data))
-            .catch((err) => res.status(500).send({ message: err }));
-    } catch (err) {
-        return res.status(400).send(err);
-    }
+      .then((data) => res.send(data))
+      .catch((err) => res.status(500).send({ message: err }));
+  } catch (err) {
+    return res.status(400).send(err);
+  }
 };

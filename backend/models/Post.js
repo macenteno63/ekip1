@@ -24,12 +24,13 @@ const PostSchema = new mongoose.Schema(
     comments: {
       type: [
         {
-          commenterId:String,
-          commenterPseudo: String,
+          commenterId: String,
+          nom: String,
           text: String,
           timestamp: Number,
         }
       ],
+      // Pour avoir le tableau créé de base
       required: true,
     },
   },
