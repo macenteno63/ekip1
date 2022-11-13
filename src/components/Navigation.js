@@ -23,13 +23,11 @@ const Navigation = () => {
     const logout = async () => {
         await axios({
             method: "get",
-            url: `${process.env.REACT_APP_API_URL}api/user/logout`,
+            url: `http://localhost:4000/api/user/logout`,
             withCredentials: true,
         })
             .then(() => removeCookie("jwt"))
             .catch((err) => console.log(err));
-
-        window.location = "/formulaire";
     };
     return (
         <div className="Navigation">

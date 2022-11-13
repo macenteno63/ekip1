@@ -7,13 +7,6 @@ import BoutonBasPage from '../components/BoutonBasPage';
 
 const Accueil = () => {
     const [nom,setNom] = useState([]);
-    // axios.get('http://localhost:4000/api/user/all')
-    //     .then((res) =>{
-    //        console.log(res);
-    //        nom = res;
-    //        test = nom[1];
-    //        console.log(test);
-    // })
     useEffect(()=>{
         const fetchNom = async () =>{
             await fetch('http://localhost:4000/api/user/all')

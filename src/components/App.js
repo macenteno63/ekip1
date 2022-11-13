@@ -8,6 +8,7 @@ import Evenement from '../pages/Evenement.js'
 import AddEvenement from '../pages/AddEvenement.js'
 import Messagerie from '../pages/Messagerie.js'
 import { BrowserRouter, Routes, Route} from "react-router-dom";
+import {UidContext} from "./AppContext";
 import {useDispatch} from "react-redux";
 // import { getUser } from '../actions/user.actions'; // reducer on utilise pas
 import React, { useEffect, useState } from "react";
@@ -34,24 +35,27 @@ const App = () => {
   });
 
   return (
+      <UidContext.Provider value={uid}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/formulaire" element={<Formulaire />} />
+            {/* # si le chemin est reinitialisationMdp on affiche le composant Reinit */}
+            <Route path="/reinitialisationMdp" element={<Reinit />} />
+            {/* # si c'est l'accueil du site alors on affiche l'acceuil */}
+            <Route path="/" element={<Accueil />} />
+            <Route path="/accueil" element={<Accueil />} />
+            <Route path="/profil" element={<Profil />} />
+            <Route path="/calendrier" element={<Calendrier />} />
+            <Route path="/evenement" element={<Evenement />} />
+            <Route path="/addevenement" element={<AddEvenement />} />
+            <Route path="/messagerie" element={<Messagerie />} />
+            {/* # si jamais l'url est inconnu on affiche une erreur 404 */}
+            <Route path="*" element={<Erreur />} />
+          </Routes>
+        </BrowserRouter>
+      </UidContext.Provider>
     // ce qui englobe notre application
-    <BrowserRouter> 
-      <Routes>
-        <Route path="/formulaire" element={<Formulaire />} />
-        {/* # si le chemin est reinitialisationMdp on affiche le composant Reinit */}
-        <Route path="/reinitialisationMdp" element={<Reinit />} /> 
-        {/* # si c'est l'accueil du site alors on affiche l'acceuil */}
-        <Route path="/" element={<Accueil />} />
-        <Route path="/accueil" element={<Accueil />} />
-        <Route path="/profil" element={<Profil />} />
-        <Route path="/calendrier" element={<Calendrier />} />
-        <Route path="/evenement" element={<Evenement />} />
-        <Route path="/addevenement" element={<AddEvenement />} />
-        <Route path="/messagerie" element={<Messagerie />} />
-        {/* # si jamais l'url est inconnu on affiche une erreur 404 */}
-        <Route path="*" element={<Erreur />} /> 
-      </Routes>
-    </BrowserRouter>
+
   )
 }
 

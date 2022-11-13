@@ -1,3 +1,7 @@
+.Profil {
+    display: flex;
+    justify-content: center;
+}
 .NomPrenom {
     top: 10%;
 }
@@ -8,7 +12,9 @@
     top: 20%;
     transform: translate(-50%,-50%); /* pour que l’élément centré se replace à 50% de sa largeur en haut et à gauche. */
 }
-
+p {
+    color: black;
+}
 .Email {
     position: absolute;
     top: 20%;
