@@ -7,7 +7,7 @@ const postRoutes = require('./routes/post.routes');
 const {checkUser, requireAuth} = require('./controllers/cookie.controller');
 const cors = require('cors')
 
-app.use(cors());
+//app.use(cors());
 const corsOptions = {
     origin: "*",
     credentials: true,
@@ -30,7 +30,7 @@ app.get('*', checkUser);
 app.get('/jwtid', requireAuth, (req, res) => {
     res.status(200).send(res.locals.user._id)
 });
-app.use(cors(corsOptions));
+//app.use(cors(corsOptions));
 //routes
 app.use('/api/user', userRoutes);
 app.use('/api/post',postRoutes);

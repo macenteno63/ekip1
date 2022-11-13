@@ -10,6 +10,7 @@ const PostSchema = new mongoose.Schema(
       type: String,
       trim: true,
       maxlength: 500,
+        required : true,
     },
     picture: {
       type: String,
@@ -19,7 +20,6 @@ const PostSchema = new mongoose.Schema(
     },
     likers: {
       type: [String],
-      required: true,
     },
     comments: {
       type: [

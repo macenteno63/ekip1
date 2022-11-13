@@ -10,8 +10,27 @@ import { grey } from '@mui/material/colors';
 import MessageIcon from '@mui/icons-material/Message';
 import CelebrationIcon from '@mui/icons-material/Celebration';
 import ForumIcon from '@mui/icons-material/Forum';
+import axios from "axios";
+import cookie from "js-cookie";
 
 const Navigation = () => {
+    const removeCookie = (key) => {
+        if (window !== "undefined") {
+            cookie.remove(key, {expires: 1});
+        }
+    };
+
+    const logout = async () => {
+        await axios({
+            method: "get",
+            url: `${process.env.REACT_APP_API_URL}api/user/logout`,
+            withCredentials: true,
+        })
+            .then(() => removeCookie("jwt"))
+            .catch((err) => console.log(err));
+
+        window.location = "/formulaire";
+    };
     return (
         <div className="Navigation">
             <ul>
@@ -35,7 +54,10 @@ const Navigation = () => {
                     <li><AccountCircleIcon sx={{ fontSize: 40 }}/> Profil</li>
                 </NavLink>
             </ul>
-            <logout> <ExitToAppIcon sx={{ color: grey[50], fontSize: 40}} /> </logout>
+            <div onClick={logout}>
+                <logout> <ExitToAppIcon sx={{ color: grey[50], fontSize: 40}} /> </logout>
+            </div>
+
         </div>
     );
 };
