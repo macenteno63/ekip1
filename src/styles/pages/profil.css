@@ -52,45 +52,6 @@
     color: black;
 }
 
-.BoutonProfil {
-    display: flex;
-    position: absolute;
-    background: linear-gradient(-45deg, #3937ac, #3034a1, #52bdff, #282692);
-    background-size: 800% 400%;
-    padding: 1em 2em;
-    right: 2%;
-    bottom: 5%;
-    border: none;
-    border-radius: 10px;
-    font-size: 17px;
-    font-weight: 70;
-    color: white;
-    transition: all .5s ease-in-out;
-    animation: gradient 10s infinite cubic-bezier(.62, .28, .23, .99) both;
-   }
-   
-   button:hover {
-    transform: scale(1.05);
-   }
-   
-   button:active {
-    transform: scale(0.8);
-   }
-   
-   @keyframes gradient {
-    0% {
-     background-position: 0% 50%;
-    }
-   
-    50% {
-     background-position: 100% 50%;
-    }
-   
-    100% {
-     background-position: 0% 50%;
-    }
-   }
-
 .PhotoProfil {
     display: flex;
     position: absolute;

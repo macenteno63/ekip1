@@ -3,6 +3,7 @@ import '../styles/pages/accueil.css'
 import React, {useState, useEffect} from 'react';
 import Navigation from '../components/Navigation';
 import Personne from "../components/Personne";
+import BoutonBasPage from '../components/BoutonBasPage';
 
 const Accueil = () => {
     const [nom,setNom] = useState([]);
@@ -32,14 +33,7 @@ const Accueil = () => {
         <Navigation/>
         <Personne scaleValue={nom}/>
         <h2>Fil de discussion :</h2>
-        <button className="button">
-            <span>Ajouter un Post</span>
-            <svg viewBox="0 0 13 10" height="20px" width="30px">
-                <path d="M1,5 L11,5"></path>
-                <path d="M6,5 V11,5"></path>
-                <path d="M6,5 V-11,5"></path>
-            </svg>
-        </button>
+        <BoutonBasPage className="button"></BoutonBasPage>
     </div>
     );
 };

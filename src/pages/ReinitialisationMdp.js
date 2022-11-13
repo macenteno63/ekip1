@@ -12,7 +12,8 @@ return <div id={"Reinitialiser"}>
                 </form>
                 <div className="inscription">
                     <a className="text"> Déjà un compte ? </a>
-                    <a className="inscriptionlien" id={"hover"} >Connexion</a>
+                    {/* href pour le moment à changer si on fait la page */}
+                    <a className="inscriptionlien" id={"hover"} href="/formulaire">Connexion</a>
                     
                 </div>
         </div>

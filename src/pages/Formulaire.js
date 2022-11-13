@@ -5,7 +5,7 @@ import Log from "../components/log";
 
 const Formulaire = () => {
     return (
-        <div id={"test"}>
+        <div id={"CentrerFormulaire"}>
             <Log/>
         </div>
     );
