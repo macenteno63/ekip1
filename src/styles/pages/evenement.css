@@ -1,0 +1,30 @@
+.Evenement grc{
+    display: grid;
+    grid-template-columns: auto auto;
+
+} 
+.grid-container2{
+    display: grid;
+    grid-template-columns: auto auto;
+
+}
+  
+.Evenement gri{
+    text-align: left;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+  
+.grid-item2{
+    text-align: left;
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+  .event{
+    background-color: #2C3E50;
+    color: white;
+  }
+  .text{
+    color: white;
+  }

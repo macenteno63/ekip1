@@ -7,6 +7,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import {useContext} from "react";
 import {UidContext} from "../components/AppContext";
 
+
 const Profil = () => {
     const uid = useContext(UidContext);
     const [user,setUser] = useState([]);
@@ -56,10 +57,10 @@ const Profil = () => {
                     </p>
                 </div>
                 <a className='PhotoProfil'><img src={message}alt=""/></a>
-                <BoutonBasPage className="button" ></BoutonBasPage>
+                <BoutonBasPage scaleValue="Modifier le profil"></BoutonBasPage>
             </div>
         ) : (
-            <h2>DeConnecté</h2>
+            <h2>Deconnecté</h2>
         )}
     </div>
     );

@@ -23,10 +23,10 @@ const Accueil = () => {
 
     return (
     <div>
-        <Navigation/>
+        <Navigation/>Ajouter un Post
         <Personne scaleValue={nom}/>
         <h2>Fil de discussion :</h2>
-        <BoutonBasPage className="button"></BoutonBasPage>
+        <BoutonBasPage scaleValue="Ajouter un post"></BoutonBasPage>
     </div>
     );
 };
