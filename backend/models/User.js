@@ -38,6 +38,9 @@ const userSchema = mongoose.Schema({
       type: String,
       max: 1024,
     },
+
+    // Tester de follow une personnes et de voir les personnes qui nous suivent !
+
     followers: {
       type: [String]
     },
@@ -45,6 +48,10 @@ const userSchema = mongoose.Schema({
       type: [String]
     },
     likes: {
+      type: [String]
+    },
+    // Voir ça pour que la personne puisse consulter les évènement auquels elle participe
+    inscrites: {
       type: [String]
     }
   },
