@@ -3,6 +3,7 @@ import '../styles/pages/erreur.css'
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Navigation from '../components/Navigation';
+import BoutonBasPage from '../components/BoutonBasPage';
 
 const Evenement = () => {
     return (
@@ -13,6 +14,7 @@ const Evenement = () => {
                     <li>Add Event</li>
                     
         </NavLink>
+        <BoutonBasPage scaleValue="Ajouter un évenement"></BoutonBasPage>
     </div>
     );
 };
