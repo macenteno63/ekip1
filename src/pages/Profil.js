@@ -7,6 +7,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import {useContext} from "react";
 import {UidContext} from "../components/AppContext";
 
+
 const Profil = () => {
     const uid = useContext(UidContext);
     const [user,setUser] = useState([]);
