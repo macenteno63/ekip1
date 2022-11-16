@@ -23,7 +23,7 @@ const Accueil = () => {
 
     return (
     <div>
-        <Navigation/>Ajouter un Post
+        <Navigation/>
         <Personne scaleValue={nom}/>
         <h2>Fil de discussion :</h2>
         <BoutonBasPage scaleValue="Ajouter un post"></BoutonBasPage>
