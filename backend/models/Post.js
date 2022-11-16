@@ -15,6 +15,7 @@ const PostSchema = new mongoose.Schema(
     picture: {
       type: String,
     },
+    // A tester car pour l'instant je n'ai pas essayé
     video: {
       type: String,
     },

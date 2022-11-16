@@ -1,8 +1,8 @@
-.button {
+.button{
     display: flex;
     position: absolute;
-    right: 20%;
     bottom: 3%;
+    right: 20%;
     padding: 12px 18px;
     transition: all 0.2s ease;
     border: none;

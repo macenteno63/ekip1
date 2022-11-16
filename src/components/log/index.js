@@ -12,13 +12,13 @@ const Log = () => {
         if (isOpen)
         {
             setIsOpen(false);
-            setNom("Inscription");
+            setNom("Pas encore de compte : S'inscrire");
         }
 
         else
         {
             setIsOpen(true);
-            setNom("Connexion");
+            setNom("Déjà un compte : Se Connecter");
         }
     }
 
