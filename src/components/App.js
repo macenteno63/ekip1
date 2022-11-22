@@ -7,6 +7,7 @@ import Calendrier from '../pages/Calendrier.js'
 import Evenement from '../pages/Evenement.js'
 import AddEvenement from '../pages/AddEvenement.js'
 import Messagerie from '../pages/Messagerie.js'
+import AddPost from '../pages/AddPost.js'
 import { BrowserRouter, Routes, Route} from "react-router-dom";
 import {UidContext} from "./AppContext";
 import {useDispatch} from "react-redux";
@@ -49,6 +50,7 @@ const App = () => {
             <Route path="/evenement" element={<Evenement />} />
             <Route path="/addevenement" element={<AddEvenement />} />
             <Route path="/messagerie" element={<Messagerie />} />
+            <Route path="/addpost" element={<AddPost />} />
             {/* # si jamais l'url est inconnu on affiche une erreur 404 */}
             <Route path="*" element={<Erreur />} />
           </Routes>

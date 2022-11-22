@@ -1,0 +1,45 @@
+
+.liste{
+    list-style: none;
+    padding-left: 20%;
+    padding-top: 50px;
+}
+
+#titre{
+    padding-right: 1000px;
+    font-size: 22px;
+    border-radius: 12px;
+    border-color: #2C3E50;
+}
+
+#description{
+    padding-right: 1000px;
+    padding-bottom: 300px;
+    font-size: 22px;
+    border-radius: 12px;
+    border-color: #2C3E50;
+}
+
+#poster{
+    padding-right: 70px;
+    padding-bottom: 30px;
+    font-size: 28px;
+    border-radius: 12px;
+    border-color: #2C3E50;
+    background-color: #2C3E50;
+    color: white;
+}
+
+#nbplaces{
+    padding-right: 1000px;
+    font-size: 22px;
+    border-radius: 12px;
+    border-color: #2C3E50;
+}
+.grid-container {
+    display: grid;
+  }
+  
+  .grid-item {
+    text-align: left;
+  }

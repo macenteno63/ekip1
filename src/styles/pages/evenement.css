@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: auto auto;
     padding-right: 50px;
-    overflow-y: hidden;
+    
 }
 
 .grid-containerEventTab{
