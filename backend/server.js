@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const userRoutes = require('./routes/user.routes');
 const postRoutes = require('./routes/post.routes');
+const eventRoutes = require('./routes/event.routes');
 const {checkUser, requireAuth} = require('./controllers/cookie.controller');
 const cors = require('cors')
 
@@ -34,6 +35,7 @@ app.get('/jwtid', requireAuth, (req, res) => {
 //routes
 app.use('/api/user', userRoutes);
 app.use('/api/post',postRoutes);
+app.use('/api/event',eventRoutes);
 
 
 

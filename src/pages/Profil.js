@@ -55,7 +55,7 @@ const Profil = () => {
                         -
                     </p>
                 </div>
-                <img src={require(user.picture)} alt={"test"}/>
+                <a className='PhotoProfil'><img src={message}alt=""/></a>
                 <BoutonBasPage className="button" ></BoutonBasPage>
             </div>
         ) : (
@@ -64,13 +64,5 @@ const Profil = () => {
     </div>
     );
 };
-// <form method="POST" onSubmit={handleUp} action={""}>
-//     <div>
-//         <label>Upload profile picture</label>
-//         <input type="file" name="profile-file" required/>
-//     </div>
-//     <div>
-//         <input type="submit" value="Upload"/>
-//     </div>
-// </form>
+
 export default Profil

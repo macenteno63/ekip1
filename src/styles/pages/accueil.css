@@ -13,3 +13,19 @@ h2{
     top: 10px;
     margin-top: 0px;
 }
+
+
+.grid-containerPost{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding-right: 50px;
+  
+}
+
+.grid-containerPostTab{
+  display: grid;
+  justify-content: center;
+  grid-template-columns: auto;
+  padding-top: 60px;
+  padding-bottom: 50px;
+}

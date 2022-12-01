@@ -52,10 +52,6 @@ module.exports.deleteUser = async (req, res) => {
     }
 };
 
-
-
-
-
 module.exports.follow = async (req, res) => {
     if (
       !ObjectID.isValid(req.params.id) ||

@@ -1,0 +1,16 @@
+.grid-containerEvent{
+    display: grid;
+    grid-template-columns: auto auto;
+    padding-right: 50px;
+    
+}
+
+.grid-containerEventTab{
+  display: grid;
+  grid-template-columns: auto auto;
+  padding-top: 60px;
+  padding-bottom: 50px;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: antiqueWhite grey;
+}
