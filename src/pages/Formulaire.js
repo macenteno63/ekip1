@@ -1,4 +1,4 @@
-import '../styles/pages/formulaire.scss'
+import '../styles/pages/formulaire.css'
 import './ReinitialisationMdp.js'
 import React from 'react';
 import Log from "../components/log";

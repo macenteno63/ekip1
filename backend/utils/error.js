@@ -56,6 +56,7 @@ module.exports.signInErrors = (err) => {
 
 
 module.exports.uploadErrors = (err) => {
+    console.log(err);
     let errors = { format: '', maxSize: ""};
   
     if (err.message.includes('invalid file'))

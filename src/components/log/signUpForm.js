@@ -41,11 +41,14 @@ const SignUpForm = () => {
             <h1>S'incrire</h1>
             <label htmlFor={"prenom"}></label>
             <input type={"text"} id={"prenom"} placeholder={"Prenom"} onChange={(e)=> setPrenom(e.target.value)} value={prenom}/>
+            <div className={"prenom error"}></div>
             <label htmlFor={"nom"}></label>
             <input type={"text"} id={"nom"} placeholder={"Nom"} onChange={(e)=> setNom(e.target.value)} value={nom}/>
-            <label htmlFor={"mail"}></label>
+            <div className={"nom error"}></div>
+            <label htmlFor={"email"}></label>
             <input type={"email"} id={"email"} name={"email"} placeholder={"Email"} onChange={(e)=> setEmail(e.target.value)} value={email}/>
-            <label htmlFor={"MDP"}></label>
+            <div className={"email error"}></div>
+            <label htmlFor={"password"}></label>
             <input type={"password"} id={"password"} name={"password"} placeholder={"Mot de Passe"} onChange={(e)=> setPassword(e.target.value)} value={password}/>
             <div className={"password error"}></div>
             <label htmlFor={"boutonSubmit"}></label>
