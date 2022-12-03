@@ -1,0 +1,30 @@
+.ProfilCommun {
+    border-color: #2C3E50;
+    font-size: 22px;
+    border-radius: 12px;
+}
+
+#Biographie{
+    padding-right: 1000px;
+    padding-bottom: 300px;
+}
+
+#Modifier{
+    padding: 20px;
+    text-align: center;
+    background-color: #2C3E50;
+    border: none;
+    color: white;
+}
+
+#Metier{
+    padding-right: 1000px;
+}
+
+#Ville {
+    padding-right: 200px;
+}
+
+#Etudes{
+    padding-right: 200px;
+}

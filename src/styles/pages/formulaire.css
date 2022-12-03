@@ -17,7 +17,7 @@
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-    //background: black;
+    background: black;
     width: 80%;
     background-color: #879FB5;
     border-radius: 10%;
@@ -118,7 +118,7 @@ h1{
     justify-content: space-around;
     list-style: none;
 
-.formu li {
+/* .formu li {
     background: darkblue;
     color: white;
     width: 130px;
@@ -131,9 +131,11 @@ h1{
 &:hover {
      background: salmon;
  }
-}
+} */
 }
 .inactive-btn {
     cursor: pointer; 
     list-style: none;
+    color: blue;
+    text-decoration-line: underline;
 }

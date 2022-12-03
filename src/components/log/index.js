@@ -7,7 +7,7 @@ const Log = () => {
     const [signInModal, setSignInModal] = useState(false);
 
     let [isOpen, setIsOpen] = useState(true);
-    let [nom, setNom] = useState("Connexion");
+    let [nom, setNom] = useState("Déjà un compte : Se connecter");
     const handleModals = () => {
         if (isOpen)
         {
@@ -18,7 +18,7 @@ const Log = () => {
         else
         {
             setIsOpen(true);
-            setNom("Déjà un compte : Se Connecter");
+            setNom("Déjà un compte : Se connecter");
         }
     }
 

@@ -1,0 +1,36 @@
+.MentionContact ul {
+    display: flex;
+    position: absolute;
+    flex-direction: row;
+    width: 100%;
+    height: 5%;
+    background-color: #2C3E50;
+    list-style: none;
+    justify-content: center;
+    padding: 10px;
+    left: -10px;
+    bottom: -10px;
+}
+
+.MentionContact p{
+color: white;
+}
+
+.MentionContact li {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  text-align: center;
+  font-size: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
+  border-radius: 18px;
+  background-color: #2C3E50;
+  justify-content: center;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+.MentionContact li:hover {
+  background-color: #396086;
+}
