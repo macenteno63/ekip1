@@ -21,14 +21,11 @@ const Evenement = () => {
                 <CelluleEvent/>
                 <CelluleEvent/>
                 <CelluleEvent/>
-                <CelluleEvent/>
-                <CelluleEvent/>
-                <CelluleEvent/>
-                <CelluleEvent/>
-            </div>
 
+            </div>
+            
             <NavLink style={{ textDecoration: 'none' }} to="/addevenement" className={(nav) => (nav.isActive ? "nav-active" : "")} end>
-                <p>Ajouter un évènement</p>        
+                <BoutonBasPage scaleValue='Ajouter un évenement'/>        
             </NavLink>
         </div>  
     </div>

@@ -5,13 +5,13 @@ import Navigation from '../components/Navigation';
 
 const AddEvenement = () => {
     return (
-    <div class="grid-container">
+    <div className="grid-container">
         <div class="grid-item">
             <Navigation/>
         </div>
 
-        <div class="grid-item">
-           <h2 className="titre">Ajouter un évènement :</h2>
+        <div className="grid-item">
+           <h2>Ajouter un évènement :</h2>
             <ul className="liste">
                 <li><input id={"titre"} placeholder={"  Titre"}/></li>
                 <li><input id={"date"} type="date"/></li>

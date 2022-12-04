@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import axios from "axios";
 import {NavLink} from "react-router-dom";
+import MentionContact from '../MentionContact';
 
 
 const SignInForm = () => {
@@ -42,7 +43,9 @@ const SignInForm = () => {
             // fetch("http://localhost:4000/api/user/login", test).then((res) => console.log(res)).catch((err)=>console.log(err))
 
     return (
+        
         <div id={"formu"}>
+            <MentionContact/>
             <form onSubmit={handleLogin} action={""}>
                 <h1>Se connecter</h1>
                 <label htmlFor={"mail"}></label>

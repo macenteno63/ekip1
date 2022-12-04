@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import axios from "axios";
 import {NavLink} from "react-router-dom";
+import MentionContact from '../MentionContact';
 //require('dotenv').config({path: './.env'})
 const SignUpForm = () => {
     const [nom, setNom] = useState("");
@@ -39,6 +40,7 @@ const SignUpForm = () => {
     };
     return (
     <div id={"formu"}>
+        <MentionContact/>
         <form onSubmit={handleRegister} action={""}>
             <h1>S'incrire</h1>
             <label htmlFor={"prenom"}></label>
