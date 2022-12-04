@@ -37,6 +37,7 @@ const userSchema = mongoose.Schema({
     bio :{
       type: String,
       max: 1024,
+      default: "vide"
     },
 
     // Tester de follow une personnes et de voir les personnes qui nous suivent !

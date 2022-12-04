@@ -31,6 +31,8 @@ const SignUpForm = () => {
                     nomError.innerHTML = res.data.errors.nom;
                     emailError.innerHTML = res.data.errors.email;
                     passwordError.innerHTML = res.data.errors.password;
+                }else {
+                    window.location = "/";
                 }
             })
             .catch((err) => console.log(err));
