@@ -38,7 +38,7 @@ const Navigation = () => {
                 </NavLink>
                 <NavLink style={{ textDecoration: 'none' }} to="/accueil" className={(nav) => (nav.isActive ? "nav-active" : "")} end>
                     <li>
-                        <p><ForumIcon sx={{ fontSize: 40 }}/></p> 
+                        <p><ForumIcon/></p> 
                         <p className="menu">Accueil</p>
                     </li>
                 </NavLink>
