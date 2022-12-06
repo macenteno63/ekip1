@@ -31,9 +31,9 @@ const Post = () => {
                 
                 <hr/>
                 <div className="textPost">
-                    <button><AiOutlineLike className='Icon'/>20</button>
+                    <button><AiOutlineLike className='Icon'/>32</button>
                     <button><AiOutlineDislike className='Icon'/>5</button>
-                    <button><AiOutlineMessage className='Icon'/></button>  
+                    <button><AiOutlineMessage className='Icon'/>9</button>  
                 </div>           
             </div> 
         </div>
