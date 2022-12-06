@@ -16,12 +16,19 @@ const Evenement = () => {
         <div>
             <h2>Évènement :</h2>
 
-            <div className="grid-containerEventTab">
-                <CelluleEvent/>
-                <CelluleEvent/>
-                <CelluleEvent/>
-                <CelluleEvent/>
-
+            <div className="scroll-bar">
+                <div className="grid-containerEventTab">
+                    <CelluleEvent/>
+                    <CelluleEvent/>
+                    <CelluleEvent/>
+                    <CelluleEvent/>
+                    <CelluleEvent/>
+                    <CelluleEvent/>
+                    <CelluleEvent/>
+                    <CelluleEvent/>
+                    <CelluleEvent/>
+                    <CelluleEvent/>
+                </div>
             </div>
             
             <NavLink style={{ textDecoration: 'none' }} to="/addevenement" className={(nav) => (nav.isActive ? "nav-active" : "")} end>

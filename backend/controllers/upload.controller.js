@@ -1,9 +1,6 @@
 const UserModel = require("../models/User");
 const fs = require("fs");
-const { promisify } = require("util");
-const pipeline = promisify(require("stream").pipeline);
 const { uploadErrors } = require("../utils/error");
-const path = require("path");
 
 module.exports.uploadProfil = async (req, res) => {
   try {
@@ -16,7 +13,7 @@ module.exports.uploadProfil = async (req, res) => {
     return res.status(201).json({errors});
   }
     const fileName = req.body.name + ".jpg";
-    let writeStream = fs.createWriteStream(`${__dirname}/../../src/assets/${fileName}`);
+    let writeStream = fs.createWriteStream(`${__dirname}/../../src/assets/profil/${fileName}`);
     writeStream.write(req.file.buffer);
     writeStream.on('finish', () => {
         console.log('Fichier mis à jour !');
@@ -26,7 +23,7 @@ module.exports.uploadProfil = async (req, res) => {
   try {
     await UserModel.findByIdAndUpdate(
         req.body.userId,
-        { $set : {picture: "assets/" + fileName}},
+        { $set : {picture: "assets/profil/" + fileName}},
         { new: true, upsert: true, setDefaultsOnInsert: true},
         (err, docs) => {
           if (!err)
@@ -36,7 +33,7 @@ module.exports.uploadProfil = async (req, res) => {
         }
     );
   } catch (err) {
-    console.log("jfkjdsl");
+    console.log(err);
     //return res.status(500).send({ message: err });
   }
 };

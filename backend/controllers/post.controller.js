@@ -4,8 +4,6 @@ const { uploadErrors } = require("../utils/error");
 // Pour vérifier que le praramètre existe dans la base de données
 const ObjectID = require("mongoose").Types.ObjectId;
 const fs = require("fs");
-const { promisify } = require("util");
-//const pipeline = promisify(require("stream").pipeline);
 
 module.exports.readPost = (req, res) => {
   PostModel.find((err, docs) => {
@@ -16,40 +14,28 @@ module.exports.readPost = (req, res) => {
 };
 
 module.exports.createPost = async (req, res) => {
-  // let fileName;
-  // console.log(req.file.mimetype);
-  // if (req.file !== null) {
-  //   try {
-  //     if (
-  //       req.file.mimetype !== "image/jpg" &&
-  //       req.file.mimetype !== "image/png" &&
-  //       req.file.mimetype !== "image/jpeg"
-  //     )
-  //       throw Error("invalid file");
-  //
-  //     if (req.file.size > 500000) throw Error("max size");
-  //   } catch (err) {
-  //     const errors = uploadErrors(err);
-  //     return res.status(201).json({ errors });
-  //   }
-    // const tempPath = req.file.path;
-    // fileName = req.body.posterId + Date.now() + ".jpg";
-    // const targetPath = req.file.path.join(__dirname, "../../client/public/uploads/posts/" + fileName);
-    // fs.rename(tempPath, targetPath, err => {
-    //   if (err)
-    // });
+  try {
+    if (req.file.mimetype !== "image/jpg" && req.file.mimetype !== "image/png" && req.file.mimetype !== "image/jpeg")
+      throw Error("invalid file");
 
-    // await pipeline(
-    //   req.file.stream,
-    //   fs.createWriteStream(
-    //     `${__dirname}/../../client/public/uploads/posts/${fileName}`
-    //   )
-    // );
+    if (req.file.size > 500000) throw Error("max size");
+  } catch (err) {
+    const errors = uploadErrors(err);
+    return res.status(201).json({errors});
+  }
+  const fileName = req.body.posterId + "____" + Date.now() + ".jpg";
+  console.log(fileName);
+  let writeStream = fs.createWriteStream(`${__dirname}/../../src/assets/posts/${fileName}`);
+  writeStream.write(req.file.buffer);
+  writeStream.on('finish', () => {
+    console.log('Fichier mis à jour !');
+  });
+  writeStream.end();
 
   const newPost = new PostModel({
     posterId: req.body.posterId,
     message: req.body.message,
-    video: req.body.video,
+    picture: fileName,
     likers: [],
     comments: [],
   });
@@ -61,7 +47,6 @@ module.exports.createPost = async (req, res) => {
     return res.status(400).send(err);
   }
 }
-// picture: req.file !== null ? "./uploads/posts/" + fileName : "",
 
 module.exports.updatePost = (req, res) => {
   // On contrôle si l'id passé existe

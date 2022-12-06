@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/components/post.css';
-import Event from '../images/event.png';
-
+import AccountCircle from '../images/account_circle.png';
+import {AiOutlineLike, AiOutlineDislike, AiOutlineMessage, AiFillDislike, AiFillLike} from "react-icons/ai";
 
 const Post = () => {
     return (
@@ -10,9 +10,9 @@ const Post = () => {
 
                 <div className="grid-containerHeaderPost">
 
-                    <div>
-                        <img className="image" src={Event}/>
-                    </div>
+                    
+                    <img className="PPPost" src={AccountCircle}/>
+                    
                     <div>
                         <h3>Etienne Fabre</h3>
                         <a>par Groupe FanFoot</a>
@@ -21,11 +21,20 @@ const Post = () => {
                 </div>
                 
                 <hr/>
-                <a> titre</a>
-                <a> texte</a>
+                <div className="textPost">
+                    <a> titre</a>
+                    <br/>
+                    <a> 
+                        Lorem ipsum dolor sit amet. Et eius omnis sit odit nostrum nam officia illo hic autem voluptas qui provident distinctio id voluptas commodi. Eum dolorem dolor ea nobis repellat ea molestiae libero eos velit reiciendis et modi ipsam qui sunt odit est debitis ipsa. Sed esse iste rem itaque Quis quo quia minus ea quia recusandae. Aut architecto autem ex quam architecto aut laborum adipisci est inventore voluptate et sapiente repudiandae quo adipisci aliquam ea repudiandae iste! Id aperiam molestias 33 error expedita non soluta doloribus et dolores veritatis et repellat beatae ab perspiciatis enim. Ut dolores tenetur aut dolorem fugit qui nostrum optio non laboriosam vitae eos velit perspiciatis ex quibusdam voluptates!
+                    </a>
+                </div>
+                
                 <hr/>
-
-                <a>like dislike repondre</a>               
+                <div className="textPost">
+                    <button><AiOutlineLike className='Icon'/>20</button>
+                    <button><AiOutlineDislike className='Icon'/>5</button>
+                    <button><AiOutlineMessage className='Icon'/></button>  
+                </div>           
             </div> 
         </div>
     );
