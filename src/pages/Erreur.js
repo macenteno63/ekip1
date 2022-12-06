@@ -3,8 +3,8 @@ import React from 'react';
 
 const Erreur = () => {
     return (
-    <div className='Erreur'>
-        <h1>Erreur 404</h1>
+    <div>
+        <h1 id='ErreurH1'>Erreur 404</h1>
     </div>
     );
 };
