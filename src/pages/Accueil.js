@@ -32,12 +32,13 @@ const Accueil = () => {
 
         <div>
             <h2>Fil de discussion :</h2>
-
-            <div className="grid-containerPostTab">
-                <Post/>
-                <Post/>
-            </div>
             
+            <div className="scroll-bar">
+                <div className="grid-containerPostTab">
+                    <Post/>
+                    <Post/>
+                </div>
+            </div>
             <NavLink style={{ textDecoration: 'none' }} to="/addpost" className={(nav) => (nav.isActive ? "nav-active" : "")} end>
                 <BoutonBasPage scaleValue="Ajouter un post"></BoutonBasPage>       
             </NavLink>

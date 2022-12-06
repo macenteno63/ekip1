@@ -10,7 +10,11 @@
   grid-template-columns: auto auto;
   padding-top: 60px;
   padding-bottom: 50px;
+
+}
+.scroll-bar{
+  height: 800px;
   overflow-y: scroll;
-  scrollbar-width: thin;
-  scrollbar-color: antiqueWhite grey;
+  overflow-x: hidden;
+  scrollbar-color: #2C3E50 #ededee;
 }

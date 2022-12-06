@@ -1,21 +1,28 @@
 .post{
-    height: 300px;
-    width: 600px;
+    height: 350px;
+    width: 800px;
     background-color: #2C3E50;
-    border-radius: 10px;
+    border-radius: 20px;
     color: white;
     padding-left: 10px;
-    grid-template-columns: auto;
+    grid-template-columns: auto;   
 }
 
+.post a{
+    font-size: 14px;
+    padding-right: 20px;
+}
+.PPPost{
+    max-width: 50px;
+    padding: 20px 10px 0 5px;
+}
+.post hr{
+    width: 95%;
+}
 .grid-itemPost{
     width: 500px;
     height: 300px;
     padding-bottom: 100px;
-}
-
-.Post a{
-    color: white;
 }
 
 .image{
@@ -23,8 +30,14 @@
     width: 50px;
 }
 
-.grid-grid-containerHeaderPost{
+.grid-containerHeaderPost{
     display: grid;
-    grid-template-rows: auto;
-    
+    justify-content: left;
+    grid-template-columns: auto auto;
+}
+
+
+
+.textPost{
+    padding-left: 50px;
 }

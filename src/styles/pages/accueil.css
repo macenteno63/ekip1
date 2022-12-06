@@ -24,8 +24,8 @@ h2{
 
 .grid-containerPostTab{
   display: grid;
-  justify-content: center;
+
   grid-template-columns: auto;
-  padding-top: 60px;
-  padding-bottom: 50px;
+  padding-top: 30px;
+  
 }
