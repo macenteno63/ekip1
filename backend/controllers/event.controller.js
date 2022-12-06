@@ -16,31 +16,23 @@ module.exports.readEvent = (req, res) => {
 };
 
 module.exports.createEvent = async (req, res) => {
-  let fileName;
+  try {
+    if (req.file.mimetype !== "image/jpg" && req.file.mimetype !== "image/png" && req.file.mimetype !== "image/jpeg")
+      throw Error("invalid file");
 
-  if (req.file !== null) {
-    try {
-      if (
-        req.file.detectedMimeType != "image/jpg" &&
-        req.file.detectedMimeType != "image/png" &&
-        req.file.detectedMimeType != "image/jpeg"
-      )
-        throw Error("invalid file");
-
-      if (req.file.size > 500000) throw Error("max size");
-    } catch (err) {
-      const errors = uploadErrors(err);
-      return res.status(201).json({ errors });
-    }
-    fileName = req.body.posterId + Date.now() + ".jpg";
-
-    await pipeline(
-      req.file.stream,
-      fs.createWriteStream(
-        `${__dirname}/../../client/public/uploads/events/${fileName}`
-      )
-    );
+    if (req.file.size > 500000) throw Error("max size");
+  } catch (err) {
+    const errors = uploadErrors(err);
+    return res.status(201).json({errors});
   }
+  const fileName = req.body.posterId + "____" + Date.now() + ".jpg";
+  console.log(fileName);
+  let writeStream = fs.createWriteStream(`${__dirname}/../../src/assets/events/${fileName}`);
+  writeStream.write(req.file.buffer);
+  writeStream.on('finish', () => {
+    console.log('Fichier mis à jour !');
+  });
+  writeStream.end();
 
   const newEvent = new EventModel({
     posterId: req.body.posterId,
