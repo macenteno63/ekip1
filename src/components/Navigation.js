@@ -1,15 +1,8 @@
 import React from 'react';
-import event from '../images/event.png';
-import message from '../images/message.png';
 // Comme href en HTML deviendront des ancres (a)
 import { NavLink } from 'react-router-dom';
 import '../styles/components/navigation.css';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import ExitToAppIcon from '@mui/icons-material/ExitToApp';
-import { grey } from '@mui/material/colors';
-import MessageIcon from '@mui/icons-material/Message';
-import CelebrationIcon from '@mui/icons-material/Celebration';
-import ForumIcon from '@mui/icons-material/Forum';
+import {FaComments, FaUserCircle, FaSignOutAlt, FaBullhorn, FaCommentDots} from "react-icons/fa";
 import axios from "axios";
 import cookie from "js-cookie";
 
@@ -39,19 +32,19 @@ const Navigation = () => {
                 </NavLink>
                 <NavLink style={{ textDecoration: 'none' }} to="/accueil" className={(nav) => (nav.isActive ? "nav-active" : "")} end>
                     <li>
-                        <p><ForumIcon sx={{ fontSize: 40 }}/></p> 
+                        <p><FaComments className="Icon"/></p> 
                         <p className="menu">Accueil</p>
                     </li>
                 </NavLink>
                 <NavLink style={{ textDecoration: 'none' }} to="/evenement" className={(nav) => (nav.isActive ? "nav-active" : "")} end>
                     <li>
-                        <p><CelebrationIcon sx={{ fontSize: 40 }}/> </p>
+                        <p><FaBullhorn className="Icon"/></p>
                         <p className="menu">Evenement</p>
                     </li>
                 </NavLink>
                 <NavLink style={{ textDecoration: 'none' }} to="/messagerie" className={(nav) => (nav.isActive ? "nav-active" : "")} end>
                     <li>
-                        <p><MessageIcon sx={{ fontSize: 40 }}/></p>
+                        <p><FaCommentDots className="Icon"/></p>
                         <p className="menu">Messagerie</p>
                     </li>
                 </NavLink>
@@ -60,13 +53,13 @@ const Navigation = () => {
                 </NavLink> */}
                 <NavLink style={{ textDecoration: 'none' }} to="/profil" className={(nav) => (nav.isActive ? "nav-active" : "")} end>
                     <li>
-                        <p><AccountCircleIcon sx={{ fontSize: 40 }}/></p>
+                        <p><FaUserCircle className="Icon"/></p>
                         <p className="menu">Profil</p>
                     </li>
                 </NavLink>
             </ul>
             <div onClick={logout}>
-                <logout> <ExitToAppIcon sx={{ color: grey[50], fontSize: 40}} /> </logout>
+                <logout> <FaSignOutAlt className="Icon"/> </logout>
             </div>
 
         </div>

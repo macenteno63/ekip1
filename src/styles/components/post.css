@@ -1,5 +1,6 @@
+
 .post{
-    height: 350px;
+    height: 370px;
     width: 800px;
     background-color: #2C3E50;
     border-radius: 20px;
@@ -16,6 +17,7 @@
     max-width: 50px;
     padding: 20px 10px 0 5px;
 }
+
 .post hr{
     width: 95%;
 }
@@ -40,4 +42,22 @@
 
 .textPost{
     padding-left: 50px;
+}
+
+.Icon{
+    font-size: 40px;
+    color: white;
+}
+
+.post button {
+    border: none;
+    color: white;
+    border-radius: 12px;
+    background-color: #2C3E50;
+    padding: 8px 7px 7px 7px;
+    margin: 0 20px 0 0;
+}
+
+.post button:hover {
+    background-color: #396086;
 }

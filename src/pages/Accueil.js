@@ -37,6 +37,8 @@ const Accueil = () => {
                 <div className="grid-containerPostTab">
                     <Post/>
                     <Post/>
+                    <Post/>
+                    <Post/>
                 </div>
             </div>
             <NavLink style={{ textDecoration: 'none' }} to="/addpost" className={(nav) => (nav.isActive ? "nav-active" : "")} end>
