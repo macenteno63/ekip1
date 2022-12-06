@@ -1,9 +1,6 @@
 const UserModel = require("../models/User");
 const fs = require("fs");
-const { promisify } = require("util");
-const pipeline = promisify(require("stream").pipeline);
 const { uploadErrors } = require("../utils/error");
-const path = require("path");
 
 module.exports.uploadProfil = async (req, res) => {
   try {
@@ -36,7 +33,7 @@ module.exports.uploadProfil = async (req, res) => {
         }
     );
   } catch (err) {
-    console.log("jfkjdsl");
+    console.log(err);
     //return res.status(500).send({ message: err });
   }
 };

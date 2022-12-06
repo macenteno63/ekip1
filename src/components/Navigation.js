@@ -17,6 +17,7 @@ const Navigation = () => {
     const removeCookie = (key) => {
         if (window !== "undefined") {
             cookie.remove(key, {expires: 1});
+            document.location.reload(true);
         }
     };
 
