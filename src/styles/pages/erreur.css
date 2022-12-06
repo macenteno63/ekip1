@@ -13,7 +13,7 @@
     src: url(../fonts/Inter-Regular.otf);
   }
 
-.Erreur h1{
+#ErreurH1{
     font-family: Bold;
     text-align: center;
     font-size: 25px;
