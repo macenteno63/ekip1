@@ -42,7 +42,7 @@ const SignUpForm = () => {
     <div id={"formu"}>
         <MentionContact/>
         <form onSubmit={handleRegister} action={""}>
-            <h1>S'incrire</h1>
+            <h1>S'inscrire</h1>
             <label htmlFor={"prenom"}></label>
             <input type={"text"} id={"prenom"} placeholder={"Prenom"} onChange={(e)=> setPrenom(e.target.value)} value={prenom}/>
             <div className={"prenom error"}></div>
