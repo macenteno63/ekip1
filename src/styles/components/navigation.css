@@ -25,6 +25,7 @@
     font-size: 20px;
     color: white;
     border-radius: 18px;
+    align-items: center;
     background-color: #2C3E50;
     margin-bottom: 50px;
     justify-content: center;
@@ -50,15 +51,19 @@
   margin-left: 30px;
 }
 
+/* il faudrait enlever les paroles et mettre que les images du menu à gauche à partir d'un moment genre moitié page */
+
 @media screen and (max-width: 1600px){
   .menu{
     font-size: 24px;
+    margin-left: 26px;
   }
 }
 
 @media screen and (max-width: 1400px){
   .menu{
     font-size: 20px;
+    margin-left: 22px;
   }
   .Navigation logout{
     margin-left: 12%;
@@ -68,12 +73,14 @@
 @media screen and (max-width: 1200px){
   .menu{
     font-size: 16px;
+    margin-left: 20px;
   }
 }
 
 @media screen and (max-width: 1000px){
   .menu{
     font-size: 12px;
+    margin-left: 18px;
   }
   .Navigation logout{
     margin-left: 11%;
@@ -83,6 +90,7 @@
 @media screen and (max-width: 600px){
   .menu{
     font-size: 12px;
+    margin-left: 16px;
   }
   .Navigation logout{
     margin-left: 9%;
