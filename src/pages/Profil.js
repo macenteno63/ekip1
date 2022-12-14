@@ -9,7 +9,6 @@ import {UidContext} from "../components/AppContext";
 const Profil = () => {
     const uid = useContext(UidContext);
     const [user,setUser] = useState([]);
-    let picture;
 
     useEffect(()=>{
         const fetchUser = async () =>{
@@ -24,8 +23,8 @@ const Profil = () => {
         }
         fetchUser();
     }, [uid])
-    picture = user.picture;
-    console.log(picture);
+
+    console.log(user);
     return (
     <div className={"Profil"}>
         <Navigation />
@@ -50,7 +49,7 @@ const Profil = () => {
                     <p>Ville</p>
                 </div>
                 <div className='Biographie' id="profil">
-                    <p>Bio : {picture} </p>
+                    <p>Bio : {user.picture} </p>
                 </div>
                 <div className='Formation' id="profil">
                     <p>À étudier : <br />
@@ -58,7 +57,7 @@ const Profil = () => {
                         -
                     </p>
                 </div>
-                <a className='PhotoProfil'><img src={"../" + picture} alt="photo de profil"/></a>
+                { user.picture === "undefined" ? <p>pas de photo</p>:<a className='PhotoProfil'><img src={require(`../${user.picture}`)} alt="photo de profil"/></a>}
 
                 <NavLink style={{ textDecoration: 'none' }} to="/modifyprofil" className={(nav) => (nav.isActive ? "nav-active" : "")} end>
                 <button className='button'>
