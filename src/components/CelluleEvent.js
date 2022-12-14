@@ -5,7 +5,7 @@ import Event from '../images/TestEvent.jpg';
 const CelluleEvent = () => {
     return (
         <div className="grid-itemCellEvent">
-            <img className="image" src={Event}/>
+            <img className="imageEvent" src={Event}/>
             <div className="event">
                 <h3>Match FCM-ASSE</h3>
                 <a>par Groupe FanFoot</a>
