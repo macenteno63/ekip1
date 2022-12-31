@@ -31,6 +31,7 @@ const App = () => {
         withCredentials: true,
       })
         .then((res) => {
+          console.log(uid);
           setUid(res.data);
           console.log(uid);
         })
@@ -39,10 +40,11 @@ const App = () => {
         });
     };
     fetchToken();
-    if(uid){
+    if(uid !== null){
+      console.log("jfdkjfls");
       dispatch(createUser(uid));
     }
-  },[uid]);
+  },[uid,dispatch]);
 // const fetchUser = (uid) =>{
 //   axios({
 //     method: "get",

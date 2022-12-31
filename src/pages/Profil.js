@@ -6,6 +6,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import {useContext} from "react";
 import {UidContext} from "../components/AppContext";
 import { useSelector} from "react-redux";
+import UploadImg from "../components/UploadImg";
 
 const Profil = () => {
     const uid = useContext(UidContext);
@@ -51,7 +52,7 @@ const Profil = () => {
                     <p>Ville</p>
                 </div>
                 <div className='Biographie' id="profil">
-                    <p>Bio : {user.picture} </p>
+                    <p>Bio : {user.bio} </p>
                 </div>
                 <div className='Formation' id="profil">
                     <p>À étudier : <br />
@@ -60,6 +61,7 @@ const Profil = () => {
                     </p>
                 </div>
                 { user.picture === "undefined" ? <p>pas de photo</p>:<a className='PhotoProfil'><img src={require(`../${user.picture}`)} alt="photo de profil"/></a>}
+                <UploadImg />
 
                 <NavLink style={{ textDecoration: 'none' }} to="/modifyprofil" className={(nav) => (nav.isActive ? "nav-active" : "")} end>
                 <button className='button'>
