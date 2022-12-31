@@ -17,9 +17,11 @@ import {useDispatch} from "react-redux";
 // import { getUser } from '../actions/user.actions'; // reducer on utilise pas
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import {createUser, getUser} from "../reducers/user.reducer";
 
 const App = () => {
   const [uid, setUid] = useState(null);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const fetchToken = async () => {
@@ -32,14 +34,26 @@ const App = () => {
           setUid(res.data);
           console.log(uid);
         })
-        .catch((err) => {
+        .catch(() => {
           console.log("No token");
         });
     };
     fetchToken();
-
-  });
-
+    if(uid){
+      dispatch(createUser(uid));
+    }
+  },[uid]);
+// const fetchUser = (uid) =>{
+//   axios({
+//     method: "get",
+//     url: `http://localhost:4000/api/user/${uid}`,
+//     withCredentials: true,
+//   })
+//       .then((res) => {
+//         return res.data
+//       })
+//       .catch((err) => console.log(err));
+// }
   return (
       <UidContext.Provider value={uid}>
         <BrowserRouter>

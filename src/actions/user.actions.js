@@ -8,10 +8,13 @@ export const GET_USER = "getUser";
 //
 // export const GET_USER_ERRORS = "GET_USER_ERRORS";
 //
-export const getUser = (uid) => {
+export const getUserr = (uid) => {
     return (dispatch) => {
-        return axios
-            .get(`http://localhost:4000/api/user/api/user/${uid}`)
+        return axios({
+            method: "get",
+            url: `http://localhost:4000/api/user/${uid}`,
+            withCredentials: true,
+        })
             .then((res) => {
                 dispatch({ type: GET_USER, payload: res.data });
             })

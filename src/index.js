@@ -9,15 +9,16 @@ import thunk from 'redux-thunk';
 // Soit en passant par l'extension graphique redux dev tools ou bien directement par la console
 import {composeWithDevTools} from 'redux-devtools-extension';
 import logger from 'redux-logger'
-//
-//
-//
 
-import {combineReducers, configureStore} from '@reduxjs/toolkit'
+import {applyMiddleware, configureStore} from '@reduxjs/toolkit'
 
-import rootReducer from './reducers'
+import userReducer from "./reducers/user.reducer";
 
-const store = configureStore({ reducer: rootReducer })
+const store = configureStore({
+    reducer:{
+        users: userReducer,
+    },
+})
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

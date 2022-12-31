@@ -5,26 +5,28 @@ import { NavLink } from 'react-router-dom';
 import EditIcon from '@mui/icons-material/Edit';
 import {useContext} from "react";
 import {UidContext} from "../components/AppContext";
+import { useSelector} from "react-redux";
 
 const Profil = () => {
     const uid = useContext(UidContext);
-    const [user,setUser] = useState([]);
+    // const [user,setUser] = useState([]);
+    const user = useSelector(state => state.users.users);
 
-    useEffect(()=>{
-        const fetchUser = async () =>{
-            await fetch(`http://localhost:4000/api/user/${uid}`)
-                .then((resp)=>{
-                    return resp.json();
-                })
-                .then((res)=>{
-                    setUser(res);
-                })
-                .catch((err) => console.log(err));
-        }
-        fetchUser();
-    }, [uid])
-
-    console.log(user);
+    // useEffect(()=>{
+    //     const fetchUser = async () =>{
+    //         await fetch(`http://localhost:4000/api/user/${uid}`)
+    //             .then((resp)=>{
+    //                 return resp.json();
+    //             })
+    //             .then((res)=>{
+    //                 setUser(res);
+    //             })
+    //             .catch((err) => console.log(err));
+    //     }
+    //     fetchUser();
+    // }, [uid])
+    //
+    // console.log(user);
     return (
     <div className={"Profil"}>
         <Navigation />
