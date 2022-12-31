@@ -18,7 +18,6 @@ color: white;
 
 .MentionContact li {
   display: flex;
-  position: relative;
   flex-direction: row;
   text-align: center;
   font-size: 15px;
@@ -28,9 +27,28 @@ color: white;
   border-radius: 18px;
   background-color: #2C3E50;
   justify-content: center;
+  align-items: center;
   margin-left: 50px;
   margin-right: 50px;
 }
 .MentionContact li:hover {
   background-color: #396086;
+}
+
+@media screen and (max-height: 800px){
+.MentionContact li {
+  height: 40px;
+}
+}
+
+@media screen and (max-height: 600px){
+.MentionContact li {
+  height: 30px;
+}
+}
+
+@media screen and (max-height: 500px){
+.MentionContact li {
+  height: 30px;
+}
 }
