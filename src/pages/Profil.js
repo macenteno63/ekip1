@@ -46,10 +46,10 @@ const Profil = () => {
                     <p>{user.email}</p>
                 </div>
                 <div className='Metier' id="profil">
-                    <p>Métier</p>
+                    <p>{user.metier}</p>
                 </div>
                 <div className='Ville' id="profil">
-                    <p>Ville</p>
+                    <p>{user.ville}</p>
                 </div>
                 <div className='Biographie' id="profil">
                     <p>Bio : {user.bio} </p>

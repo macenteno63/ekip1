@@ -18,26 +18,26 @@ module.exports.userInfo = (req, res) => {
 };
 
 module.exports.updateUser = async (req, res) => {
-    if (!ObjectID.isValid(req.params.id))
-        return res.status(400).send("ID unknown : " + req.params.id);
+  if (!ObjectID.isValid(req.params.id))
+    return res.status(400).send("ID unknown : " + req.params.id);
 
-    try {
-        await UserModel.findOneAndUpdate(
-            { _id: req.params.id },
-            {
-                $set: {
-                    bio: req.body.bio,
-                },
-            },
-            { new: true, upsert: true, setDefaultsOnInsert: true },
-            (err, docs) => {
-                if (!err) return res.send(docs);
-                if (err) return res.status(500).send({ message: err });
-            }
-        );
-    } catch (err) {
-        return res.status(500).json({ message: err });
-    }
+  try {
+    await UserModel.findOneAndUpdate(
+      { _id: req.params.id },
+      {
+        $set: {
+          bio: req.body.bio,
+            metier: req.body.metier,
+            ville: req.body.ville
+
+        },
+      },
+      { new: true, upsert: true, setDefaultsOnInsert: true })
+      .then((data) => res.send(data))
+      .catch((err) => res.status(500).send({ message: err }));
+  } catch (err) {
+    return res.status(500).json({ message: err });
+  }
 };
 
 module.exports.deleteUser = async (req, res) => {
@@ -77,7 +77,7 @@ module.exports.follow = async (req, res) => {
         { new: true, upsert: true },
         (err, docs) => {
           // if (!err) res.status(201).json(docs);
-          if (err) return res.status(400).jsos(err);
+          if (err) return res.status(400).json(err);
         }
       );
     } catch (err) {

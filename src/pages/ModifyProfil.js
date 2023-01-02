@@ -5,13 +5,16 @@ import '../styles/pages/modifyprofil.css'
 import {useContext} from "react";
 import {UidContext} from "../components/AppContext";
 import {useDispatch, useSelector} from "react-redux";
-import {modifyProfile} from "../reducers/user.reducer";
+import {modifyProfile, updateBio} from "../reducers/user.reducer";
 
 const ModifyProfil = () => {
     const uid = useContext(UidContext);
     const user = useSelector(state => state.users.users);
     const dispatch = useDispatch();
-    const [bio,setBio] = useState("vide");
+    const [bio,setBio] = useState(user.bio);
+    const [metier,setMetier] = useState(user.metier);
+    const [ville,setVille] = useState(user.ville);
+    //const [payload,setPayload] = useState({bio: null, metier : null, ville : null});
     // useEffect(()=>{
     //     const fetchUser = async () =>{
     //         await fetch(`http://localhost:4000/api/user/${uid}`)
@@ -35,12 +38,12 @@ const ModifyProfil = () => {
                 <h2>Modifier le profil :</h2>
                     <ul className="liste">
                         <li>Date de naissance : <input type="date"/></li>
-                        <li>Metier : <br/> <input className="ProfilCommun" id={"Metier"} placeholder={user.metier}/></li>
-                        <li>Ville :<br/> <input className="ProfilCommun" id={"Ville"} placeholder={user.ville}/></li>
-                        <li>Biographie : <br/> <input className="ProfilCommun" id={"Biographie"} placeholder={user.bio} onChange={(e)=> setBio(e.target.value)}/></li>
+                        <li>Metier : <br/> <input className="ProfilCommun" id={"Metier"} defaultValue={metier} onChange={(e)=> setMetier(e.target.value)}/></li>
+                        <li>Ville :<br/> <input className="ProfilCommun" id={"Ville"} defaultValue={ville} onChange={(e)=> setVille(e.target.value)}/></li>
+                        <li>Biographie : <br/> <textarea className="ProfilCommun" id={"Biographie"} defaultValue={bio} onChange={(e)=> setBio(e.target.value)}/></li>
                         <li>Études / diplôme obtenu :<br/><input className="ProfilCommun" id={"Etudes"} placeholder={user.etudes}/></li>
                         <NavLink style={{ textDecoration: 'none' }} to="/profil" className={(nav) => (nav.isActive ? "nav-active" : "")} end>
-                            <li><input className="ProfilCommun" id={"Modifier"} type="button" value="Modifier" onClick={(e)=>dispatch(modifyProfile(bio))}/></li>
+                            <li><input className="ProfilCommun" id={"Modifier"} type="button" value="Modifier" onClick={(e)=>dispatch(updateBio(user._id,bio,metier,ville))}/></li>
 
                         </NavLink>
                     </ul>
