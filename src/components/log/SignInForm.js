@@ -46,7 +46,7 @@ const SignInForm = () => {
         
         <div id={"formu"}>
             <MentionContact/>
-            <form onSubmit={handleLogin} action={""}>
+            <form className='Formu' onSubmit={handleLogin} action={""}>
                 <h1>Se connecter</h1>
                 <label htmlFor={"mail"}></label>
                 <input type={"email"} id={"email"} name={"email"} placeholder={"Email"} onChange={(e)=> setEmail(e.target.value)} value={email}/>

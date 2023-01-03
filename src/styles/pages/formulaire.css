@@ -12,7 +12,7 @@
     font-family: SemiBold;
     src: url(../fonts/Inter-Regular.otf);
   }
-#formu form{
+#formu .Formu{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -41,7 +41,7 @@
     height: 100%;
     position: fixed;
 }
-#formuIns form{
+#formuIns .Formu{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
