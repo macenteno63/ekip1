@@ -2,7 +2,6 @@ import '../styles/pages/profil.css'
 import React, {useEffect, useState} from 'react';
 import Navigation from '../components/Navigation';
 import { NavLink } from 'react-router-dom';
-import EditIcon from '@mui/icons-material/Edit';
 import {useContext} from "react";
 import {UidContext} from "../components/AppContext";
 import { useSelector} from "react-redux";
@@ -26,21 +25,20 @@ const Profil = () => {
     //     }
     //     fetchUser();
     // }, [uid])
-    //
+    
     // console.log(user);
     return (
-    <div className={"Profil"}>
+    <div>
         <Navigation />
         {uid ? (
 
-            <div>
-                <h2> Profil :</h2>
+            <div className='Profil'>
                 {/* <p className='EditIcon'><EditIcon sx={{ fontSize: 40 }}/></p> */}
                 <div className='NomPrenom' id="profil">
                     <p>{user.nom} {user.prenom}</p>
                 </div>
                 <div className='Age' id="profil">
-                    <p>age : {user.age}</p>
+                    <p>Age : {user.age}</p>
                 </div>
                 <div className='Email' id="profil">
                     <p>{user.email}</p>
@@ -54,14 +52,18 @@ const Profil = () => {
                 <div className='Biographie' id="profil">
                     <p>Bio : {user.bio} </p>
                 </div>
-                <div className='Formation' id="profil">
+                {/* <div className='Formation' id="profil">
                     <p>À étudier : <br />
                         - <br />
                         -
                     </p>
-                </div>
+                </div> */}
+
                 { user.picture === "undefined" ? <p>pas de photo</p>:<a className='PhotoProfil'><img src={require(`../${user.picture}`)} alt="photo de profil"/></a>}
-                <UploadImg />
+
+                <div className='InputImage'>
+                    <UploadImg />
+                </div>
 
                 <NavLink style={{ textDecoration: 'none' }} to="/modifyprofil" className={(nav) => (nav.isActive ? "nav-active" : "")} end>
                 <button className='button'>

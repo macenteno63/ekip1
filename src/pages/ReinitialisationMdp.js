@@ -3,7 +3,7 @@ import '../styles/pages/reinitialisationMdp.css'
 
 function ReinitialiserMDP(){
 return <div id={"Reinitialiser"}>
-                <form method={"POST"}>
+                <form className="FormuMDP" method={"POST"}>
                     <h1> Réinitialiser le mot de passe :</h1>
                     <p>Entrez l'adresse e-mail que vous avez utilisée pour vous inscrire à EKIP. Nous vous enverrons un lien pour réinitialiser votre mot de passe.</p>
                     <input type={"email"} id={"mail"} placeholder={"Email"}/>

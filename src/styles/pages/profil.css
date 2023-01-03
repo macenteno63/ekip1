@@ -1,4 +1,57 @@
 .Profil {
+    display: grid;
+    grid-template-columns: 500px 800px;
+    grid-template-rows: repeat(9, 65px);
+    grid-gap: 20px;
+    margin-left: 400px;
+}
+
+p {
+    color: black;
+}
+
+.NomPrenom {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.Age {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.Email {
+    grid-column: 2;
+    grid-row: 4;
+}
+
+.Metier {
+    grid-column: 2;
+    grid-row: 5;
+}
+
+.Ville {
+    grid-column: 2;
+    grid-row: 6;
+}
+
+.Biographie {
+    grid-column: 1;
+    grid-row: 8;
+}
+
+.InputImage {
+    grid-column: 1;
+    grid-row: 7;
+}
+
+#profil {
+    justify-content: center;
+    font-family: Regular;
+    font-size: 25px;
+    color: black;
+}
+/* .Profil {
     display: flex;
     justify-content: center;
 }
@@ -10,11 +63,9 @@
     position: absolute;
     right: 20%;
     top: 20%;
-    transform: translate(-50%,-50%); /* pour que l’élément centré se replace à 50% de sa largeur en haut et à gauche. */
+    transform: translate(-50%,-50%);  pour que l’élément centré se replace à 50% de sa largeur en haut et à gauche. 
 }
-p {
-    color: black;
-}
+
 .Email {
     position: absolute;
     top: 20%;
@@ -50,19 +101,13 @@ p {
     transform: translate(-50%);
 }
 
-#profil {
-    display: flex;
-    justify-content: center;
-    font-family: Regular;
-    font-size: 25px;
-    color: black;
-}
 
+*/
 .PhotoProfil {
     display: flex;
     position: absolute;
     top: 10%;
     left: 22%;
-    width: 500px;
-    height: 300px;
-}
+    width: 400px;
+    height: 400px;
+} 
