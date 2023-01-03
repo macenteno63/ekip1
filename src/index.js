@@ -8,10 +8,12 @@ import reportWebVitals from './reportWebVitals';
 import {configureStore} from '@reduxjs/toolkit'
 
 import userReducer from "./reducers/user.reducer";
+import eventReducer from "./reducers/event.reducer";
 
 const store = configureStore({
     reducer:{
         users: userReducer,
+        events: eventReducer,
     },
 })
 

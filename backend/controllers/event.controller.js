@@ -25,14 +25,13 @@ module.exports.createEvent = async (req, res) => {
     const errors = uploadErrors(err);
     return res.status(201).json({errors});
   }
-  const fileName = req.body.posterId + "____" + Date.now() + ".jpg";
-  console.log(fileName);
-  let writeStream = fs.createWriteStream(`${__dirname}/../../src/assets/events/${fileName}`);
-  writeStream.write(req.file.buffer);
-  writeStream.on('finish', () => {
-    console.log('Fichier mis à jour !');
-  });
-  writeStream.end();
+    const fileName = req.body.name + ".jpg";
+    let writeStream = fs.createWriteStream(`${__dirname}/../../src/assets/events/${fileName}`);
+    writeStream.write(req.file.buffer);
+    writeStream.on('finish', () => {
+        console.log('Fichier mis à jour !');
+    });
+    writeStream.end();
 
   const newEvent = new EventModel({
     posterId: req.body.posterId,
@@ -40,7 +39,7 @@ module.exports.createEvent = async (req, res) => {
     date: req.body.date,
     description: req.body.description,
     nbPlaces: req.body.nbPlaces,
-    picture: req.file !== null ? "./uploads/events/" + fileName : "",
+    picture: fileName,
     inscrits: [],
   });
 
@@ -65,17 +64,17 @@ module.exports.updateEvent = (req, res) => {
     description: req.body.description,
     nbPlaces: req.body.nbPlaces,
   };
-
   EventModel.findByIdAndUpdate(
-    req.params.id,
-    // On met à jour le message du event
-    { $set: updatedRecord },
-    { new: true },
-    (err, docs) => {
-      if (!err) res.send(docs);
-      else console.log("Update error : " + err);
-    }
-  );
+        req.body.id,
+        { $set : {picture: "assets/events/" + fileName}},
+        { new: true, upsert: true, setDefaultsOnInsert: true},
+        (err, docs) => {
+          if (!err)
+            return res.send(docs);
+          else
+            return res.status(500).send({ message: err });
+        }
+    );
 };
 
 module.exports.deleteEvent = (req, res) => {
@@ -145,4 +144,14 @@ module.exports.desinscrireEvent = async (req, res) => {
   } catch (err) {
     return res.status(400);
   }
+};
+
+module.exports.readEventById = (req, res) => {
+  if (!ObjectID.isValid(req.params.id))
+    return res.status(400).send("ID unknown : " + req.params.id);
+
+  EventModel.findById(req.params.id, (err, docs) => {
+    if (!err) res.send(docs);
+    else console.log("ID unknown : " + err);
+  });
 };
