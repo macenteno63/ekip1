@@ -6,9 +6,14 @@ import Navigation from '../components/Navigation';
 import Personne from "../components/Personne";
 import BoutonBasPage from '../components/BoutonBasPage';
 import { NavLink } from 'react-router-dom';
+import axios from "axios";
+import {useDispatch} from "react-redux";
+import {getPost} from "../reducers/postSlice";
+import log from "../components/log";
 
 const Accueil = () => {
     const [nom,setNom] = useState([]);
+    const dispatch = useDispatch();
     useEffect(()=>{
         const fetchNom = async () =>{
             await fetch('http://localhost:4000/api/user/all')
@@ -22,7 +27,16 @@ const Accueil = () => {
         }
         fetchNom();
     }, [nom])
+  const getPostt = () => {
+    axios
+      .get("http://localhost:4000/api/post")
+      .then((res) => dispatch(getPost(res.data)))
+    .catch((err)=> console.log())
+  };
 
+  useEffect(() => {
+    getPostt();
+  }, []);
     return (
     <div className="grid-containerPost">
 
@@ -35,9 +49,6 @@ const Accueil = () => {
             
             <div className="scroll-bar">
                 <div className="grid-containerPostTab">
-                    <Post/>
-                    <Post/>
-                    <Post/>
                     <Post/>
                 </div>
             </div>

@@ -22,14 +22,12 @@ import {createUser, getUser} from "../reducers/user.reducer";
 const App = () => {
   const [uid, setUid] = useState(null);
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    const fetchToken = async () => {
-      await axios({
-        method: "get",
-        url: `http://localhost:4000/jwtid`,
-        withCredentials: true,
-      })
+  const fetchToken = async () => {
+    await axios({
+      method: "get",
+      url: `http://localhost:4000/jwtid`,
+      withCredentials: true,
+    })
         .then((res) => {
           console.log(uid);
           setUid(res.data);
@@ -38,7 +36,8 @@ const App = () => {
         .catch(() => {
           console.log("No token");
         });
-    };
+  };
+  useEffect(() => {
     fetchToken();
     if(uid !== null){
       dispatch(createUser(uid));
