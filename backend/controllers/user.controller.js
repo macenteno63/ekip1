@@ -28,7 +28,8 @@ module.exports.updateUser = async (req, res) => {
         $set: {
           bio: req.body.bio,
             metier: req.body.metier,
-            ville: req.body.ville
+            ville: req.body.ville,
+            age: req.body.age
 
         },
       },

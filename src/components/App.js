@@ -41,7 +41,6 @@ const App = () => {
     };
     fetchToken();
     if(uid !== null){
-      console.log("jfdkjfls");
       dispatch(createUser(uid));
     }
   },[uid,dispatch]);

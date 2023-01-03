@@ -16,6 +16,7 @@ export const usersSlice = createSlice({
         state.users.bio = action.payload.bio;
         state.users.ville = action.payload.ville;
         state.users.metier = action.payload.metier;
+          state.users.age = action.payload.age;
       }
   },
 });
@@ -43,18 +44,19 @@ export const uploadPicture = (data, id) => {
       .catch((err) => console.log(err));
   };
 };
-export const updateBio = (userId, bio, metier, ville) => {
+export const updateBio = (userId, bio, metier, ville,age) => {
   return (dispatch) => {
     return axios({
       method: "put",
       url: `http://localhost:4000/api/user/` + userId,
-      data: { bio,metier,ville },
+      data: { bio,metier,ville,age },
     })
       .then((res) => {
           let action ={
               bio: bio,
               metier :metier,
-              ville : ville
+              ville : ville,
+              age : age
           }
         dispatch({ type: "users/modifyProfile", payload: action });
       })

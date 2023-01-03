@@ -14,7 +14,7 @@ const ModifyProfil = () => {
     const [bio,setBio] = useState(user.bio);
     const [metier,setMetier] = useState(user.metier);
     const [ville,setVille] = useState(user.ville);
-    //const [payload,setPayload] = useState({bio: null, metier : null, ville : null});
+    const [age,setAge] = useState(user.age);
     // useEffect(()=>{
     //     const fetchUser = async () =>{
     //         await fetch(`http://localhost:4000/api/user/${uid}`)
@@ -37,13 +37,13 @@ const ModifyProfil = () => {
             <div className="grid-item">
                 <h2>Modifier le profil :</h2>
                     <ul className="liste">
-                        <li>Date de naissance : <input type="date"/></li>
+                        <li>age : <input type="number" min={0} max={60} defaultValue={age} onChange={(e)=> setAge(e.target.value)}/></li>
                         <li>Metier : <br/> <input className="ProfilCommun" id={"Metier"} defaultValue={metier} onChange={(e)=> setMetier(e.target.value)}/></li>
                         <li>Ville :<br/> <input className="ProfilCommun" id={"Ville"} defaultValue={ville} onChange={(e)=> setVille(e.target.value)}/></li>
                         <li>Biographie : <br/> <textarea className="ProfilCommun" id={"Biographie"} defaultValue={bio} onChange={(e)=> setBio(e.target.value)}/></li>
                         <li>Études / diplôme obtenu :<br/><input className="ProfilCommun" id={"Etudes"} placeholder={user.etudes}/></li>
                         <NavLink style={{ textDecoration: 'none' }} to="/profil" className={(nav) => (nav.isActive ? "nav-active" : "")} end>
-                            <li><input className="ProfilCommun" id={"Modifier"} type="button" value="Modifier" onClick={(e)=>dispatch(updateBio(user._id,bio,metier,ville))}/></li>
+                            <li><input className="ProfilCommun" id={"Modifier"} type="button" value="Modifier" onClick={(e)=>dispatch(updateBio(user._id,bio,metier,ville,age))}/></li>
 
                         </NavLink>
                     </ul>

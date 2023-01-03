@@ -3,11 +3,11 @@ import SignInForm from "./SignInForm";
 import SignUpForm from "./signUpForm";
 
 const Log = () => {
-    const [signUPModal, setSignUpModal] = useState(true);
-    const [signInModal, setSignInModal] = useState(false);
+    // const [signUPModal, setSignUpModal] = useState(true);
+    // const [signInModal, setSignInModal] = useState(true);
 
-    let [isOpen, setIsOpen] = useState(true);
-    let [nom, setNom] = useState("Déjà un compte : Se connecter");
+    let [isOpen, setIsOpen] = useState(false);
+    let [nom, setNom] = useState("Pas encore de compte : S'inscrire");
     const handleModals = () => {
         if (isOpen)
         {
@@ -36,7 +36,7 @@ const Log = () => {
             {isOpen ?  <SignUpForm /> : <SignInForm />}
             {/*{signInModal && <SignInForm />}*/}
             <ul  id={"bouton"}>
-                <li className={signInModal ? "active-btn" : "inactive-btn"} id={"login"} onClick={handleModals}>
+                <li className={"active-btn"} id={"login"} onClick={handleModals}>
                     {nom}
                 </li>
                 {/*<li className={signUPModal ? "active-btn" : "inactive-btn"} id={"register"} onClick={handleModals} >*/}

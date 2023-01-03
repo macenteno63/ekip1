@@ -40,16 +40,16 @@ const Profil = () => {
                     <p>{user.nom} {user.prenom}</p>
                 </div>
                 <div className='Age' id="profil">
-                    <p>age</p>
+                    <p>age : {user.age}</p>
                 </div>
                 <div className='Email' id="profil">
                     <p>{user.email}</p>
                 </div>
                 <div className='Metier' id="profil">
-                    <p>{user.metier}</p>
+                    <p>Metier : {user.metier}</p>
                 </div>
                 <div className='Ville' id="profil">
-                    <p>{user.ville}</p>
+                    <p>Ville : {user.ville}</p>
                 </div>
                 <div className='Biographie' id="profil">
                     <p>Bio : {user.bio} </p>
