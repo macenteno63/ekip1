@@ -16,7 +16,7 @@ export const usersSlice = createSlice({
         state.users.bio = action.payload.bio;
         state.users.ville = action.payload.ville;
         state.users.metier = action.payload.metier;
-          state.users.age = action.payload.age;
+        state.users.age = action.payload.age;
       }
   },
 });

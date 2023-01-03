@@ -12,7 +12,7 @@
     font-family: SemiBold;
     src: url(../fonts/Inter-Regular.otf);
   }
-form {
+.Formu {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
