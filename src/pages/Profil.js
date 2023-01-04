@@ -8,8 +8,6 @@ import { useSelector} from "react-redux";
 import UploadImg from "../components/UploadImg";
 
 const Profil = () => {
-    const uid = useContext(UidContext);
-    // const [user,setUser] = useState([]);
     const user = useSelector(state => state.users.users);
 
     // useEffect(()=>{
@@ -30,7 +28,7 @@ const Profil = () => {
     return (
     <div>
         <Navigation />
-        {uid ? (
+        {user !==null ? (
 
             <div className='Profil'>
                 {/* <p className='EditIcon'><EditIcon sx={{ fontSize: 40 }}/></p> */}

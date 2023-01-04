@@ -6,7 +6,7 @@ const EventItem = (props) => {
     const dispatch = useDispatch();
     return (
         <li>
-            <span>{props.scaleValue.name}</span>
+            <span>{props.scaleValue.titre}</span>
             <button onClick={() => dispatch(deleteEvent(props.scaleValue._id))}>Supprimer</button>
         </li>
     );

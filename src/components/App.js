@@ -18,6 +18,7 @@ import {useDispatch} from "react-redux";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import {createUser, getUser} from "../reducers/user.reducer";
+import {fetchPost, fetchUsers, getPost} from "../reducers/postSlice";
 
 const App = () => {
   const [uid, setUid] = useState(null);
@@ -29,19 +30,19 @@ const App = () => {
       withCredentials: true,
     })
         .then((res) => {
-          console.log(uid);
           setUid(res.data);
           console.log(uid);
         })
         .catch(() => {
           console.log("No token");
         });
-  };
-  useEffect(() => {
-    fetchToken();
     if(uid !== null){
       dispatch(createUser(uid));
     }
+  };
+
+  useEffect(() => {
+    fetchToken();
   },[uid,dispatch]);
 // const fetchUser = (uid) =>{
 //   axios({

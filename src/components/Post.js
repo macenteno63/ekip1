@@ -5,13 +5,28 @@ import Card from "./post/Card";
 import AccountCircle from '../images/account_circle.png';
 import {AiOutlineLike, AiOutlineDislike, AiOutlineMessage, AiFillDislike, AiFillLike} from "react-icons/ai";
 import {useSelector} from "react-redux";
+import {fetchPost} from "../reducers/postSlice";
 
 
 const Post = () => {
     const posts = useSelector(state => state.post.post)
+    //fetchPost();
     return (
         <div>
-                {!isEmpty(posts[0]) &&
+                {posts === null ? <div className="lds-spinner">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div> :
                     posts.map((post) => {
                         return <Card post={post} key={post._id}/>;
                     })}
