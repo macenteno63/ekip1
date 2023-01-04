@@ -12,57 +12,58 @@
     font-family: SemiBold;
     src: url(../fonts/Inter-Regular.otf);
   }
-#formu .Formu{
+.Formulaire{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 10px 0px;
     height: 100%;
     background: black;
     width: 80%;
-    background-color: #879FB5;
-    border-radius: 10%;
-}
-#formu{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    /* border: solid yellow 2px; */
-    width: 400px;
-    height: 400px;
-
-}
-#CentrerFormulaire {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-}
-#formuIns .Formu{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    width: 300px;
-    height: 350px;
-    border: solid #879FB5 5px;
-    background-color: #879FB5;
-    border-radius: 10%;
+    background-color: rgb(19, 68, 123);
+    border: solid rgb(19, 68, 123);
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 5px;
 }
-#formuIns{
+
+#FormuConnex {
+    border-radius: 10% 0% 0% 10%;
+}
+
+#FormuInscr {
+    border-radius: 0% 10% 10% 0%;
+}
+
+#FormuCnx{
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
     flex-direction: column;
-    /* border: solid yellow 2px; */
+    text-align: center;
+    width: 400px;
+    height: 500px;
+    margin-left: 385px;
+}
+
+#FormuIns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;  
+    width: 400px;
+    height: 500px;
+    margin-left: 615px;
+}
+
+#CentrerFormulaire {
+    display: flex;
+    justify-content: left;
+    align-items: center;
     width: 100%;
-    height: 100vh;
+    height: 100%;
+    position: fixed;
 }
 
 
@@ -73,6 +74,7 @@ input{
 
 #boutonSubmit{
     margin-top: 5px;
+    width: 150px;
     padding: 5px;
     cursor: pointer; 
 }
@@ -90,7 +92,7 @@ h1{
     font-size: 25px;
     color:white;
 }
-.inscription{
+/* .inscription{
     display: flex;
     padding-top: 20px;
 }
@@ -99,7 +101,7 @@ h1{
     padding-left: 10px; 
     font-style: italic;
     cursor: pointer;      
-}
+} */
 #hover:hover{
     color: blue;
     text-decoration: underline;
@@ -112,12 +114,6 @@ h1{
 .text{
     font-family: SemiBold;
 }
-.formu ul {
-    padding: 10px;
-    display: flex;
-    justify-content: space-around;
-    list-style: none;
-
 /* .formu li {
     background: darkblue;
     color: white;
@@ -132,12 +128,70 @@ h1{
      background: salmon;
  }
 } */
-}
+
 .inactive-btn {
     cursor: pointer; 
     list-style: none;
     color: blue;
     text-decoration-line: underline;
+}
+
+.boutonToIns {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    margin-top: 5px;
+    padding: 5px;
+    bottom: 364px;
+    right: 985px;
+    width: 150px;
+    color: black;
+}
+
+.boutonToCnx {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    margin-top: 5px;
+    padding: 5px;
+    bottom: 280px;
+    right: 630px;
+    width: 150px;
+    color: black;
+}
+
+.couleurLogoCnx {
+    display: flex;
+    position: absolute;
+    right: 610px;
+    width: 350px;
+    height: 500px;
+    background-color: rgb(199, 222, 248);
+    border-radius: 0% 10% 10% 0%;
+}
+
+.imageLogoCnx {
+    width: 330px;
+    height: 430px;
+    margin-top: 35px;
+    margin-left: 10px;
+}
+
+.couleurLogoIns {
+    display: flex;
+    position: absolute;
+    right: 975px;
+    width: 350px;
+    height: 500px;
+    background-color: rgb(199, 222, 248);
+    border-radius: 10% 0% 0% 10%;
+}
+
+.imageLogoIns {
+    width: 330px;
+    height: 430px;
+    margin-top: 35px;
+    margin-left: 10px;
 }
 
 @media screen and (max-height: 500px){

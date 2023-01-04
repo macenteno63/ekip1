@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import axios from "axios";
 import {NavLink} from "react-router-dom";
 import MentionContact from '../MentionContact';
+import Logo from '../../images/Logo.png';
 //require('dotenv').config({path: './.env'})
 const SignUpForm = () => {
     const [nom, setNom] = useState("");
@@ -39,9 +40,9 @@ const SignUpForm = () => {
             .catch((err) => console.log(err));
     };
     return (
-    <div id={"formu"}>
+    <div id={"FormuIns"}>
         <MentionContact/>
-        <form className='Formu' onSubmit={handleRegister} action={""}>
+        <form className='Formulaire' id={"FormuInscr"} onSubmit={handleRegister} action={""}>
             <h1>S'inscrire</h1>
             <label htmlFor={"prenom"}></label>
             <input type={"text"} id={"prenom"} placeholder={"Prenom"} onChange={(e)=> setPrenom(e.target.value)} value={prenom}/>
@@ -58,6 +59,9 @@ const SignUpForm = () => {
             <label htmlFor={"boutonSubmit"}></label>
             <input type={"submit"} id={"boutonSubmit"} value={"S'incrire"}/>
         </form>
+        <div className="couleurLogoIns">
+            <img className="imageLogoIns" src={Logo}/>
+        </div>
     </div>
     );
 };

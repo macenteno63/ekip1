@@ -18,6 +18,7 @@ color: white;
 
 .MentionContact li {
   display: flex;
+  width: 240px;
   flex-direction: row;
   text-align: center;
   font-size: 15px;

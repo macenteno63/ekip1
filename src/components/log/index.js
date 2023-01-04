@@ -7,18 +7,18 @@ const Log = () => {
     // const [signInModal, setSignInModal] = useState(true);
 
     let [isOpen, setIsOpen] = useState(false);
-    let [nom, setNom] = useState("Pas encore de compte : S'inscrire");
+    let [nom, setNom] = useState("S'inscrire");
     const handleModals = () => {
         if (isOpen)
         {
             setIsOpen(false);
-            setNom("Pas encore de compte : S'inscrire");
+            setNom("S'inscrire");
         }
 
         else
         {
             setIsOpen(true);
-            setNom("Déjà un compte : Se connecter");
+            setNom("Se connecter");
         }
     }
 
@@ -32,17 +32,17 @@ const Log = () => {
     //     // }
     // };
     return (
-        <div id={"formu"}>
+        <div id={isOpen ? "FormuIns" : "FormuCnx"}>
             {isOpen ?  <SignUpForm /> : <SignInForm />}
             {/*{signInModal && <SignInForm />}*/}
-            <ul  id={"bouton"}>
-                <li className={"active-btn"} id={"login"} onClick={handleModals}>
+            <div  id={"bouton"}>
+                <button className={isOpen ? "boutonToCnx" : "boutonToIns"} id={"login"} onClick={handleModals}>
                     {nom}
-                </li>
+                </button>
                 {/*<li className={signUPModal ? "active-btn" : "inactive-btn"} id={"register"} onClick={handleModals} >*/}
                 {/*    {nom}*/}
                 {/*</li>*/}
-            </ul>
+            </div>
         </div>
     );
 };
@@ -75,4 +75,3 @@ const Log = () => {
 // };
 
 export default Log;
-
