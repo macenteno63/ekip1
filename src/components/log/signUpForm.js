@@ -3,6 +3,7 @@ import axios from "axios";
 import {NavLink} from "react-router-dom";
 import MentionContact from '../MentionContact';
 import Logo from '../../images/Logo.png';
+import fond from '../../images/fond.jpg';
 //require('dotenv').config({path: './.env'})
 const SignUpForm = () => {
     const [nom, setNom] = useState("");
@@ -41,6 +42,7 @@ const SignUpForm = () => {
     };
     return (
     <div id={"FormuIns"}>
+        <img className='ImageFond' src={fond}/>
         <MentionContact/>
         <form className='Formulaire' id={"FormuInscr"} onSubmit={handleRegister} action={""}>
             <h1>S'inscrire</h1>
@@ -57,7 +59,7 @@ const SignUpForm = () => {
             <input type={"password"} id={"password"} name={"password"} placeholder={"Mot de Passe"} onChange={(e)=> setPassword(e.target.value)} value={password}/>
             <div className={"password error"}></div>
             <label htmlFor={"boutonSubmit"}></label>
-            <input type={"submit"} id={"boutonSubmit"} value={"S'incrire"}/>
+            <input type={"submit"} id={"boutonSubmit"} value={"S'inscrire"}/>
         </form>
         <div className="couleurLogoIns">
             <img className="imageLogoIns" src={Logo}/>

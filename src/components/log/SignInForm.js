@@ -3,6 +3,7 @@ import axios from "axios";
 import {NavLink} from "react-router-dom";
 import MentionContact from '../MentionContact';
 import Logo from '../../images/Logo.png';
+import fond from '../../images/fond.jpg';
 
 const SignInForm = () => {
         const [email, setEmail] = useState("");
@@ -45,6 +46,7 @@ const SignInForm = () => {
     return (
         
         <div id={"FormuCnx"}>
+            <img className='ImageFond' src={fond}/>
             <MentionContact/>
             <form className='Formulaire' id={"FormuConnex"} onSubmit={handleLogin} action={""}>
                 <h1>Se connecter</h1>
