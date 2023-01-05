@@ -4,7 +4,7 @@ import React from 'react';
 
 
 const EventList = () => {
-    const events = useSelector(state => state.event.event);
+    const events = useSelector(state => state.events.events);
     return (
         <div>
                 {events === null ? <div className="lds-spinner">

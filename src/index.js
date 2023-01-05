@@ -9,7 +9,7 @@ import {configureStore} from '@reduxjs/toolkit'
 
 import userReducer from "./reducers/user.reducer";
 import postReducer, {fetchPost} from "./reducers/postSlice"
-import eventReducer from "./reducers/event.reducer";
+import eventReducer, { fetchEvent } from "./reducers/event.reducer";
 
 const store = configureStore({
     reducer:{
@@ -19,7 +19,7 @@ const store = configureStore({
     },
 })
 store.dispatch(fetchPost());
-
+store.dispatch(fetchEvent());
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <Provider store={store}>

@@ -7,7 +7,9 @@ export const eventsSlice = createSlice({
   // Nom de la partie d'état
   name: "events",
   // Etat initial
-  initialState: [],
+  initialState: {
+    events : null
+},
   // Fonctions reducers qui permettent de réaliser des intéractions avec comme paramètres l'état actuel et l'action que l'on va effectuer sur cet état
   reducers: {
     // On crée un événement
@@ -50,53 +52,16 @@ export const eventsSlice = createSlice({
   },
 });
 
-// // Action creators sont générés pour chaque case de reducer
-// export const createEvent = (id) => {
-//   return (dispatch) => {
-//     return axios
-//       .post(`http://localhost:4000/api/event/`, id)
-//       .then((res) => {
-//         dispatch({ type: "events/addEvent", payload: res.data });
-//       })
-//       .catch((err) => console.log(err));
-//   };
-// };
-
-// // On récupère tous les événements
-// export const getEvents = () => {
-//   return (dispatch) => {
-//     return axios
-//       .get(`http://localhost:4000/api/event/`)
-//       .then((res) => {
-//         dispatch({ type: "events/getEvents", payload: res.data });
-//       })
-//       .catch((err) => console.log(err));
-//   };
-// };
-
-// // On supprime un événement
-// export const deleteEvent = (id) => {
-//   return (dispatch) => {
-//     return axios
-//       .delete(`http://localhost:4000/api/event/${id}`)
-//       .then((res) => {
-//         dispatch({ type: "events/deleteEvent", payload: id });
-//       })
-//       .catch((err) => console.log(err));
-//   };
-// };
-
-// // On crée une action pour mettre à jour un événement
-// export const updateEvent = (id) => {
-//   return (dispatch) => {
-//     return axios
-//       .put(`http://localhost:4000/api/event/${id}`)
-//       .then((res) => {
-//         dispatch({ type: "events/updateEvent", payload: res.data });
-//       })
-//       .catch((err) => console.log(err));
-//   };
-// };
+export const fetchEvent = () => {
+  return (dispatch) => {
+    return axios
+      .get(`http://localhost:4000/api/event/`)
+      .then((res) => {
+        dispatch({ type: "events/getEvents", payload: res.data });
+      })
+      .catch((err) => console.log(err));
+  };
+};
 
 // On exporte les actions
 export const { addEvent, getEvents, deleteEvent, updateEvent } = eventsSlice.actions;
