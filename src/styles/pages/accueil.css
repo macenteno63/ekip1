@@ -2,6 +2,15 @@
     font-family: Regular;
     src: url(../fonts/Inter-Regular.otf);
   }
+  
+@font-face {
+    font-family: Bold;
+    src: url(../fonts/Inter-Black.otf);
+  }
+
+p{
+    font-family: Bold;
+}
 
 h2{
     display: flex;
@@ -14,13 +23,19 @@ h2{
     margin-top: 0px;
 }
 
+.container {
+    height: 920px;
+}
+.container .scroll-bar{
+   height: 85%;
+}
 
 .grid-containerPost{
   display: grid;
-  grid-template-columns: auto auto auto;
-  padding-right: 50px;
-  
+  grid-template-columns: 23% 54% 5%;
+  padding-right: 20px;
 }
+
 .lds-spinner {
     display: inline-block;
     position: center;
@@ -99,12 +114,51 @@ h2{
     }
 }
 .grid-containerPostTab{
-  /*display: grid;*/
-
-  /*grid-template-columns: auto;*/
-  /*padding-top: 30px;*/
     display: flex;
     justify-content: center;
     align-items: center;
   
+}
+
+@media screen and (max-height: 1050px){
+    .container {
+    height: 850px;
+    }
+}
+
+@media screen and (max-height: 870px){
+    .container {
+    height: 750px;
+    }
+}
+
+@media screen and (max-height: 775px){
+    .container {
+    height: 650px;
+    }
+}
+
+@media screen and (max-height: 690px){
+    .container {
+    height: 540px;
+    }
+}
+
+@media screen and (max-height: 590px){
+    .container {
+    height: 430px;
+    }
+}
+
+@media screen and (max-height: 490px){
+    .container {
+    height: 300px;
+    }
+}
+
+@media screen and (max-width: 1370px){
+    .grid-containerPost{
+        display: grid;
+        grid-template-columns: 18% 65% 1%;
+    }
 }

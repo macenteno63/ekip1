@@ -49,7 +49,7 @@ const SignInForm = () => {
             <img className='ImageFond' src={fond}/>
             <MentionContact/>
             <form className='Formulaire' id={"FormuConnex"} onSubmit={handleLogin} action={""}>
-                <h1>Se connecter</h1>
+                <h1 className='Titre'>Se connecter</h1>
                 <label htmlFor={"mail"}></label>
                 <input type={"email"} id={"email"} name={"email"} placeholder={"Email"} onChange={(e)=> setEmail(e.target.value)} value={email}/>
                 <div className="email error"/>

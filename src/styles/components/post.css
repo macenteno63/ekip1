@@ -1,12 +1,13 @@
 
-.post{
+.ContainerPost{
     height: 370px;
     width: 800px;
     background-color: #2C3E50;
     border-radius: 20px;
     color: white;
     padding-left: 10px;
-    grid-template-columns: auto;   
+    grid-template-columns: auto;
+    margin-bottom: 20px;   
 }
 
 .post a{
@@ -38,10 +39,16 @@
     grid-template-columns: auto auto;
 }
 
-
+.textPostMessage{
+    padding-left: 50px;
+}
 
 .textPost{
-    padding-left: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    height: 230px;
+    padding-left: 20px;
 }
 
 .Icon{
@@ -49,7 +56,7 @@
     color: white;
 }
 
-.post button {
+.post button { 
     border: none;
     color: white;
     border-radius: 12px;
@@ -60,4 +67,45 @@
 
 .post button:hover {
     background-color: #396086;
+}
+
+@media screen and (max-width: 1600px){
+    .ContainerPost{
+        width: 700px;
+    }
+}
+
+@media screen and (max-width: 1370px){
+    .ContainerPost{
+        width: 650px;
+    }
+}
+
+@media screen and (max-width: 1140px){
+    .ContainerPost{
+        width: 500px;
+    }
+}
+
+@media screen and (max-width: 910px){
+    .ContainerPost{
+        width: 360px;
+        height: 410px;
+    }
+    .textPost {
+        height: 270px;
+    }
+}
+
+@media screen and (max-width: 710px){
+    .ContainerPost{
+        width: 250px;
+        height: 450px;
+    }
+    .Icon {
+        font-size: 30px;
+    }
+    .textPost {
+        height: 310px;
+    }
 }

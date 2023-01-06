@@ -45,7 +45,7 @@ const SignUpForm = () => {
         <img className='ImageFond' src={fond}/>
         <MentionContact/>
         <form className='Formulaire' id={"FormuInscr"} onSubmit={handleRegister} action={""}>
-            <h1>S'inscrire</h1>
+            <h1 className='Titre'>S'inscrire</h1>
             <label htmlFor={"prenom"}></label>
             <input type={"text"} id={"prenom"} placeholder={"Prenom"} onChange={(e)=> setPrenom(e.target.value)} value={prenom}/>
             <div className={"prenom error"}></div>

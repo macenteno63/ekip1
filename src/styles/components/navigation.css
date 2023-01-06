@@ -10,8 +10,8 @@
       justify-content: center;
       padding: 10px;
       margin-top: -10px;
-      margin-bottom: 0px;
-      left: 0;
+      margin-bottom: -10px;
+      margin-left: -10px;
 }
 
 .Navigation p{
@@ -19,25 +19,97 @@
 }
 
 .Navigation li {
-    display: flex;
-    flex-direction: row;
-    margin: 10px;
-    font-size: 20px;
-    color: white;
-    border-radius: 18px;
-    align-items: center;
-    background-color: #2C3E50;
-    margin-bottom: 50px;
-    justify-content: center;
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-direction: row;
+  margin: 10px 0;
+  justify-content: center;
+  font-size: 20px;
+  border-radius: 18px;
+  color: white;
+  transition: 0.5s;
+  overflow: hidden;
+  text-decoration: none;
 }
+
+.IconNav {
+  font-size: 40px;
+  color: white;
+}
+
 .Navigation li:hover {
-    background-color: #396086;
+  color: #255784;
+  background: #2196f3;
+  box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+  transition-delay: 1s;
+}
+
+
+.Navigation li span {
+  position: absolute;
+  display: block;
+}
+
+.Navigation li span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #2196f3);
+}
+
+.Navigation li:hover span:nth-child(1) {
+  left: 100%;
+  transition: 1s;
+}
+
+.Navigation li span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #2196f3);
+}
+
+.Navigation li:hover span:nth-child(3) {
+  right: 100%;
+  transition: 1s;
+  transition-delay: 0.5s;
+}
+
+.Navigation li span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #2196f3);
+}
+
+.Navigation li:hover span:nth-child(2) {
+  top: 100%;
+  transition: 1s;
+  transition-delay: 0.25s;
+}
+
+.Navigation li span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #2196f3);
+}
+
+.Navigation li:hover span:nth-child(4) {
+  bottom: 100%;
+  transition: 1s;
+  transition-delay: 0.75s;
 }
 
 .Navigation logout {
   display: flex;
-  position: fixed;
-  bottom: 5px;
+  position: absolute;
+  bottom: 1%;
   margin-left: 13%;
 }
 
@@ -58,6 +130,9 @@
     font-size: 24px;
     margin-left: 26px;
   }
+  .IconNav {
+    font-size: 38px;
+  }
 }
 
 @media screen and (max-width: 1400px){
@@ -68,6 +143,9 @@
   .Navigation logout{
     margin-left: 12%;
   }
+  .IconNav {
+    font-size: 36px;
+  }
 }
 
 @media screen and (max-width: 1200px){
@@ -75,24 +153,41 @@
     font-size: 16px;
     margin-left: 20px;
   }
+  .IconNav {
+    font-size: 34px;
+  }
 }
 
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 1050px){
   .menu{
-    font-size: 12px;
-    margin-left: 18px;
+    font-size: 14px;
+    margin-left: 20px;
+  }
+  .IconNav {
+    font-size: 32px;
+  }
+}
+
+@media screen and (max-width: 910px){
+  .menu{
+    display: none;
   }
   .Navigation logout{
-    margin-left: 11%;
+    margin-left: 9%;
+  }
+  .IconNav {
+    font-size: 45px;
   }
 }
 
 @media screen and (max-width: 600px){
   .menu{
-    font-size: 12px;
-    margin-left: 16px;
+    display: none;
   }
   .Navigation logout{
-    margin-left: 9%;
+    margin-left: 8%;
+  }
+  .IconNav {
+    font-size: 40px;
   }
 }

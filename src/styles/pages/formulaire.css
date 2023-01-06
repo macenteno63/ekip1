@@ -67,8 +67,7 @@
     position: fixed;
 }
 
-
-input{
+.Formulaire input{
     padding: 5px;
     margin-bottom: 20px;
 }
@@ -80,38 +79,16 @@ input{
     cursor: pointer; 
 }
 
-.mdp{
-    font-family: Regular;
-    text-align: right;
-    font-size: 13px;
-    color:white;
-    cursor: pointer; 
-}
-h1{
+.Titre{
     font-family: Bold;
     text-align: center;
     font-size: 25px;
     color:white;
 }
-#hover:hover{
-    color: blue;
-    text-decoration: underline;
-}
 
-.lien{
-    cursor: pointer;
-}
-
-.text{
+/* .text{
     font-family: SemiBold;
-}
-
-.inactive-btn {
-    cursor: pointer; 
-    list-style: none;
-    color: blue;
-    text-decoration-line: underline;
-}
+} */
 
 .boutonToIns {
     display: flex;
