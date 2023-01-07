@@ -5,6 +5,7 @@ import '../styles/components/navigation.css';
 import {FaComments, FaUserCircle, FaSignOutAlt, FaBullhorn, FaCommentDots} from "react-icons/fa";
 import axios from "axios";
 import cookie from "js-cookie";
+import LogoTransparent from '../images/LogoTransparent.png';
 
 const Navigation = () => {
     const removeCookie = (key) => {
@@ -26,6 +27,7 @@ const Navigation = () => {
     return (
         <div className="Navigation">
             <ul>
+                <img className='LogoNav' src={LogoTransparent}/>
                 <NavLink style={{ textDecoration: 'none' }} to="/formulaire" className={(nav) => (nav.isActive ? "nav-active" : "")} end>
                     <li>Formulaire</li>
                     
