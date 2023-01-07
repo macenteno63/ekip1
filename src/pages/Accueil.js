@@ -7,24 +7,25 @@ import Personne from "../components/Personne";
 import BoutonBasPage from '../components/BoutonBasPage';
 import { NavLink } from 'react-router-dom';
 import axios from "axios";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {getPost} from "../reducers/postSlice";
 
 const Accueil = () => {
     const [nom,setNom] = useState([]);
-    useEffect(()=>{
-        const fetchNom = async () =>{
-            await fetch('http://localhost:4000/api/user/all')
-                .then((resp)=>{
-                    return resp.json();
-                })
-                .then((res)=>{
-                    setNom(res);
-                })
-                .catch((err) => console.log(err));
-        }
-        fetchNom();
-    }, [nom])
+    const users = useSelector(state => state.utilisateurs.utilisateurs);
+    // useEffect(()=>{
+    //     const fetchNom = async () =>{
+    //         await fetch('http://localhost:4000/api/user/all')
+    //             .then((resp)=>{
+    //                 return resp.json();
+    //             })
+    //             .then((res)=>{
+    //                 setNom(res);
+    //             })
+    //             .catch((err) => console.log(err));
+    //     }
+    //     fetchNom();
+    // }, [nom])
 
 
   // useEffect(() => {
@@ -51,7 +52,7 @@ const Accueil = () => {
         </div>
 
         <div>
-            <Personne scaleValue={nom}/>
+            {users !== null && <Personne scaleValue={users}/>}
         </div>
 
         

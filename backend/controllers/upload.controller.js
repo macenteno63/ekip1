@@ -3,6 +3,7 @@ const fs = require("fs");
 const { uploadErrors } = require("../utils/error");
 
 module.exports.uploadProfil = async (req, res) => {
+  console.log(req.body);
   try {
     if (req.file.mimetype !== "image/jpg" && req.file.mimetype !== "image/png" && req.file.mimetype !== "image/jpeg")
       throw Error("invalid file");
@@ -13,7 +14,7 @@ module.exports.uploadProfil = async (req, res) => {
     return res.status(201).json({errors});
   }
     const fileName = req.body.name + ".jpg";
-    let writeStream = fs.createWriteStream(`${__dirname}/../../src/assets/profil/${fileName}`);
+    let writeStream = fs.createWriteStream(`${__dirname}/../../public/profil/${fileName}`);
     writeStream.write(req.file.buffer);
     writeStream.on('finish', () => {
         console.log('Fichier mis à jour !');
@@ -23,7 +24,7 @@ module.exports.uploadProfil = async (req, res) => {
   try {
     await UserModel.findByIdAndUpdate(
         req.body.userId,
-        { $set : {picture: "assets/profil/" + fileName}},
+        { $set : {picture: "./profil/" + fileName}},
         { new: true, upsert: true, setDefaultsOnInsert: true},
         (err, docs) => {
           if (!err)

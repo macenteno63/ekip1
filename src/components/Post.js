@@ -10,10 +10,11 @@ import {fetchPost} from "../reducers/postSlice";
 
 const Post = () => {
     const posts = useSelector(state => state.post.post)
+    const users = useSelector(state => state.utilisateurs.utilisateurs);
     //fetchPost();
     return (
         <div>
-                {posts === null ? <div className="lds-spinner">
+                {posts === null || users === null ? <div className="lds-spinner">
                         <div></div>
                         <div></div>
                         <div></div>
@@ -28,7 +29,7 @@ const Post = () => {
                         <div></div>
                     </div> :
                     posts.map((post) => {
-                        return <Card post={post} key={post._id}/>;
+                                return <Card post={post} users={users} key={post._id}/>;
                     })}
 
         </div>

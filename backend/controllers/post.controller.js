@@ -25,7 +25,7 @@ module.exports.createPost = async (req, res) => {
   }
   const fileName = req.body.posterId + "____" + Date.now() + ".jpg";
   console.log(fileName);
-  let writeStream = fs.createWriteStream(`${__dirname}/../../src/assets/posts/${fileName}`);
+  let writeStream = fs.createWriteStream(`${__dirname}/../../public/post/${fileName}`);
   writeStream.write(req.file.buffer);
   writeStream.on('finish', () => {
     console.log('Fichier mis à jour !');

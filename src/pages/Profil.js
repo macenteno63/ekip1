@@ -6,10 +6,10 @@ import {useContext} from "react";
 import {UidContext} from "../components/AppContext";
 import { useSelector} from "react-redux";
 import UploadImg from "../components/UploadImg";
+import {isEmpty} from "../components/utils";
 
 const Profil = () => {
     const user = useSelector(state => state.users.users);
-
     // useEffect(()=>{
     //     const fetchUser = async () =>{
     //         await fetch(`http://localhost:4000/api/user/${uid}`)
@@ -57,7 +57,7 @@ const Profil = () => {
                     </p>
                 </div> */}
 
-                { user.picture === "undefined" ? <p>pas de photo</p>:<a className='PhotoProfil'><img src={require(`../${user.picture}`)} alt="photo de profil"/></a>}
+                { isEmpty(user) ? <p>pas de photo</p>:<a className='PhotoProfil'><img src={user.picture} alt="photo de profil"/></a>}
 
                 <div className='InputImage'>
                     <UploadImg />

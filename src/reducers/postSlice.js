@@ -16,6 +16,9 @@ export const postSlice = createSlice({
             //     state.loading = 'idle'
             // }
             state.post = action.payload;
+        },
+        createPostt:(state,action)=>{
+
         }
     },
 });
@@ -29,6 +32,16 @@ export const fetchPost = () => {
       .catch((err) => console.log(err));
   };
 };
+
+export const createPost= (data) =>{
+        return (dispatch) => {
+            return axios
+                .post(`http://localhost:4000/api/post/`, data)
+                .then((res) => {
+                        dispatch({ type: "post/createPostt", payload: data });
+                    })
+                }
+}
 // export const fetchPost = () => async (dispatch) => {
 //   dispatch(getLoading())
 //     await axios .get("http://localhost:4000/api/post") .then(res =>dispatch(getPost(res.data)))

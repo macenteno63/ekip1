@@ -6,7 +6,9 @@ const userRoutes = require('./routes/user.routes');
 const postRoutes = require('./routes/post.routes');
 const eventRoutes = require('./routes/event.routes');
 const {checkUser, requireAuth} = require('./controllers/cookie.controller');
+const { createServer } = require("http");
 const cors = require('cors')
+const { Server } = require ("socket.io");
 
 //app.use(cors());
 const corsOptions = {
@@ -17,12 +19,6 @@ const corsOptions = {
     'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE',
     'preflightContinue': false
 }
-// app.use((req, res, next) => {
-//     res.setHeader('Access-Control-Allow-Origin', '*');
-//     res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
-//     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
-//     next();
-// });
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser());
@@ -42,6 +38,26 @@ app.use('/api/event',eventRoutes);
 app.get('/', (req, res) => {
     res.send('Hello World!')
 })
+
+
+
+const io = new Server(5000,{
+    cors: {
+        origin : 'http://localhost:3000',
+        credentials:true,
+    }
+});
+
+io.on("connection", (socket) => {
+    // send a message to the client
+    socket.emit("hello from server", 1, "2", { 3: Buffer.from([4]) });
+
+
+    // receive a message from the client
+    socket.on("hello from client", (...args) => {
+        console.log("bien recu client->server")
+    });
+});
 
 //server
 app.listen( process.env.PORT || 4000, () => {

@@ -37,7 +37,7 @@ const ModifyProfil = () => {
             <div className="grid-item">
                 <h2>Modifier le profil :</h2>
                     <ul className="liste">
-                        <li>age : <input type="number" min={0} max={60} defaultValue={age} onChange={(e)=> setAge(e.target.value)}/></li>
+                        <li>age : <input type="number" min={0} max={100} defaultValue={age} onChange={(e)=> setAge(e.target.value)}/></li>
                         <li>Metier : <br/> <input className="ProfilCommun" id={"Metier"} defaultValue={metier} onChange={(e)=> setMetier(e.target.value)}/></li>
                         <li>Ville :<br/> <input className="ProfilCommun" id={"Ville"} defaultValue={ville} onChange={(e)=> setVille(e.target.value)}/></li>
                         <li>Biographie : <br/> <textarea className="ProfilCommun" id={"Biographie"} defaultValue={bio} onChange={(e)=> setBio(e.target.value)}/></li>
