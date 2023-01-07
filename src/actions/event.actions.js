@@ -51,3 +51,5 @@ export const updateEvent = (id) => {
         .catch((err) => console.log(err));
     };
     }
+
+export const GET__EVENT = "GET__EVENT";

@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import '../styles/components/post.css';
 import { isEmpty } from "./utils.js";
 import Card from "./post/Card";
 import AccountCircle from '../images/account_circle.png';

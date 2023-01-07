@@ -41,7 +41,7 @@ const ModifyProfil = () => {
                         <li>Metier : <br/> <input className="ProfilCommun" id={"Metier"} defaultValue={metier} onChange={(e)=> setMetier(e.target.value)}/></li>
                         <li>Ville :<br/> <input className="ProfilCommun" id={"Ville"} defaultValue={ville} onChange={(e)=> setVille(e.target.value)}/></li>
                         <li>Biographie : <br/> <textarea className="ProfilCommun" id={"Biographie"} defaultValue={bio} onChange={(e)=> setBio(e.target.value)}/></li>
-                        <li>Études / diplôme obtenu :<br/><input className="ProfilCommun" id={"Etudes"} placeholder={user.etudes}/></li>
+                        {/* <li>Études / diplôme obtenu :<br/><input className="ProfilCommun" id={"Etudes"} placeholder={user.etudes}/></li> */}
                         <NavLink style={{ textDecoration: 'none' }} to="/profil" className={(nav) => (nav.isActive ? "nav-active" : "")} end>
                             <li><input className="ProfilCommun" id={"Modifier"} type="button" value="Modifier" onClick={(e)=>dispatch(updateBio(user._id,bio,metier,ville,age))}/></li>
 

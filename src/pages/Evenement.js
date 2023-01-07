@@ -2,8 +2,9 @@ import '../styles/pages/evenement.css'
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Navigation from '../components/Navigation';
-import CelluleEvent from '../components/CelluleEvent';
 import BoutonBasPage from '../components/BoutonBasPage';
+import EventList from '../components/EventList';
+import CelluleEvent from '../components/CelluleEvent';
 
 const Evenement = () => {
     return (
@@ -18,14 +19,7 @@ const Evenement = () => {
 
             <div className="scroll-bar">
                 <div className="grid-containerEventTab">
-                    <CelluleEvent/>
-                    <CelluleEvent/>
-                    <CelluleEvent/>
-                    <CelluleEvent/>
-                    <CelluleEvent/>
-                    <CelluleEvent/>
-                    <CelluleEvent/>
-                    <CelluleEvent/>
+                    {/* <EventList/> */}
                     <CelluleEvent/>
                     <CelluleEvent/>
                 </div>

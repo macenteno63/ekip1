@@ -6,6 +6,7 @@ function Personne(props) {
     return (
         <div className={"Personne"}>
             <ul>
+                <p>Utilisateurs :</p>
                 {users.map((user) => (
                     <li>{user.nom}</li>
                 ))}

@@ -12,138 +12,336 @@
     font-family: SemiBold;
     src: url(../fonts/Inter-Regular.otf);
   }
-#formu .Formu{
+.Formulaire{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 10px 0px;
     height: 100%;
     background: black;
     width: 80%;
-    background-color: #879FB5;
-    border-radius: 10%;
+    background-color: rgb(19, 68, 123);
+    border: solid rgb(19, 68, 123);
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 5px;
+    z-index: 1;
 }
-#formu{
+
+#FormuConnex {
+    border-radius: 10% 0% 0% 10%;
+}
+
+#FormuInscr {
+    border-radius: 0% 10% 10% 0%;
+}
+
+#FormuCnx{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     text-align: center;
-    /* border: solid yellow 2px; */
-    width: 400px;
-    height: 400px;
-
+    width: 46%;
+    height: 72%;
+    margin-left: 14%;
 }
-#CentrerFormulaire {
+
+#FormuIns{
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;  
+    width: 46%;
+    height: 72%;
+    margin-left: 29%;
+}
+
+#CentrerFormulaire {
+    display: flex;
+    justify-content: left;
     align-items: center;
     width: 100%;
     height: 100%;
     position: fixed;
 }
-#formuIns .Formu{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    width: 300px;
-    height: 350px;
-    border: solid #879FB5 5px;
-    background-color: #879FB5;
-    border-radius: 10%;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 5px;
-}
-#formuIns{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    flex-direction: column;
-    /* border: solid yellow 2px; */
-    width: 100%;
-    height: 100vh;
-}
 
-
-input{
+.Formulaire input{
     padding: 5px;
     margin-bottom: 20px;
 }
 
 #boutonSubmit{
     margin-top: 5px;
+    width: 150px;
     padding: 5px;
     cursor: pointer; 
 }
 
-.mdp{
-    font-family: Regular;
-    text-align: right;
-    font-size: 13px;
-    color:white;
-    cursor: pointer; 
-}
-h1{
+.Titre{
     font-family: Bold;
     text-align: center;
     font-size: 25px;
     color:white;
 }
-.inscription{
-    display: flex;
-    padding-top: 20px;
-}
-.inscriptionlien{
-    font-family: Regular;
-    padding-left: 10px; 
-    font-style: italic;
-    cursor: pointer;      
-}
-#hover:hover{
-    color: blue;
-    text-decoration: underline;
-}
 
-.lien{
-    cursor: pointer;
-}
-
-.text{
+/* .text{
     font-family: SemiBold;
-}
-.formu ul {
-    padding: 10px;
-    display: flex;
-    justify-content: space-around;
-    list-style: none;
-
-/* .formu li {
-    background: darkblue;
-    color: white;
-    width: 130px;
-    padding: 10px 0;
-    border-radius: 18px;
-    cursor: pointer;
-    transition: 0.3s;
-    box-shadow: 3px 3px 1px rgba(51, 51, 51, 0.418);
-
-&:hover {
-     background: salmon;
- }
 } */
-}
-.inactive-btn {
-    cursor: pointer; 
-    list-style: none;
-    color: blue;
-    text-decoration-line: underline;
+
+.boutonToIns {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    margin-top: 5px;
+    padding: 5px;
+    bottom: calc(38% - 4px);
+    right: calc(51% + 8px);
+    width: 8%;
+    color: black;
+    z-index: 1;
 }
 
-@media screen and (max-height: 500px){
-    #formu{
-        width: 400px;
-        height: 300px;
-    
+.boutonToCnx {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    margin-top: 5px;
+    padding: 5px;
+    bottom: calc(29% - 1px);
+    right: 33%;
+    width: 8%;
+    color: black;
+    z-index: 1;
+}
+
+.couleurLogoCnx {
+    display: flex;
+    position: absolute;
+    right: 32%;
+    width: calc(18% + 5px);
+    height: 52%;
+    background-color: rgb(199, 222, 248);
+    border-radius: 0% 10% 10% 0%;
+    z-index: 1;
+}
+
+.imageLogoCnx {
+    width: 94%;
+    margin-left: 3%;
+    height: 90%;
+    margin-top: 5%;
+}
+
+.couleurLogoIns {
+    display: flex;
+    position: absolute;
+    right: 51%;
+    width: calc(18% + 5px);
+    height: 52%;
+    background-color: rgb(199, 222, 248);
+    border-radius: 10% 0% 0% 10%;
+}
+
+.imageLogoIns {
+    width: 94%;
+    margin-left: 3%;
+    height: 90%;
+    margin-top: 5%;
+}
+
+.ImageFond {
+    display: flex;
+    position: absolute;
+    z-index: 0;
+    height: 150%;
+    width: 150%;
+}
+
+@media screen and (max-height: 885px){
+     .Formulaire {
+        gap: 5px 0px;
     }
-  }
+    .boutonToCnx{
+        bottom: calc(30% + 6px);
+    }
+}
+
+@media screen and (max-height: 750px){
+     .Formulaire {
+        gap: 1px 0px;
+    }
+    .boutonToCnx{
+        bottom: calc(30% + 8px);
+    }
+}
+@media screen and (max-height: 575px){
+    .Formulaire {
+       gap: 2px 0px;
+       height: 150%;
+   }
+   .boutonToCnx{
+    bottom: calc(23% + 5px);
+    }
+    .couleurLogoIns{
+        height: 62%;
+    }
+}
+
+@media screen and (max-width: 1710px){
+   .boutonToCnx{
+       width: 120px;
+   }
+   .boutonToIns{
+    width: 120px;
+    }
+   #boutonSubmit{
+        width: 120px;
+   }
+}
+
+@media screen and (max-width: 1440px){
+    #FormuIns{
+        width: 50%;
+    }
+    #FormuCnx{
+        width: 50%;
+        margin-left: 8%;
+    }
+    .couleurLogoCnx{
+        width: calc(22% + 5px);
+        right: 31%;
+    }
+    .boutonToIns{
+        width: 120px;
+        right: calc(56% - 5px);
+    }
+    .boutonToCnx{
+        width: 120px;
+        right: 29%;
+    }
+    #boutonSubmit{
+         width: 120px;
+    }
+    .couleurLogoIns{
+        width: calc(22% + 5px);
+        right: calc(50% + 5px);
+    }
+ }
+
+ @media screen and (max-width: 1210px){
+    #FormuIns{
+        width: 55%;
+    }
+    #FormuCnx{
+        width: 55%;
+        margin-left: 5%;
+    }
+    .couleurLogoCnx{
+        width: calc(27% + 5px);
+        right: calc(24% + 8px);
+    }
+    .boutonToIns{
+        width: 120px;
+        right: calc(55% - 5px);
+    }
+    .boutonToCnx{
+        width: 120px;
+        right: calc(24% - 10px);
+    }
+    #boutonSubmit{
+         width: 120px;
+    }
+    .couleurLogoIns{
+        width: calc(27% + 5px);
+        right: calc(49% + 5px);
+    }
+ }
+
+ @media screen and (max-width: 970px){
+    #FormuIns{
+        width: 60%;
+    }
+    #FormuCnx{
+        width: 60%;
+        margin-left: 2%;
+    }
+    .couleurLogoCnx{
+        width: calc(32% + 5px);
+        right: 18%;
+    }
+    .boutonToIns{
+        width: 100px;
+        right: calc(54% - 5px);
+    }
+    .boutonToCnx{
+        width: 100px;
+        right: calc(19% - 10px);
+    }
+    #boutonSubmit{
+         width: 100px;
+    }
+    .couleurLogoIns{
+        width: calc(32% + 5px);
+        right: calc(48% + 10px);
+    }
+ }
+
+ @media screen and (max-width: 680px){
+    #FormuIns{
+        width: 65%;
+    }
+    #FormuCnx{
+        width: 65%;
+        margin-left: -1%;
+    }
+    .couleurLogoCnx{
+        width: calc(37% + 5px);
+        right: 11%;
+    }
+    .boutonToIns{
+        width: 100px;
+        right: calc(53% - 5px);
+    }
+    .boutonToCnx{
+        width: 100px;
+        right: calc(14% - 10px);
+    }
+    #boutonSubmit{
+         width: 100px;
+    }
+    .couleurLogoIns{
+        width: calc(37% + 5px);
+        right: calc(47% + 15px);
+    }
+ }
+
+ @media screen and (max-width: 500px){
+    #FormuIns{
+        width: 65%;
+    }
+    #FormuCnx{
+        width: 65%;
+        margin-left: 0%;
+    }
+    .boutonToIns{
+        width: 70px;
+        right: calc(52% - 5px);
+    }
+    .couleurLogoCnx{
+        width: calc(37% + 5px);
+        right: 8%;
+    }
+    .boutonToCnx{
+        width: 70px;
+        right: calc(14% - 10px);
+    }
+    #boutonSubmit{
+         width: 90px;
+    }
+    .couleurLogoIns{
+        width: calc(37% + 5px);
+        right: calc(47% + 15px);
+    }
+ }

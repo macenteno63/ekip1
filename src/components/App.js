@@ -59,7 +59,7 @@ const App = () => {
       <UidContext.Provider value={uid}>
         <BrowserRouter>
           <Routes>
-            <Route path="/formulaire" element={<Formulaire />} />
+          <Route path="/formulaire" element={<Formulaire />} />
             {/* # si le chemin est reinitialisationMdp on affiche le composant Reinit */}
             <Route path="/reinitialisationMdp" element={<Reinit />} />
             {/* # si c'est l'accueil du site alors on affiche l'acceuil */}

@@ -8,7 +8,7 @@
     right: 0;
     font-weight: 90;
     list-style: none;
-    justify-content: center;
+    justify-content: flex-start;
     margin-top: -10px;
     margin-bottom: 0px;
     padding: 10px;
@@ -23,5 +23,9 @@
     color: white;
     border-radius: 18px;
     background-color: #396086;
-    margin-bottom: 50px;
+    margin-bottom: 5px;
+}
+
+.Personne p {
+    color: white;
 }

@@ -1,13 +1,33 @@
-import React from 'react';
 import {useSelector} from 'react-redux';
-import EventItem from './EventItem';
+import EventItem from './event/EventItem';
+import React from 'react';
 
-const EventList = (props) => {
-    const events = useSelector(state => state.events);
+
+const EventList = () => {
+    const events = useSelector(state => state.events.events);
     return (
-        <ul>
-            {events.map(event => <EventItem key={event._id} scaleValue={event} />)}
-        </ul>
+        <div>
+                {events === null ? <div className="lds-spinner">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div> :
+                    events.map((event) => {
+                        return (
+                            <EventItem event={event}/>
+                        )
+                    })}
+
+        </div>
     );
 }
 

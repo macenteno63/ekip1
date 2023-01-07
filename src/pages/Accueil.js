@@ -38,7 +38,7 @@ const Accueil = () => {
             <Navigation/>
         </div>
 
-        <div>
+        <div className='container'>
             <h2>Fil de discussion :</h2>
             
             <div className="scroll-bar">

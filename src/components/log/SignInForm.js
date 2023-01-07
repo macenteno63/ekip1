@@ -2,7 +2,8 @@ import React, {useState} from 'react';
 import axios from "axios";
 import {NavLink} from "react-router-dom";
 import MentionContact from '../MentionContact';
-
+import Logo from '../../images/Logo.png';
+import fond from '../../images/fond.jpg';
 
 const SignInForm = () => {
         const [email, setEmail] = useState("");
@@ -44,20 +45,26 @@ const SignInForm = () => {
 
     return (
         
-        <div id={"formu"}>
+        <div id={"FormuCnx"}>
+            <img className='ImageFond' src={fond}/>
             <MentionContact/>
-            <form className='Formu' onSubmit={handleLogin} action={""}>
-                <h1>Se connecter</h1>
+            <form className='Formulaire' id={"FormuConnex"} onSubmit={handleLogin} action={""}>
+                <h1 className='Titre'>Se connecter</h1>
                 <label htmlFor={"mail"}></label>
                 <input type={"email"} id={"email"} name={"email"} placeholder={"Email"} onChange={(e)=> setEmail(e.target.value)} value={email}/>
                 <div className="email error"/>
                 <label htmlFor={"password"}></label>
                 <input type={"password"} id={"password"} name={"password"} placeholder={"Mot de Passe"} onChange={(e)=> setPassword(e.target.value)} value={password}/>
-                <NavLink to={"/reinitialisationMdp"}>mot de passe oublié</NavLink>
+                {/* <NavLink to={"/reinitialisationMdp"}>mot de passe oublié</NavLink> */}
                 <div className="password error"></div>
                 <input type={"submit"} id={"boutonSubmit"} value={"Se connecter"}/>
             </form>
+            <div className="couleurLogoCnx">
+            <img className="imageLogoCnx" src={Logo}/>
+            </div>
         </div>
+
+    
     );
 };
 

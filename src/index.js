@@ -16,7 +16,8 @@ const store = configureStore({
     reducer:{
         users: userReducer,
         post: postReducer,
-        utilisateurs: utilisateursSlice
+        utilisateurs: utilisateursSlice,
+        event: eventReducer
     },
 })
 store.dispatch(fetchPost());

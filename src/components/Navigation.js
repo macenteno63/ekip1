@@ -31,20 +31,32 @@ const Navigation = () => {
                     
                 </NavLink>
                 <NavLink style={{ textDecoration: 'none' }} to="/accueil" className={(nav) => (nav.isActive ? "nav-active" : "")} end>
-                    <li>
-                        <p><FaComments className="Icon"/></p> 
+                    <li className='BoutonNavig'>
+                        <a><FaComments className="IconNav"/></a> 
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
                         <p className="menu">Accueil</p>
                     </li>
                 </NavLink>
                 <NavLink style={{ textDecoration: 'none' }} to="/evenement" className={(nav) => (nav.isActive ? "nav-active" : "")} end>
-                    <li>
-                        <p><FaBullhorn className="Icon"/></p>
+                    <li className='BoutonNavig'>
+                        <a><FaBullhorn className="IconNav"/></a>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
                         <p className="menu">Evenement</p>
                     </li>
                 </NavLink>
                 <NavLink style={{ textDecoration: 'none' }} to="/messagerie" className={(nav) => (nav.isActive ? "nav-active" : "")} end>
-                    <li>
-                        <p><FaCommentDots className="Icon"/></p>
+                    <li className='BoutonNavig'>
+                        <a><FaCommentDots className="IconNav"/></a>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
                         <p className="menu">Messagerie</p>
                     </li>
                 </NavLink>
@@ -52,14 +64,18 @@ const Navigation = () => {
                     <li>Calendrier</li>
                 </NavLink> */}
                 <NavLink style={{ textDecoration: 'none' }} to="/profil" className={(nav) => (nav.isActive ? "nav-active" : "")} end>
-                    <li>
-                        <p><FaUserCircle className="Icon"/></p>
+                    <li className='BoutonNavig'>
+                        <a><FaUserCircle className="IconNav"/></a>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
                         <p className="menu">Profil</p>
                     </li>
                 </NavLink>
             </ul>
             <div onClick={logout}>
-                <logout> <FaSignOutAlt className="Icon"/> </logout>
+                <logout> <FaSignOutAlt className="IconNav"/> </logout>
             </div>
 
         </div>
