@@ -4,12 +4,14 @@ import {AiOutlineDislike, AiOutlineLike, AiOutlineMessage} from "react-icons/ai"
 import {useSelector} from "react-redux";
 import {isEmpty} from "../utils";
 import log from "../log";
+import '../../styles/components/post.css';
 
 const Card = (props) => {
     const [isLoading, setIsLoading] = useState(true);
-    const [userr,setUserr] = useState(null)
+    const [userr,setUserr] = useState([])
     const test = useSelector(state => state.utilisateurs.utilisateurs)
    function user (){
+        console.log(props.users)
         props.users.forEach(element => element._id === props.post.posterId && setUserr(element))
         }
 
@@ -18,7 +20,7 @@ const Card = (props) => {
         isEmpty(props.users)  ? console.log("loading") : user()
     }, [props.users]);
     return (
-        isLoading ? (<div>null</div>) : (<div className="post">
+        isLoading ? (<div>null</div>) : (<div className='ContainerPost'> <div className="post">
             {/*<img*/}
             {/*    src={*/}
             {/*        !isEmpty(users[0]) &&*/}
@@ -33,25 +35,26 @@ const Card = (props) => {
             {/*    }*/}
             {/*    alt="poster-pic"*/}
             {/*/>*/}
-            <img src={`./post/${props.post.picture}`} alt={"pp"}/>
+            <img src={userr.picture} alt={"pp"}/>
             <div className="grid-containerHeaderPost">
-                <h3>{userr.nom}</h3>
+                <h3>{userr.nom + " " +userr.prenom}</h3>
             </div>
 
             <hr/>
-            <div className="textPost">
+            <div className="textPostMessage">
                 <a>
                     {props.post.message}
                 </a>
             </div>
 
             <hr/>
+            <img src={`./post/${props.post.picture}`} alt={"pp"}/>
             <div className="textPost">
                 <button><AiOutlineLike className='Icon'/>32</button>
                 <button><AiOutlineDislike className='Icon'/>5</button>
                 <button><AiOutlineMessage className='Icon'/>9</button>
             </div>
-        </div>)
+        </div></div>)
 
     );
 };

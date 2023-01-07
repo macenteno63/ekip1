@@ -10,6 +10,7 @@ import {configureStore} from '@reduxjs/toolkit'
 import userReducer from "./reducers/user.reducer";
 import postReducer, {fetchPost} from "./reducers/postSlice"
 import utilisateursSlice, {fetchUsers} from "./reducers/utilisateursSlice";
+import eventReducer from "./reducers/event.reducer";
 // import eventReducer from "./reducers/event.reducer";
 
 const store = configureStore({

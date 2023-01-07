@@ -2,7 +2,7 @@ const UserModel = require("../models/User");
 const ObjectID = require("mongoose").Types.ObjectId;
 
 module.exports.getAllUsers = async (req, res) => {
-    UserModel.find().select("nom")
+    UserModel.find().select("-password")
         .then(user => res.status(200).json(user))
         .catch(err => res.status(200).send({ err }));
 };
