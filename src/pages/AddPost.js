@@ -20,6 +20,7 @@ const AddPost = () => {
         data.append("file", file);
         console.log(data);
         dispatch(createPost(data));
+        window.location= "/"
     };
     return (
     <div class="grid-container">
@@ -43,7 +44,7 @@ const AddPost = () => {
                     <br/>
                         <li><input id={"titre"} placeholder={"  Titre"}/></li>
                         <li><input id={"description"} placeholder={"  Description"} onChange={(e)=> setMessage(e.target.value)}/></li>
-                        <input type="submit" value="Envoyer" />
+                        <input type="submit" value="Envoyer"/>
 
                         {/*<NavLink style={{ textDecoration: 'none' }} to="/accueil" className={(nav) => (nav.isActive ? "nav-active" : "")} end>*/}
                         {/*    <li><input className="ProfilCommun" id={"Modifier"} type="button" value="Modifier" onClick={(e)=>dispatch(createPost(uid,filename,message)}/></li>                </NavLink>*/}
