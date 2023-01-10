@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 // Comme href en HTML deviendront des ancres (a)
 import { NavLink } from 'react-router-dom';
 import '../styles/components/navigation.css';
@@ -6,6 +6,7 @@ import {FaComments, FaUserCircle, FaSignOutAlt, FaBullhorn, FaCommentDots} from 
 import axios from "axios";
 import cookie from "js-cookie";
 import LogoTransparent from '../images/LogoTransparent.png';
+import {UidContext} from "./AppContext";
 
 const Navigation = () => {
     const uid = useContext(UidContext)
