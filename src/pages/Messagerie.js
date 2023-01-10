@@ -3,25 +3,34 @@ import React, {useState, useEffect} from 'react';
 import Navigation from '../components/Navigation';
 import Personne from '../components/Personne';
 import {useSelector} from "react-redux";
-import { io } from "socket.io-client";
+import {io} from "socket.io-client";
 
 const Messagerie = () => {
-    const [nom,setNom] = useState([]);
-    const [message,setMessage] = useState("")
+    const [nom, setNom] = useState([]);
+    const [message, setMessage] = useState("")
 
 
     const socket = io("ws://localhost:5000");
 
-// send a message to the server
-    socket.emit("hello from client");
-
-// receive a message from the server
-    socket.on("hello from server", (...args) => {
-        console.log("bien recu ->server->client")
-        setMessage("bien recu ->server->client");
+    socket.on('connect', () => {
+        console.log('Connecté au serveur');
     });
-    const sendMessage = ()=>{
-        socket.emit("hello from client")
+
+
+// Reçoit un message du serveur
+    socket.on('receiveMessage', (data) => {
+        console.log(`Message reçu de ${data.sender} : ${data.message}`);
+        setMessage(data.message)
+    });
+
+    socket.on('disconnect', () => {
+        console.log('Déconnecté du serveur');
+    });
+    function sendMessage () {
+        socket.emit('sendMessage', {
+            sender: 'mateo',
+            message: 'Salut, comment ça va ?'
+        });
     }
     // const users = useSelector(state => state.utilisateurs.utilisateurs);
     // useEffect(()=>{
@@ -38,13 +47,13 @@ const Messagerie = () => {
     //         .catch((err) => console.log(err));
     // }
     return (
-    <div>
-        <Navigation/>
-        {/*<Personne scaleValue={users}/>*/}
-        <h2>Messagerie</h2>
-        <div style={{textAlign:"center"}}>{message}</div>
-        <button style={{textAlign:"center"}} onClick={sendMessage()}>envoie coucou</button>
-    </div>
+        <div>
+            <Navigation/>
+            {/*<Personne scaleValue={users}/>*/}
+            <h2>Messagerie</h2>
+            <div style={{textAlign: "center"}}>{message}</div>
+            <button style={{textAlign: "center"}} onClick={sendMessage()}>envoie coucou</button>
+        </div>
     );
 };
 

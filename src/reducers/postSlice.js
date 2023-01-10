@@ -18,7 +18,7 @@ export const postSlice = createSlice({
             state.post = action.payload;
         },
         createPostt:(state,action)=>{
-
+            state.push(action.payload)
         }
     },
 });

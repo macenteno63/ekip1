@@ -5,14 +5,17 @@ import Post from '../components/Post';
 import Navigation from '../components/Navigation';
 import Personne from "../components/Personne";
 import BoutonBasPage from '../components/BoutonBasPage';
-import { NavLink } from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import axios from "axios";
 import {useDispatch, useSelector} from "react-redux";
 import {getPost} from "../reducers/postSlice";
 
 const Accueil = () => {
-    const [nom,setNom] = useState([]);
+    const [nom, setNom] = useState([]);
     const users = useSelector(state => state.utilisateurs.utilisateurs);
+    // function clickAction(nom){
+    //     console.log(nom)
+    // }
     // useEffect(()=>{
     //     const fetchNom = async () =>{
     //         await fetch('http://localhost:4000/api/user/all')
@@ -28,37 +31,42 @@ const Accueil = () => {
     // }, [nom])
 
 
-  // useEffect(() => {
-  //   getPostt();
-  // }, [dispatch]);
+    // useEffect(() => {
+    //   getPostt();
+    // }, [dispatch]);
     return (
-    <div className="grid-containerPost">
+        <div className="grid-containerPost">
 
-        <div>
-            <Navigation/>
-        </div>
-
-        <div className='container'>
-            <h2>Fil de discussion :</h2>
-            
-            <div className="scroll-bar">
-                <div className="grid-containerPostTab">
-                    <Post/>
-                </div>
+            <div>
+                <Navigation/>
             </div>
-            <NavLink style={{ textDecoration: 'none' }} to="/addpost" className={(nav) => (nav.isActive ? "nav-active" : "")} end>
-                <BoutonBasPage scaleValue="Ajouter un post"></BoutonBasPage>       
-            </NavLink>
-        </div>
 
-        <div>
-            {users !== null && <Personne scaleValue={users}/>}
-        </div>
+            <div className='container'>
+                <h2>Fil de discussion :</h2>
 
-        
-        
-        
-    </div>
+                <div className="scroll-bar">
+                    <div className="grid-containerPostTab">
+                        <Post/>
+                    </div>
+                </div>
+                <NavLink style={{textDecoration: 'none'}} to="/addpost"
+                         className={(nav) => (nav.isActive ? "nav-active" : "")} end>
+                    <BoutonBasPage scaleValue="Ajouter un post"></BoutonBasPage>
+                </NavLink>
+            </div>
+
+            <div>
+                {users !== null && (
+                    <div className={"Personne"}>
+                        <p> Utilisateur:</p>
+                        <ul>
+                            {users.map((user) => <button onClick={event => console.log(user.nom)}><Personne scaleValue={user} key={user._id}/></button>)}
+                        </ul>
+                    </div>)}
+            </div>
+
+
+        </div>
     );
 };
 

@@ -1,12 +1,14 @@
-import React from 'react';
+import React, {useContext} from 'react';
 // Comme href en HTML deviendront des ancres (a)
 import { NavLink } from 'react-router-dom';
 import '../styles/components/navigation.css';
 import {FaComments, FaUserCircle, FaSignOutAlt, FaBullhorn, FaCommentDots} from "react-icons/fa";
 import axios from "axios";
 import cookie from "js-cookie";
+import {UidContext} from "./AppContext";
 
 const Navigation = () => {
+    const uid = useContext(UidContext)
     const removeCookie = (key) => {
         if (window !== "undefined") {
             cookie.remove(key, {expires: 1});
@@ -74,9 +76,10 @@ const Navigation = () => {
                     </li>
                 </NavLink>
             </ul>
-            <div onClick={logout}>
+            {uid &&             <div onClick={logout}>
                 <logout> <FaSignOutAlt className="IconNav"/> </logout>
-            </div>
+            </div>}
+
 
         </div>
     );

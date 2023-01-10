@@ -11,7 +11,6 @@ const Card = (props) => {
     const [userr,setUserr] = useState([])
     const test = useSelector(state => state.utilisateurs.utilisateurs)
    function user (){
-        console.log(props.users)
         props.users.forEach(element => element._id === props.post.posterId && setUserr(element))
         }
 
