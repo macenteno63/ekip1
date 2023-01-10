@@ -1,11 +1,11 @@
-import React, {useContext} from 'react';
+import React from 'react';
 // Comme href en HTML deviendront des ancres (a)
 import { NavLink } from 'react-router-dom';
 import '../styles/components/navigation.css';
 import {FaComments, FaUserCircle, FaSignOutAlt, FaBullhorn, FaCommentDots} from "react-icons/fa";
 import axios from "axios";
 import cookie from "js-cookie";
-import {UidContext} from "./AppContext";
+import LogoTransparent from '../images/LogoTransparent.png';
 
 const Navigation = () => {
     const uid = useContext(UidContext)
@@ -28,6 +28,7 @@ const Navigation = () => {
     return (
         <div className="Navigation">
             <ul>
+                <img className='LogoNav' src={LogoTransparent}/>
                 <NavLink style={{ textDecoration: 'none' }} to="/formulaire" className={(nav) => (nav.isActive ? "nav-active" : "")} end>
                     <li>Formulaire</li>
                     
