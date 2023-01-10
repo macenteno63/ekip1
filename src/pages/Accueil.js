@@ -1,39 +1,14 @@
 import '../styles/pages/erreur.css'
 import '../styles/pages/accueil.css'
-import React, {useState, useEffect} from 'react';
 import Post from '../components/Post';
 import Navigation from '../components/Navigation';
 import Personne from "../components/Personne";
 import BoutonBasPage from '../components/BoutonBasPage';
 import {NavLink} from 'react-router-dom';
-import axios from "axios";
-import {useDispatch, useSelector} from "react-redux";
-import {getPost} from "../reducers/postSlice";
+import {useSelector} from "react-redux";
 
 const Accueil = () => {
-    const [nom, setNom] = useState([]);
     const users = useSelector(state => state.utilisateurs.utilisateurs);
-    // function clickAction(nom){
-    //     console.log(nom)
-    // }
-    // useEffect(()=>{
-    //     const fetchNom = async () =>{
-    //         await fetch('http://localhost:4000/api/user/all')
-    //             .then((resp)=>{
-    //                 return resp.json();
-    //             })
-    //             .then((res)=>{
-    //                 setNom(res);
-    //             })
-    //             .catch((err) => console.log(err));
-    //     }
-    //     fetchNom();
-    // }, [nom])
-
-
-    // useEffect(() => {
-    //   getPostt();
-    // }, [dispatch]);
     return (
         <div className="grid-containerPost">
 

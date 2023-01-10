@@ -8,8 +8,8 @@ const EventItem = () => {
                 { event.picture === "undefined" ? <p>pas de photo</p>:<a className='imageEvent'><img src={require(`../${event.picture}`)} alt="photo de l'event"/></a>}
                 <div className="event">
                     <h3>{event.titre}</h3>
-                    <a>{event.posterId}</a>
-                    <a className="date">{event.date}</a>
+                    <p>{event.posterId}</p>
+                    <p className="date">{event.date}</p>
                 </div> 
             </div>
     );

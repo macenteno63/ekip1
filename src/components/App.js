@@ -17,8 +17,7 @@ import {useDispatch} from "react-redux";
 // import { getUser } from '../actions/user.actions'; // reducer on utilise pas
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import {createUser, getUser} from "../reducers/user.reducer";
-import {fetchPost, fetchUsers, getPost} from "../reducers/postSlice";
+import {createUser} from "../reducers/user.reducer";
 
 const App = () => {
   const [uid, setUid] = useState(null);

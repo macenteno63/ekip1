@@ -11,9 +11,9 @@ return <div id={"Reinitialiser"}>
                     <input type={"submit"} id={"boutonSubmit"} value={"Se connecter"}/>
                 </form>
                 <div className="inscription">
-                    <a className="text"> Déjà un compte ? </a>
+                    <p className="text"> Déjà un compte ? </p>
                     {/* href pour le moment à changer si on fait la page */}
-                    <a className="inscriptionlien" id={"hover"} href="/formulaire">Connexion</a>
+                    <p className="inscriptionlien" id={"hover"} href="/formulaire">Connexion</p>
                     
                 </div>
         </div>

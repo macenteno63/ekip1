@@ -3,7 +3,6 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Navigation from '../components/Navigation';
 import BoutonBasPage from '../components/BoutonBasPage';
-import EventList from '../components/EventList';
 import CelluleEvent from '../components/CelluleEvent';
 
 const Evenement = () => {
@@ -19,7 +18,6 @@ const Evenement = () => {
 
             <div className="scroll-bar">
                 <div className="grid-containerEventTab">
-                    {/* <EventList/> */}
                     <CelluleEvent/>
                     <CelluleEvent/>
                 </div>

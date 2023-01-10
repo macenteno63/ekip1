@@ -1,8 +1,6 @@
 import '../styles/pages/addpost.css'
 import React, {useContext, useState} from 'react';
-import { NavLink } from 'react-router-dom';
 import Navigation from '../components/Navigation';
-import {updateBio, uploadPicture} from "../reducers/user.reducer";
 import {useDispatch} from "react-redux";
 import {createPost} from "../reducers/postSlice";
 import {UidContext} from "../components/AppContext";
@@ -23,12 +21,12 @@ const AddPost = () => {
         window.location= "/"
     };
     return (
-    <div class="grid-container">
-        <div class="grid-item">
+    <div className="grid-container">
+        <div className="grid-item">
             <Navigation/>
         </div>
 
-        <div class="grid-item">
+        <div className="grid-item">
            <h2 className="titre">Ajouter un post :</h2>
 
                 <form action="" onSubmit={handlePicture} className="upload-pic">

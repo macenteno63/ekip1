@@ -8,7 +8,7 @@ const utilisateursSlice = createSlice({
   },
     reducers:{
         getAll:(state,action)=>{
-            state.utilisateurs = action .payload;
+            state.utilisateurs = action.payload;
         }
     }
 });

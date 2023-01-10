@@ -9,8 +9,4 @@ function Personne(props) {
         </div>
     );
 }
-
-{/*{users.map((user) => (*/}
-{/*    <li>{user.nom}</li>*/}
-{/*))}*/}
 export default Personne;
