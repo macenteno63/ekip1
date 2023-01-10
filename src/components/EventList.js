@@ -4,7 +4,8 @@ import React from 'react';
 
 
 const EventList = () => {
-    const events = useSelector(state => state.events.events);
+    const events = useSelector(state => state.event.event)
+    const users = useSelector(state => state.utilisateurs.utilisateurs);
     return (
         <div>
                 {events === null ? <div className="lds-spinner">
@@ -20,13 +21,11 @@ const EventList = () => {
                         <div></div>
                         <div></div>
                         <div></div>
+                        <grid></grid>
                     </div> :
                     events.map((event) => {
-                        return (
-                            <EventItem event={event}/>
-                        )
+                                return <EventItem event={event} users={users} key={event._id}/>;
                     })}
-
         </div>
     );
 }
