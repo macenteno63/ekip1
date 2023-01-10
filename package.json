@@ -42,8 +42,8 @@
   "scripts": {
     "start": "react-scripts start",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b gh-pages -d docs",
-    "build": "react-scripts docs",
+    "deploy": "gh-pages -b master -d build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
