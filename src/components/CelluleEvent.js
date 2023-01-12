@@ -1,8 +1,10 @@
 import React from 'react';
 import '../styles/components/celluleEvent.css';
 import Event from '../images/TestEvent.jpg';
+import {useSelector} from "react-redux";
 
 const CelluleEvent = () => {
+    const event = useSelector(state => state.event.event)
     return (
         <div className="grid-itemCellEvent">
             <img className="imageEvent" src={Event}/>

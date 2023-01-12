@@ -16,6 +16,7 @@ const EventSchema = new mongoose.Schema(
     },
     description: {
       type: String,
+      maxlength: 500,
     },
     nbPlaces: {
       type : Number,

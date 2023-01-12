@@ -1,5 +1,7 @@
 .event{
-    height: 70px;
+    display: flex;
+    flex-direction: column;
+    height: 400px;
     background-color: #2C3E50;
     border-radius: 0 0 10px 10px;
     color: white;
@@ -25,4 +27,7 @@
 }
 .date{
     margin-left: 100px;
+}
+hr {
+    width: 90%;
 }

@@ -1,6 +1,6 @@
 .grid-containerEvent{
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 20% 35% 35% 5%;
     padding-right: 50px;
     
 }

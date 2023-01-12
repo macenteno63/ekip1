@@ -26,7 +26,7 @@ module.exports.createEvent = async (req, res) => {
     return res.status(201).json({errors});
   }
     const fileName = req.body.name + ".jpg";
-    let writeStream = fs.createWriteStream(`${__dirname}/../../src/assets/events/${fileName}`);
+    let writeStream = fs.createWriteStream(`${__dirname}/../../public/event/${fileName}`);
     writeStream.write(req.file.buffer);
     writeStream.on('finish', () => {
         console.log('Fichier mis à jour !');

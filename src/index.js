@@ -10,8 +10,7 @@ import {configureStore} from '@reduxjs/toolkit'
 import userReducer from "./reducers/user.reducer";
 import postReducer, {fetchPost} from "./reducers/postSlice"
 import utilisateursSlice, {fetchUsers} from "./reducers/utilisateursSlice";
-import eventReducer from "./reducers/event.reducer";
-// import eventReducer from "./reducers/event.reducer";
+import eventReducer, {fetchEvent} from "./reducers/eventSlice";
 
 const store = configureStore({
     reducer:{
@@ -22,6 +21,7 @@ const store = configureStore({
     },
 })
 store.dispatch(fetchPost());
+store.dispatch(fetchEvent())
 store.dispatch(fetchUsers());
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

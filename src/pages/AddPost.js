@@ -1,8 +1,6 @@
 import '../styles/pages/addpost.css'
 import React, {useContext, useState} from 'react';
-import { NavLink } from 'react-router-dom';
 import Navigation from '../components/Navigation';
-import {updateBio, uploadPicture} from "../reducers/user.reducer";
 import {useDispatch} from "react-redux";
 import {createPost} from "../reducers/postSlice";
 import {UidContext} from "../components/AppContext";
@@ -33,7 +31,7 @@ const AddPost = () => {
 
                 <form action="" onSubmit={handlePicture} className="upload-pic">
                     <ul className="liste">
-                    <label htmlFor="file">Changer d'image :</label>
+                    <label htmlFor="file">Choisir une image :</label>
                     <input
                         type="file"
                         id="file"
@@ -43,8 +41,8 @@ const AddPost = () => {
                     />
                     <br/>
                         <li><input id={"titre"} placeholder={"  Titre"}/></li>
-                        <li><input id={"description"} placeholder={"  Description"} onChange={(e)=> setMessage(e.target.value)}/></li>
-                        <input type="submit" value="Envoyer"/>
+                        <li><input id={"message"} placeholder={"  Message"} onChange={(e)=> setMessage(e.target.value)}/></li>
+                        <input id='poster' type="submit" value="Envoyer"/>
 
                         {/*<NavLink style={{ textDecoration: 'none' }} to="/accueil" className={(nav) => (nav.isActive ? "nav-active" : "")} end>*/}
                         {/*    <li><input className="ProfilCommun" id={"Modifier"} type="button" value="Modifier" onClick={(e)=>dispatch(createPost(uid,filename,message)}/></li>                </NavLink>*/}
