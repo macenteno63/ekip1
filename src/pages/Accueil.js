@@ -9,51 +9,37 @@ import { NavLink } from 'react-router-dom';
 import { useSelector} from "react-redux";
 
 const Accueil = () => {
-    const [nom,setNom] = useState([]);
     const users = useSelector(state => state.utilisateurs.utilisateurs);
-    // useEffect(()=>{
-    //     const fetchNom = async () =>{
-    //         await fetch('http://localhost:4000/api/user/all')
-    //             .then((resp)=>{
-    //                 return resp.json();
-    //             })
-    //             .then((res)=>{
-    //                 setNom(res);
-    //             })
-    //             .catch((err) => console.log(err));
-    //     }
-    //     fetchNom();
-    // }, [nom])
-
-
-  // useEffect(() => {
-  //   getPostt();
-  // }, [dispatch]);
     return (
     <div className="grid-containerPost">
             <Navigation/>
 
-        <div className='container'>
-            <h2>Fil de discussion :</h2>
-            
-            <div className="scroll-bar">
-                <div className="grid-containerPostTab">
-                    <Post/>
+            <div className='container'>
+                <h2>Fil de discussion :</h2>
+
+                <div className="scroll-bar">
+                    <div className="grid-containerPostTab">
+                        <Post/>
+                    </div>
                 </div>
+                <NavLink style={{textDecoration: 'none'}} to="/addpost"
+                         className={(nav) => (nav.isActive ? "nav-active" : "")} end>
+                    <BoutonBasPage scaleValue="Ajouter un post"></BoutonBasPage>
+                </NavLink>
             </div>
-            <NavLink style={{ textDecoration: 'none' }} to="/addpost" className={(nav) => (nav.isActive ? "nav-active" : "")} end>
-                <BoutonBasPage scaleValue="Ajouter un post"></BoutonBasPage>       
-            </NavLink>
-        </div>
 
-        <div>
-            {users !== null && <Personne scaleValue={users}/>}
-        </div>
+            <div>
+                {users !== null && (
+                    <div className={"Personne"}>
+                        <p> Utilisateur:</p>
+                        <ul>
+                            {users.map((user) => <button onClick={event => console.log(user.nom)}><Personne scaleValue={user} key={user._id}/></button>)}
+                        </ul>
+                    </div>)}
+            </div>
 
-        
-        
-        
-    </div>
+
+        </div>
     );
 };
 

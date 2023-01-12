@@ -7,11 +7,11 @@ const CelluleEvent = () => {
     const event = useSelector(state => state.event.event)
     return (
         <div className="grid-itemCellEvent">
-            <img className="imageEvent" src={Event}/>
+            <img className="imageEvent" src={Event} alt={"celluleImg"}/>
             <div className="event">
                 <h3>Match FCM-ASSE</h3>
-                <a>par Groupe FanFoot</a>
-                <a className="date">07/11/22</a>
+                <p>par Groupe FanFoot</p>
+                <p className="date">07/11/22</p>
             </div> 
         </div>
     );

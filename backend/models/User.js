@@ -32,7 +32,7 @@ const userSchema = mongoose.Schema({
         },
         picture: {
             type: String,
-            default: "assets/profil/random-user.png"
+            default: "/profil/random-user.png"
         },
         bio: {
             type: String,

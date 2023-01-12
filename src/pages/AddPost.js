@@ -21,12 +21,12 @@ const AddPost = () => {
         window.location= "/"
     };
     return (
-    <div class="grid-container">
-        <div class="grid-item">
+    <div className="grid-container">
+        <div className="grid-item">
             <Navigation/>
         </div>
 
-        <div class="grid-item">
+        <div className="grid-item">
            <h2 className="titre">Ajouter un post :</h2>
 
                 <form action="" onSubmit={handlePicture} className="upload-pic">

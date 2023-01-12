@@ -23,7 +23,7 @@ export const usersSlice = createSlice({
 export const createUser = (uid) => {
     return (dispatch) => {
         return axios
-            .get(`http://localhost:4000/api/user/${uid}`)
+            .get(`${process.env.REACT_APP_API_URL}/api/user/${uid}`)
             .then((res) => {
                 dispatch({ type: "users/getUser", payload: res.data });
             })
@@ -33,10 +33,10 @@ export const createUser = (uid) => {
 export const uploadPicture = (data, id) => {
   return (dispatch) => {
     return axios
-      .post(`http://localhost:4000/api/user/upload`, data)
+      .post(`${process.env.REACT_APP_API_URL}/api/user/upload`, data)
       .then((res) => {
           return axios
-            .get(`http://localhost:4000/api/user/${id}`)
+            .get(`${process.env.REACT_APP_API_URL}/api/user/${id}`)
             .then((res) => {
               dispatch({ type: "users/uploadPicture", payload: res.data.picture });
             });
@@ -48,7 +48,7 @@ export const updateBio = (userId, bio, metier, ville,age) => {
   return (dispatch) => {
     return axios({
       method: "put",
-      url: `http://localhost:4000/api/user/` + userId,
+      url: `${process.env.REACT_APP_API_URL}/api/user/` + userId,
       data: { bio,metier,ville,age },
     })
       .then((res) => {

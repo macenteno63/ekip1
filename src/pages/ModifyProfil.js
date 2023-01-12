@@ -1,14 +1,11 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import Navigation from '../components/Navigation';
 import { NavLink } from 'react-router-dom';
 import '../styles/pages/modifyprofil.css'
-import {useContext} from "react";
-import {UidContext} from "../components/AppContext";
 import {useDispatch, useSelector} from "react-redux";
-import {modifyProfile, updateBio} from "../reducers/user.reducer";
+import {updateBio} from "../reducers/user.reducer";
 
 const ModifyProfil = () => {
-    const uid = useContext(UidContext);
     const user = useSelector(state => state.users.users);
     const dispatch = useDispatch();
     const [bio,setBio] = useState(user.bio);

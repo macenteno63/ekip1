@@ -1,19 +1,17 @@
 import '../styles/components/personne.css'
 import React from 'react';
+import Popup from "reactjs-popup";
 
 function Personne(props) {
-    const users = props.scaleValue;
+    const user = props.scaleValue;
     return (
-        <div className={"Personne"}>
-            <ul>
-                <p>Utilisateurs :</p>
-                {users.map((user) => (
-                    <li>{user.nom}</li>
-                ))}
-            </ul>
+        <div>
+            <Popup trigger={<li>{user.nom}</li>}
+                   position={["bottom center", "bottom right", "bottom left"]}
+                   closeOnDocumentClick>
+                <div>{user.email}</div>
+            </Popup>
         </div>
     );
 }
-
-
 export default Personne;

@@ -17,8 +17,7 @@ import {useDispatch} from "react-redux";
 // import { getUser } from '../actions/user.actions'; // reducer on utilise pas
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import {createUser, getUser} from "../reducers/user.reducer";
-import {fetchPost, fetchUsers, getPost} from "../reducers/postSlice";
+import {createUser} from "../reducers/user.reducer";
 
 const App = () => {
   const [uid, setUid] = useState(null);
@@ -26,7 +25,7 @@ const App = () => {
   const fetchToken = async () => {
     await axios({
       method: "get",
-      url: `http://localhost:4000/jwtid`,
+      url: `${process.env.REACT_APP_API_URL}/jwtid`,
       withCredentials: true,
     })
         .then((res) => {

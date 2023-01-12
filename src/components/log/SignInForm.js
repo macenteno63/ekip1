@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import axios from "axios";
-import {NavLink} from "react-router-dom";
 import MentionContact from '../MentionContact';
 import Logo from '../../images/Logo.png';
 import fond from '../../images/fond.jpg';
@@ -33,20 +32,11 @@ const SignInForm = () => {
                     })
                     .catch((err) => console.log(err));
             }
-            // let test = {
-            //     method: "post",
-            //     body: {
-            //         mail,
-            //         password,
-            //     }
-            // }
-            //
-            // fetch("http://localhost:4000/api/user/login", test).then((res) => console.log(res)).catch((err)=>console.log(err))
 
     return (
         
         <div id={"FormuCnx"}>
-            <img className='ImageFond' src={fond}/>
+            <img className='ImageFond' src={fond} alt={"imageFond"}/>
             <MentionContact/>
             <form className='Formulaire' id={"FormuConnex"} onSubmit={handleLogin} action={""}>
                 <h1 className='Titre'>Se connecter</h1>
@@ -60,7 +50,7 @@ const SignInForm = () => {
                 <input type={"submit"} id={"boutonSubmit"} value={"Se connecter"}/>
             </form>
             <div className="couleurLogoCnx">
-            <img className="imageLogoCnx" src={Logo}/>
+            <img className="imageLogoCnx" src={Logo} alt={"logo"}/>
             </div>
         </div>
 

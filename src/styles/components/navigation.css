@@ -115,14 +115,14 @@
   transition-delay: 0.75s;
 }
 
-.Navigation logout {
+.Navigation .logout {
   display: flex;
   position: absolute;
   bottom: 1%;
   margin-left: 13%;
 }
 
-.Navigation logout:hover {
+.Navigation .logout:hover {
   background-color: #396086;
   border-radius: 5px;
 }

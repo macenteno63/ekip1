@@ -34,14 +34,10 @@ const Log = () => {
     return (
         <div id={isOpen ? "FormuIns" : "FormuCnx"}>
             {isOpen ?  <SignUpForm /> : <SignInForm />}
-            {/*{signInModal && <SignInForm />}*/}
             <div  id={"bouton"}>
                 <button className={isOpen ? "boutonToCnx" : "boutonToIns"} id={"login"} onClick={handleModals}>
                     {nom}
                 </button>
-                {/*<li className={signUPModal ? "active-btn" : "inactive-btn"} id={"register"} onClick={handleModals} >*/}
-                {/*    {nom}*/}
-                {/*</li>*/}
             </div>
         </div>
     );

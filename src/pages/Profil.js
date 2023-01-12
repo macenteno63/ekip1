@@ -1,9 +1,6 @@
 import '../styles/pages/profil.css'
-import React, {useEffect, useState} from 'react';
 import Navigation from '../components/Navigation';
 import { NavLink } from 'react-router-dom';
-import {useContext} from "react";
-import {UidContext} from "../components/AppContext";
 import { useSelector} from "react-redux";
 import UploadImg from "../components/UploadImg";
 import {isEmpty} from "../components/utils";
@@ -60,7 +57,7 @@ const Profil = () => {
                 { isEmpty(user) ? <p>pas de photo</p>:<a className='PhotoProfil'><img src={user.picture} alt="photo de profil"/></a>}
 
                 <div className='InputImage'>
-                    <UploadImg />
+                    <UploadImg/>
                 </div>
 
                 <NavLink style={{ textDecoration: 'none' }} to="/modifyprofil" className={(nav) => (nav.isActive ? "nav-active" : "")} end>
