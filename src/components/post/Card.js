@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {AiOutlineDislike, AiOutlineLike, AiOutlineMessage} from "react-icons/ai";
 import {isEmpty} from "../utils";
 import '../../styles/components/post.css';
+import Like from "./Like";
 
 const Card = (props) => {
     const [isLoading, setIsLoading] = useState(true);
@@ -31,7 +32,7 @@ const Card = (props) => {
             <hr/>
             <img src={`./post/${props.post.picture}`} alt={"pp"}/>
             <div className="textPost">
-                <button><AiOutlineLike className='Icon'/>32</button>
+                 <Like post={props.post}/>
                 <button><AiOutlineDislike className='Icon'/>5</button>
                 <button><AiOutlineMessage className='Icon'/>9</button>
             </div>

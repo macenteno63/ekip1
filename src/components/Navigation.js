@@ -20,7 +20,7 @@ const Navigation = () => {
     const logout = async () => {
         await axios({
             method: "get",
-            url: `http://localhost:4000/api/user/logout`,
+            url: `${process.env.REACT_APP_API_URL}/api/user/logout`,
             withCredentials: true,
         })
             .then(() => removeCookie("jwt"))
@@ -78,9 +78,7 @@ const Navigation = () => {
                     </li>
                 </NavLink>
             </ul>
-            {uid &&             <div onClick={logout}>
-                <logout> <FaSignOutAlt className="IconNav"/> </logout>
-            </div>}
+            {uid &&             <div onClick={logout} className={"logout"}><FaSignOutAlt className="IconNav"/></div>}
 
 
         </div>

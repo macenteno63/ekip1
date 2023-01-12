@@ -16,7 +16,7 @@ const utilisateursSlice = createSlice({
 export const fetchUsers = () => {
   return (dispatch) => {
     return axios
-      .get(`http://localhost:4000/api/user/all`)
+      .get(`${process.env.REACT_APP_API_URL}/api/user/all`)
       .then((res) => {
         dispatch({ type: "utilisateurs/getAll", payload: res.data });
       })
