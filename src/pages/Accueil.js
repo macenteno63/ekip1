@@ -1,6 +1,6 @@
 import '../styles/pages/erreur.css'
 import '../styles/pages/accueil.css'
-import React, {useState} from 'react';
+import React from 'react';
 import Post from '../components/Post';
 import Navigation from '../components/Navigation';
 import Personne from "../components/Personne";

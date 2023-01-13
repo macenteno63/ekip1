@@ -5,6 +5,7 @@ import Accueil from '../pages/Accueil.js'
 import Profil from '../pages/Profil.js'
 import Calendrier from '../pages/Calendrier.js'
 import Evenement from '../pages/Evenement.js'
+import SignEvent from '../pages/SignEvent.js'
 import AddEvenement from '../pages/AddEvenement.js'
 import Messagerie from '../pages/Messagerie.js'
 import AddPost from '../pages/AddPost.js'
@@ -67,6 +68,7 @@ const App = () => {
             <Route path="/profil" element={<Profil />} />
             <Route path="/calendrier" element={<Calendrier />} />
             <Route path="/evenement" element={<Evenement />} />
+            <Route path="/signevent" element={<SignEvent />} />
             <Route path="/addevenement" element={<AddEvenement />} />
             <Route path="/messagerie" element={<Messagerie />} />
             <Route path="/addpost" element={<AddPost />} />

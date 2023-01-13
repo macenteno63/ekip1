@@ -1,5 +1,4 @@
 import '../styles/pages/addevenement.css'
-import { NavLink } from 'react-router-dom';
 import Navigation from '../components/Navigation';
 import React, {useContext, useState} from 'react';
 import {useDispatch} from "react-redux";
@@ -10,7 +9,7 @@ const AddEvenement = () => {
     const [description,setDescription] = useState("")
     const [titre,setTitre] = useState("")
     const [date, setDate] = useState("")
-    const [nbplaces, setNbplaces] = useState("")
+    const [nbPlaces, setNbplaces] = useState("")
     const uid = useContext(UidContext);
     const dispatch = useDispatch()
     const [file,setFile] = useState()
@@ -20,12 +19,12 @@ const AddEvenement = () => {
         data.append("description", description);
         data.append("titre", titre)
         data.append("date",date)
-        data.append("nbplaces",nbplaces)
+        data.append("nbPlaces",nbPlaces)
         data.append("posterId", uid);
         data.append("file", file);
         console.log(data);
         dispatch(createEvent(data));
-        window.location= "/"
+        window.location= "/evenement"
     };
     return (
     <div className="grid-container">

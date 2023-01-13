@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/components/celluleEvent.css';
+import '../styles/components/EventItem.css';
 import Event from '../images/TestEvent.jpg';
 import {useSelector} from "react-redux";
 

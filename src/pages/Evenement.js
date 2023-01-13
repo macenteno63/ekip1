@@ -4,10 +4,8 @@ import { NavLink } from 'react-router-dom';
 import Navigation from '../components/Navigation';
 import BoutonBasPage from '../components/BoutonBasPage';
 import EventList from '../components/EventList';
-import {useSelector} from "react-redux";
 
 const Evenement = () => {
-    const users = useSelector(state => state.utilisateurs.utilisateurs);
     return (
     <div className="grid-containerEvent">
 
