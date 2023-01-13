@@ -20,7 +20,7 @@ const store = configureStore({
         event: eventReducer
     },
 })
-store.dispatch(fetchPost());
+store.dispatch(fetchPost(5));
 store.dispatch(fetchEvent())
 store.dispatch(fetchUsers());
 
