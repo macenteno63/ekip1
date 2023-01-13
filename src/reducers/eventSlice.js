@@ -18,7 +18,7 @@ export const eventSlice = createSlice({
             state.event = action.payload;
         },
         createEventt:(state,action)=>{
-
+            state.push(action.payload)
         }
     },
 });
