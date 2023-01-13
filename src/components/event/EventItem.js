@@ -13,31 +13,18 @@ const EventItem = (props) => {
         }
 
     useEffect(() => {
-        !isEmpty(props.users[0]) && setIsLoading(false);
+        !isEmpty(props.users) && setIsLoading(false);
         isEmpty(props.users) ? console.log("loading") : user()
     }, [props.users]);
     return (
-        isLoading ? (<div>null</div>) : (<div className='grid-itemCellEvent'> <div className="event">
-            {/*<img*/}
-            {/*    src={*/}
-            {/*        !isEmpty(users[0]) &&*/}
-            {/*        users*/}
-            {/*            .map((user) => {*/}
-            {/*                if (user._id === props.post.posterId){*/}
-            {/*                    return user.picture;*/}
-            {/*                }*/}
-            {/*                else return null;*/}
-            {/*            })*/}
-            {/*            .join("")*/}
-            {/*    }*/}
-            {/*    alt="poster-pic"*/}
-            {/*/>*/}
+        isLoading ? (<div>en chargement</div>) : (<div className='grid-itemCellEvent'> <div className="event">
             <hr/>
             <div>
                 <a>
-                <img src={`./event/${props.event.picture}`} alt={"imageEvent"}/>
-                <h3>par {userr.nom + " " +userr.prenom}</h3>
+                <img className='imageEvent' src={`./event/${props.event.picture}`} alt={"imageEvent"}/>
+                <p>par {userr.prenom + " " + userr.nom}</p>
                 {props.event.titre}
+                {props.event.posterId}
                 <p className="date"> {props.event.date}</p>
                 </a>
             </div>
