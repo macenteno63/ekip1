@@ -31,16 +31,19 @@ export const postSlice = createSlice({
         unlike: (state, action) => {
             state.post.map((post) => {
                 if (post._id === action.payload.postId) {
-                    post.likers = post.likers.filter(t=> t !== action.payload.userId)
+                    post.likers = post.likers.filter(t => t !== action.payload.userId)
                 }
             })
         },
-        updateMessage: (state,action)=>{
+        updateMessage: (state, action) => {
             state.post.map((post) => {
                 if (post._id === action.payload.postId) {
                     post.message = action.payload.message;
                 }
             })
+        },
+        DELETE_POST: (state, action) => {
+            state.post = state.post.filter(t => t._id !== action.payload.postId)
         }
     },
 });
@@ -49,7 +52,7 @@ export const fetchPost = (num) => {
         return axios
             .get(`${process.env.REACT_APP_API_URL}/api/post/`)
             .then((res) => {
-                const tab = res.data.slice(0,num)
+                const tab = res.data.slice(0, num)
                 dispatch({type: "post/getPost", payload: tab});
             })
             .catch((err) => console.log(err));
@@ -93,17 +96,29 @@ export const unlikePost = (postId, userId) => {
     };
 };
 export const updatePost = (postId, message) => {
-  return (dispatch) => {
-    return axios({
-      method: "put",
-      url: `${process.env.REACT_APP_API_URL}/api/post/${postId}`,
-      data: { message },
-    })
-      .then((res) => {
-        dispatch({ type: "post/updateMessage", payload: { message, postId } });
-      })
-      .catch((err) => console.log(err));
-  };
+    return (dispatch) => {
+        return axios({
+            method: "put",
+            url: `${process.env.REACT_APP_API_URL}/api/post/${postId}`,
+            data: {message},
+        })
+            .then((res) => {
+                dispatch({type: "post/updateMessage", payload: {message, postId}});
+            })
+            .catch((err) => console.log(err));
+    };
+};
+export const deleteP = (postId) => {
+    return (dispatch) => {
+        return axios({
+            method: "delete",
+            url: `${process.env.REACT_APP_API_URL}/api/post/${postId}`,
+        })
+            .then((res) => {
+                dispatch({ type: "post/DELETE_POST", payload: { postId } });
+            })
+            .catch((err) => console.log(err));
+    };
 };
 
 // export const fetchPost = () => async (dispatch) => {
