@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Rubik', sans-serif;
+}
+
+.main-container {
+    width: calc(100vw - 220px);
+    margin-left: 210px;
+    height: 100vh;
+}
+
+.main-container.home {
+    width: calc(100vw - 400px);
+    max-width: 1000px;
+    margin: auto;
+}
+
+.navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+.navigation img {
+    width: 100%;
+}
+
+.navigation ul {
+    width: calc(100% - 8% * 2);
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 8%;
+}
+
+.navigation ul li svg {
+    font-size: 30px;
+}
+
+.navigation ul li {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    padding: 8px;
+    color: black;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.navigation ul li:hover {
+    background-color: rgba(0, 0, 0, 0.09);
+}
+
+
+#rightBar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 100vh;
+}
+
+#rightBar p:first-of-type {
+    text-align: center;
+}
+
+#rightBar ul {
+    width: calc(100% - 8% * 2);
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 8%;
+}
+
+#rightBar ul li {
+    font-size: 14px;
+    margin-top: 10px;
+    padding: 8px;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: grey;
+}
+
+.main-container p {
+    margin: 0;
+}
+
+.main-container p.detail-title {
+    font-size: 25px;
+    background-color: black;
+    color: white;
+    width: fit-content;
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.main-container .imageEvt {
+    max-height: 170px;
+}

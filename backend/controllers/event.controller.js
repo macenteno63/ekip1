@@ -18,7 +18,7 @@ module.exports.createEvent = async (req, res) => {
     if (req.file.mimetype !== "image/jpg" && req.file.mimetype !== "image/png" && req.file.mimetype !== "image/jpeg")
       throw Error("invalid file");
 
-    if (req.file.size > 500000) throw Error("max size");
+    if (req.file.size > 1000000) throw Error("max size");
   } catch (err) {
     const errors = uploadErrors(err);
     return res.status(201).json({errors});
