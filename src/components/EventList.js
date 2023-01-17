@@ -7,7 +7,7 @@ const EventList = () => {
     const events = useSelector(state => state.event.event)
     const users = useSelector(state => state.utilisateurs.utilisateurs);
     return (
-        <div>
+        <>
                 {events === null ? <div className="lds-spinner">
                         <div></div>
                         <div></div>
@@ -26,7 +26,7 @@ const EventList = () => {
                     events.map((event) => {
                                 return <EventItem event={event} users={users} key={event._id}/>;
                     })}
-        </div>
+        </>
     );
 }
 

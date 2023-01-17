@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useState} from 'react';
-import {AiOutlineDislike, AiOutlineLike, AiOutlineMessage} from "react-icons/ai";
+import {AiOutlineDislike, AiOutlineMessage} from "react-icons/ai";
 import {isEmpty} from "../utils";
 import '../../styles/components/post.css';
 import Like from "./Like";
@@ -35,15 +35,14 @@ const Card = (props) => {
         setIsUpdated(false);
     };
     return (
-        isLoading ? (<div>null</div>) : (<div className='ContainerPost'>
-            <div className="post">
-                <img src={userr.picture} alt={"pp"}/>
-                <div className="grid-containerHeaderPost">
-                    <h3>{userr.nom + " " + userr.prenom}</h3>
+        !isLoading && (
+            <div className='grid-block block-post'>
+                <div className="author">
+                    <img src={userr.picture} alt={"pp"}/>
+                    <p>{userr.nom + " " + userr.prenom}</p>
                 </div>
-
-                <hr/>
-                <div className="textPostMessage">
+                <div className="content">
+                    <img src={`./post/${props.post.picture}`} alt={"pp"}/>
                     {isUpdated === false && <p>{props.post.message}</p>}
                     {isUpdated && (
                         <div className="update-post">
@@ -59,10 +58,7 @@ const Card = (props) => {
                         </div>
                     )}
                 </div>
-
-                <hr/>
-                <img src={`./post/${props.post.picture}`} alt={"pp"}/>
-                <div className="textPost">
+                <div className="actions">
                     <Like post={props.post}/>
                     {uid === props.post.posterId && <><button onClick={() => setIsUpdated(true)}><AiOutlineDislike className='Icon'/>5</button>
                         <button onClick={() => deletePost()}><AiOutlineDislike className='Icon'/>5</button></>
@@ -70,8 +66,7 @@ const Card = (props) => {
                     <button><AiOutlineMessage className='Icon'/>9</button>
                 </div>
             </div>
-        </div>)
-
+        )
     );
 };
 

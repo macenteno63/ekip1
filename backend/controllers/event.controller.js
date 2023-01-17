@@ -4,8 +4,6 @@ const { uploadErrors } = require("../utils/error");
 // Pour vérifier que le praramètre existe dans la base de données
 const ObjectID = require("mongoose").Types.ObjectId;
 const fs = require("fs");
-const { promisify } = require("util");
-const pipeline = promisify(require("stream").pipeline);
 
 module.exports.readEvent = (req, res) => {
   EventModel.find((err, docs) => {
@@ -20,12 +18,12 @@ module.exports.createEvent = async (req, res) => {
     if (req.file.mimetype !== "image/jpg" && req.file.mimetype !== "image/png" && req.file.mimetype !== "image/jpeg")
       throw Error("invalid file");
 
-    if (req.file.size > 500000) throw Error("max size");
+    if (req.file.size > 1000000) throw Error("max size");
   } catch (err) {
     const errors = uploadErrors(err);
     return res.status(201).json({errors});
   }
-    const fileName = req.body.name + ".jpg";
+  const fileName = req.body.posterId + "____" + Date.now() + ".jpg";
     let writeStream = fs.createWriteStream(`${__dirname}/../../public/event/${fileName}`);
     writeStream.write(req.file.buffer);
     writeStream.on('finish', () => {

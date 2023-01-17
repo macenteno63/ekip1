@@ -63,7 +63,10 @@ p {
 } 
 
 #boutonProfil {
-    right: 5%;
+    display: flex;
+    position: absolute;
+    bottom: 5%;
+    right: 10%;
 }
 
 @media screen and (max-width: 1190px) {

@@ -1,19 +1,18 @@
-.grid-containerEvent{
-    display: grid;
-    grid-template-columns: 20% 35% 35% 5%;
-    padding-right: 50px;
-    
+.grid-containerEvent {
+  display: grid;
+  grid-template-columns: 20% 40% 40%;
+  padding-right: 50px;
 }
 
-.grid-containerEventTab{
+.grid-containerEventTab {
   display: grid;
   grid-template-columns: auto auto;
   padding-top: 60px;
   padding-bottom: 50px;
-
 }
-.scroll-bar{
-   height: 800px; 
+
+.scroll-bar {
+  height: 800px;
   overflow-y: scroll;
   overflow-x: hidden;
   scrollbar-color: #2C3E50 #ededee;

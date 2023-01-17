@@ -47,12 +47,6 @@ const Profil = () => {
                 <div className='Biographie' id="profil">
                     <p>Bio : {user.bio} </p>
                 </div>
-                {/* <div className='Formation' id="profil">
-                    <p>À étudier : <br />
-                        - <br />
-                        -
-                    </p>
-                </div> */}
 
                 { isEmpty(user) ? <p>pas de photo</p>:<a className='PhotoProfil'><img src={user.picture} alt="photo de profil"/></a>}
 

@@ -1,5 +1,4 @@
 import '../styles/pages/addevenement.css'
-import { NavLink } from 'react-router-dom';
 import Navigation from '../components/Navigation';
 import React, {useContext, useState} from 'react';
 import {useDispatch} from "react-redux";
@@ -7,19 +6,25 @@ import {createEvent} from "../reducers/eventSlice";
 import {UidContext} from "../components/AppContext";
 
 const AddEvenement = () => {
-    const [message,setMessage] = useState("")
+    const [description,setDescription] = useState("")
+    const [titre,setTitre] = useState("")
+    const [date, setDate] = useState("")
+    const [nbPlaces, setNbplaces] = useState("")
     const uid = useContext(UidContext);
     const dispatch = useDispatch()
     const [file,setFile] = useState()
     const handlePicture = (e) => {
         e.preventDefault();
         const data = new FormData();
-        // data.append("message", message);
-        // data.append("posterId", uid);
-        // data.append("file", file);
+        data.append("description", description);
+        data.append("titre", titre)
+        data.append("date",date)
+        data.append("nbPlaces",nbPlaces)
+        data.append("posterId", uid);
+        data.append("file", file);
         console.log(data);
-        // dispatch(createPost(data));
-        window.location= "/"
+        dispatch(createEvent(data));
+        window.location= "/evenement"
     };
     return (
     <div className="grid-container">
@@ -39,42 +44,15 @@ const AddEvenement = () => {
                         accept=".jpg, .jpeg, .png"
                         onChange={(e) => setFile(e.target.files[0])}
                     />
-                    <li><input id={"titre"} placeholder={"Titre"}/></li>
-                    <li>Date de l'évenement : <input id={"date"} type="date"/></li>
-                    <li><input id={"description"} placeholder={"  Description"}/></li>
-                    <li><input id={"nbplaces"} placeholder={"  Nombre de places"}/></li>
+                    <li><input id={"titre"} placeholder={"Titre"} onChange={(e)=> setTitre(e.target.value)}/></li>
+                    <li>Date de l'évenement : <input id={"date"} type="date" onChange={(e)=> setDate(e.target.value)}/></li>
+                    <li><input id={"description"} placeholder={"  Description"} onChange={(e)=> setDescription(e.target.value)}/></li>
+                    <li><input id={"nbplaces"} placeholder={"  Nombre de places"} onChange={(e)=> setNbplaces(e.target.value)}/></li>
                     <input id='poster' type="submit" value="Envoyer"/>
                     </ul>
 
                 </form>
         </div>
-
-        <div class="grid-item">
-           <h2 className="titre">Ajouter un post :</h2>
-
-                <form action="" onSubmit={handlePicture} className="upload-pic">
-                    <ul className="liste">
-                    <label htmlFor="file">Choisir une image :</label>
-                    <input
-                        type="file"
-                        id="file"
-                        name="file"
-                        accept=".jpg, .jpeg, .png"
-                        onChange={(e) => setFile(e.target.files[0])}
-                    />
-                    <br/>
-                        <li><input id={"titre"} placeholder={"  Titre"}/></li>
-                        <li><input id={"description"} placeholder={"  Description"} onChange={(e)=> setMessage(e.target.value)}/></li>
-                        <input type="submit" value="Envoyer"/>
-
-                        {/*<NavLink style={{ textDecoration: 'none' }} to="/accueil" className={(nav) => (nav.isActive ? "nav-active" : "")} end>*/}
-                        {/*    <li><input className="ProfilCommun" id={"Modifier"} type="button" value="Modifier" onClick={(e)=>dispatch(createPost(uid,filename,message)}/></li>                </NavLink>*/}
-                    </ul>
-
-                </form>
-
-        </div>
-        
     </div>
     );
 };

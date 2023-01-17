@@ -27,7 +27,7 @@ h2{
     height: 920px;
 }
 .container .scroll-bar{
-   height: 85%;
+   height: 90%;
 }
 
 .grid-containerPost{
@@ -120,31 +120,31 @@ h2{
   
 }
 
-@media screen and (max-height: 1050px){
+@media screen and (max-height: 1000px){
     .container {
     height: 850px;
     }
 }
 
-@media screen and (max-height: 870px){
+@media screen and (max-height: 890px){
     .container {
     height: 750px;
     }
 }
 
-@media screen and (max-height: 775px){
+@media screen and (max-height: 810px){
     .container {
     height: 650px;
     }
 }
 
-@media screen and (max-height: 690px){
+@media screen and (max-height: 710px){
     .container {
     height: 540px;
     }
 }
 
-@media screen and (max-height: 590px){
+@media screen and (max-height: 610px){
     .container {
     height: 430px;
     }
