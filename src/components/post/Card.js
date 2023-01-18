@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useState} from 'react';
-import {AiOutlineDislike, AiOutlineMessage} from "react-icons/ai";
+import {AiOutlineEdit, AiOutlineMessage, AiOutlineDelete} from "react-icons/ai";
 import {isEmpty} from "../utils";
 import '../../styles/components/post.css';
 import Like from "./Like";
@@ -60,8 +60,8 @@ const Card = (props) => {
                 </div>
                 <div className="actions">
                     <Like post={props.post}/>
-                    {uid === props.post.posterId && <><button onClick={() => setIsUpdated(true)}><AiOutlineDislike className='Icon'/>5</button>
-                        <button onClick={() => deletePost()}><AiOutlineDislike className='Icon'/>5</button></>
+                    {uid === props.post.posterId && <><button onClick={() => setIsUpdated(true)}><AiOutlineEdit className='Icon'/></button>
+                        <button onClick={() => deletePost()}><AiOutlineDelete className='Icon'/></button></>
                     }
                     <button><AiOutlineMessage className='Icon'/>9</button>
                 </div>
