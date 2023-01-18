@@ -8,7 +8,10 @@ function Personne(props) {
         <Popup trigger={<li>{user.nom}</li>}
                position={["bottom center", "bottom right", "bottom left"]}
                closeOnDocumentClick>
-            <div>{user.email}</div>
+            <div>
+                <p>{user.email}</p>
+                <img src={user.picture} alt={"pp navigation"}/>
+            </div>
         </Popup>
     );
 }
