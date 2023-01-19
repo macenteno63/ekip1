@@ -6,12 +6,14 @@ import Like from "./Like";
 import {useDispatch} from "react-redux";
 import {deleteP, updatePost} from "../../reducers/postSlice";
 import {UidContext} from "../AppContext";
+import CardComment from "./CardComment";
 
 const Card = (props) => {
     const [isLoading, setIsLoading] = useState(true);
     const [userr, setUserr] = useState([]);
     const [isUpdated, setIsUpdated] = useState(false);
     const [textUpdate, setTextUpdate] = useState(null);
+    const [showComment, setShowComment] = useState(false);
     const dispatch = useDispatch();
     const uid = useContext(UidContext);
 
@@ -63,7 +65,10 @@ const Card = (props) => {
                     {uid === props.post.posterId && <><button onClick={() => setIsUpdated(true)}><AiOutlineEdit className='Icon'/></button>
                         <button onClick={() => deletePost()}><AiOutlineDelete className='Icon'/></button></>
                     }
-                    <button><AiOutlineMessage className='Icon'/>9</button>
+                    <button onClick={() => setShowComment(!showComment)}><AiOutlineMessage className='Icon'/>{props.post.comments.length}</button>
+                </div>
+                <div>
+                    {showComment && <CardComment post={props.post} />}
                 </div>
             </div>
         )

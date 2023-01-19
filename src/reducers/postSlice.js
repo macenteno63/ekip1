@@ -44,6 +44,9 @@ export const postSlice = createSlice({
         },
         DELETE_POST: (state, action) => {
             state.post = state.post.filter(t => t._id !== action.payload.postId)
+        },
+        ADD_COMMENT: (state, action) => {
+            state.post.comments = state.post.comments.push(action.payload);
         }
     },
 });
@@ -116,6 +119,19 @@ export const deleteP = (postId) => {
         })
             .then((res) => {
                 dispatch({ type: "post/DELETE_POST", payload: { postId } });
+            })
+            .catch((err) => console.log(err));
+    };
+};
+export const addComment = (postId, commenterId, text, nom) => {
+    return (dispatch) => {
+        return axios({
+            method: "patch",
+            url: `${process.env.REACT_APP_API_URL}/api/post/comment-post/${postId}`,
+            data: { commenterId, text, nom },
+        })
+            .then((res) => {
+                dispatch({ type: "post/ADD_COMMENT", payload: { postId } });
             })
             .catch((err) => console.log(err));
     };
