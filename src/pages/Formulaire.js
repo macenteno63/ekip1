@@ -1,7 +1,8 @@
 import '../styles/pages/formulaire.css'
 import './ReinitialisationMdp.js'
-import React from 'react';
+import React, {useContext, useEffect} from 'react';
 import Log from "../components/log";
+import {UidContext} from "../components/AppContext";
 
 const Formulaire = () => {
     return (

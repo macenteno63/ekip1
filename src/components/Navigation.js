@@ -30,10 +30,6 @@ const Navigation = () => {
         <div className="navigation">
             <img src={LogoTransparent} alt=""/>
             <ul>
-                <NavLink style={{textDecoration: 'none'}} to="/formulaire"
-                         className={(nav) => (nav.isActive ? "nav-active" : "")} end>
-                    <li><FaComments/> Formulaire</li>
-                </NavLink>
                 <NavLink style={{textDecoration: 'none'}} to="/accueil"
                          className={(nav) => (nav.isActive ? "nav-active" : "")} end>
                     <li className='BoutonNavig'>

@@ -40,7 +40,6 @@ const AddPost = () => {
                         onChange={(e) => setFile(e.target.files[0])}
                     />
                     <br/>
-                        <li><input id={"titre"} placeholder={"  Titre"}/></li>
                         <li><input id={"message"} placeholder={"  Message"} onChange={(e)=> setMessage(e.target.value)}/></li>
                         <input id='poster' type="submit" value="Envoyer"/>
 

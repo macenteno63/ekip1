@@ -15,11 +15,9 @@ import ModifyProfil from '../pages/ModifyProfil.js'
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {UidContext} from "./AppContext";
 import {useDispatch} from "react-redux";
-// import { getUser } from '../actions/user.actions'; // reducer on utilise pas
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import {createUser} from "../reducers/user.reducer";
-import ProtectedRoute from "./ProtectedRoute";
 
 const App = () => {
     const [uid, setUid] = useState(null);
@@ -45,43 +43,35 @@ const App = () => {
     useEffect(() => {
         fetchToken();
     }, [uid, dispatch]);
-// const fetchUser = (uid) =>{
-//   axios({
-//     method: "get",
-//     url: `http://localhost:4000/api/user/${uid}`,
-//     withCredentials: true,
-//   })
-//       .then((res) => {
-//         return res.data
-//       })
-//       .catch((err) => console.log(err));
-// }
     return (
         <UidContext.Provider value={uid}>
-                <BrowserRouter>
+            <BrowserRouter>
+                {uid === null ?
                     <Routes>
-                        <Route element={<ProtectedRoute/>}>
-                            <Route path="/" element={<Accueil/>} exact/>
-                            {/* # si le chemin est reinitialisationMdp on affiche le composant Reinit */}
-                            <Route path="/reinitialisationMdp" element={<Reinit/>}/>
-                            {/* # si c'est l'accueil du site alors on affiche l'acceuil */}
-                            <Route path="/accueil" element={<Accueil/>}/>
-                            <Route path="/profil" element={<Profil/>}/>
-                            <Route path="/calendrier" element={<Calendrier/>}/>
-                            <Route path="/evenement" element={<Evenement/>}/>
-                            <Route path="/signevent" element={<SignEvent/>}/>
-                            <Route path="/addevenement" element={<AddEvenement/>}/>
-                            <Route path="/messagerie" element={<Messagerie/>}/>
-                            <Route path="/addpost" element={<AddPost/>}/>
-                            <Route path="/contact" element={<Contact/>}/>
-                            <Route path="/mentions" element={<Mentions/>}/>
-                            <Route path="/modifyprofil" element={<ModifyProfil/>}/>
-                            {/* # si jamais l'url est inconnu on affiche une erreur 404 */}
-                            <Route path="*" element={<Erreur/>}/>
-                        </Route>
+                        <Route path="*" element={<Formulaire/>}/>
+                    </Routes> :
+                    <Routes>
+                        <Route path="/" element={<Accueil/>} exact/>
+                        {/* # si le chemin est reinitialisationMdp on affiche le composant Reinit */}
+                        <Route path="/reinitialisationMdp" element={<Reinit/>}/>
+                        {/* # si c'est l'accueil du site alors on affiche l'acceuil */}
+                        <Route path="/accueil" element={<Accueil/>}/>
+                        <Route path="/profil" element={<Profil/>}/>
+                        <Route path="/calendrier" element={<Calendrier/>}/>
+                        <Route path="/evenement" element={<Evenement/>}/>
+                        <Route path="/signevent" element={<SignEvent/>}/>
+                        <Route path="/addevenement" element={<AddEvenement/>}/>
+                        <Route path="/messagerie" element={<Messagerie/>}/>
+                        <Route path="/addpost" element={<AddPost/>}/>
+                        <Route path="/contact" element={<Contact/>}/>
+                        <Route path="/mentions" element={<Mentions/>}/>
+                        <Route path="/modifyprofil" element={<ModifyProfil/>}/>
+                        {/* # si jamais l'url est inconnu on affiche une erreur 404 */}
+                        <Route path="*" element={<Erreur/>}/>
                         <Route path="/formulaire" element={<Formulaire/>}/>
                     </Routes>
-                </BrowserRouter>
+                }
+            </BrowserRouter>
         </UidContext.Provider>
         // ce qui englobe notre application
     )
