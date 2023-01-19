@@ -5,6 +5,8 @@ import {addComment, fetchPost} from "../../reducers/postSlice";
 
 const CardComment = (props) => {
     const userData = useSelector((state) => state.users.users);
+    const users = useSelector((state) => state.utilisateurs.utilisateurs);
+    console.log(users)
     const dispatch = useDispatch();
     const [text, setText] = useState("");
     const handleComment = (e) => {
@@ -30,10 +32,15 @@ const CardComment = (props) => {
                     >
                         <div className="right-part">
                             <div className="comment-header">
-                                    <h3>{comment.nom}</h3>
+                                <div className="image">
+                                    <img src={users.find(_u => _u._id === comment.commenterId)?.picture} alt="" />
+                                </div>
+                                <h3>{comment.nom}</h3>
                             </div>
-                            <p>{comment.text}</p>
-                            <span>{timestampParser(comment.timestamp)}</span>
+                            <div className="message">
+                                <p>{comment.text}</p>
+                                <span>{timestampParser(comment.timestamp)}</span>
+                            </div>
                             {/*<EditDeleteComment comment={comment} postId={post._id} />*/}
                         </div>
                     </div>
@@ -48,8 +55,7 @@ const CardComment = (props) => {
                         value={text}
                         placeholder="Laisser un commentaire"
                     />
-                    <br />
-                    <input type="submit" value="Envoyer" />
+                    <input type="submit" value="Envoyer"/>
                 </form>
             )}
         </div>
