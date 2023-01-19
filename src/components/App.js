@@ -19,6 +19,7 @@ import {useDispatch} from "react-redux";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import {createUser} from "../reducers/user.reducer";
+import ProtectedRoute from "./ProtectedRoute";
 
 const App = () => {
     const [uid, setUid] = useState(null);
@@ -57,31 +58,32 @@ const App = () => {
 // }
     return (
         <UidContext.Provider value={uid}>
-            <BrowserRouter>
-                <Routes>
-                    <Route path="/formulaire" element={<Formulaire/>}/>
-                    {/* # si le chemin est reinitialisationMdp on affiche le composant Reinit */}
-                    <Route path="/reinitialisationMdp" element={<Reinit/>}/>
-                    {/* # si c'est l'accueil du site alors on affiche l'acceuil */}
-                    <Route path="/" element={<Accueil/>}/>
-                    <Route path="/accueil" element={<Accueil/>}/>
-                    <Route path="/profil" element={<Profil/>}/>
-                    <Route path="/calendrier" element={<Calendrier/>}/>
-                    <Route path="/evenement" element={<Evenement/>}/>
-                    <Route path="/signevent" element={<SignEvent/>}/>
-                    <Route path="/addevenement" element={<AddEvenement/>}/>
-                    <Route path="/messagerie" element={<Messagerie/>}/>
-                    <Route path="/addpost" element={<AddPost/>}/>
-                    <Route path="/contact" element={<Contact/>}/>
-                    <Route path="/mentions" element={<Mentions/>}/>
-                    <Route path="/modifyprofil" element={<ModifyProfil/>}/>
-                    {/* # si jamais l'url est inconnu on affiche une erreur 404 */}
-                    <Route path="*" element={<Erreur/>}/>
-                </Routes>
-            </BrowserRouter>
+                <BrowserRouter>
+                    <Routes>
+                        <Route element={<ProtectedRoute/>}>
+                            <Route path="/" element={<Accueil/>} exact/>
+                            {/* # si le chemin est reinitialisationMdp on affiche le composant Reinit */}
+                            <Route path="/reinitialisationMdp" element={<Reinit/>}/>
+                            {/* # si c'est l'accueil du site alors on affiche l'acceuil */}
+                            <Route path="/accueil" element={<Accueil/>}/>
+                            <Route path="/profil" element={<Profil/>}/>
+                            <Route path="/calendrier" element={<Calendrier/>}/>
+                            <Route path="/evenement" element={<Evenement/>}/>
+                            <Route path="/signevent" element={<SignEvent/>}/>
+                            <Route path="/addevenement" element={<AddEvenement/>}/>
+                            <Route path="/messagerie" element={<Messagerie/>}/>
+                            <Route path="/addpost" element={<AddPost/>}/>
+                            <Route path="/contact" element={<Contact/>}/>
+                            <Route path="/mentions" element={<Mentions/>}/>
+                            <Route path="/modifyprofil" element={<ModifyProfil/>}/>
+                            {/* # si jamais l'url est inconnu on affiche une erreur 404 */}
+                            <Route path="*" element={<Erreur/>}/>
+                        </Route>
+                        <Route path="/formulaire" element={<Formulaire/>}/>
+                    </Routes>
+                </BrowserRouter>
         </UidContext.Provider>
         // ce qui englobe notre application
-
     )
 }
 
